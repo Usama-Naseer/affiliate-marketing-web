@@ -1,3 +1,4 @@
+import 'package:discountandcodes/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CouponsListView extends StatelessWidget {
@@ -15,7 +16,7 @@ class CouponsListView extends StatelessWidget {
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w400,
-                color: Colors.grey),
+                color: AppColors.greyColor),
           ),
           SizedBox(
             height: 310,
@@ -24,8 +25,8 @@ class CouponsListView extends StatelessWidget {
                 itemBuilder: (context, index) => Container(
                       height: MediaQuery.of(context).size.height * 0.1,
                       width: MediaQuery.of(context).size.width * 0.12,
-                      margin: const EdgeInsets.only(
-                          right: 20, bottom: 10, top: 10),
+                      margin:
+                          const EdgeInsets.only(right: 20, bottom: 10, top: 10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           color: Colors.white,
@@ -33,7 +34,7 @@ class CouponsListView extends StatelessWidget {
                             BoxShadow(
                                 offset: const Offset(2, 2),
                                 blurRadius: 2,
-                                color: Colors.black.withOpacity(0.2))
+                                color: AppColors.blackColor.withOpacity(0.2))
                           ]),
                       child: Column(
                         children: [
@@ -44,16 +45,15 @@ class CouponsListView extends StatelessWidget {
                                     topRight: Radius.circular(12),
                                     topLeft: Radius.circular(12)),
                                 image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/images/model.jpeg'),
+                                    image:
+                                        AssetImage('assets/images/model.jpeg'),
                                     fit: BoxFit.fill)),
                           ),
                           const SizedBox(
                             height: 20,
                           ),
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 15),
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +63,7 @@ class CouponsListView extends StatelessWidget {
                                   style: TextStyle(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 14,
-                                      color: Colors.black),
+                                      color: AppColors.blackColor),
                                 ),
                                 const SizedBox(
                                   height: 10,
@@ -72,19 +72,20 @@ class CouponsListView extends StatelessWidget {
                                   '\$50 Off Storewide (Minimum Order: \$4.000) at XOTIC...',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w400,
-                                      color: Colors.grey),
+                                      color: AppColors.greyColor),
                                 ),
                                 const Text(
                                   'Visit the store now',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w400,
-                                      color: Colors.blue,
+                                      color: AppColors.blueColor,
                                       decoration: TextDecoration.underline),
                                 ),
-                                const SizedBox(height: 20,),
+                                const SizedBox(
+                                  height: 20,
+                                ),
                                 Row(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Container(
                                       height: 10,
@@ -96,7 +97,7 @@ class CouponsListView extends StatelessWidget {
                                       child: const Icon(
                                         Icons.check,
                                         size: 8,
-                                        color: Colors.white,
+                                        color: AppColors.whiteColor,
                                       ),
                                     ),
                                     const SizedBox(
@@ -107,21 +108,29 @@ class CouponsListView extends StatelessWidget {
                                       style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14,
-                                          color: Colors.grey),
+                                          color: AppColors.greyColor),
                                     ),
                                   ],
                                 ),
                                 Container(
                                   height: 30,
                                   width: 150,
-                                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                                  margin: EdgeInsets.symmetric(vertical: 10),
-                                  decoration:  BoxDecoration(
-                                    color: Colors.green,
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 5),
+                                  margin:
+                                      const EdgeInsets.symmetric(vertical: 10),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.greenColor,
                                     borderRadius: BorderRadius.circular(8),
-
                                   ),
-                                  child: const Center(child: Text('Shop with code',style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14,color: Colors.white),)),
+                                  child: const Center(
+                                      child: Text(
+                                    'Shop with code',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                        color: AppColors.whiteColor),
+                                  )),
                                 )
                               ],
                             ),

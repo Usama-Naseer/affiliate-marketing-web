@@ -1,3 +1,4 @@
+import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/screens/store_page.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +15,7 @@ class StoreListView extends StatelessWidget {
           const Text(
             'Stores',
             style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-                color: Colors.grey),
+                fontSize: 20, fontWeight: FontWeight.w400, color: AppColors.greyColor),
           ),
           SizedBox(
             height: 300,
@@ -25,20 +24,23 @@ class StoreListView extends StatelessWidget {
                 itemBuilder: (context, index) => Container(
                       height: MediaQuery.of(context).size.height * 0.20,
                       width: MediaQuery.of(context).size.width * 0.18,
-                      margin: const EdgeInsets.only(
-                          right: 20, bottom: 10, top: 10),
+                      margin:
+                          const EdgeInsets.only(right: 20, bottom: 10, top: 10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.white,
+                          color: AppColors.whiteColor,
                           boxShadow: [
                             BoxShadow(
                                 offset: const Offset(2, 2),
                                 blurRadius: 2,
-                                color: Colors.black.withOpacity(0.2))
+                                color: AppColors.blackColor.withOpacity(0.2))
                           ]),
                       child: GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> const StorePage()));
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const StorePage()));
                         },
                         child: Column(
                           children: [
@@ -70,19 +72,19 @@ class StoreListView extends StatelessWidget {
                                         style: TextStyle(
                                             fontWeight: FontWeight.w400,
                                             fontSize: 14,
-                                            color: Colors.grey),
+                                            color: AppColors.greyColor),
                                       ),
                                       Container(
                                         height: 10,
                                         width: 10,
                                         decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: Colors.green,
+                                          color: AppColors.greenColor,
                                         ),
                                         child: const Icon(
                                           Icons.check,
                                           size: 8,
-                                          color: Colors.white,
+                                          color:  AppColors.whiteColor,
                                         ),
                                       ),
                                       const SizedBox(
@@ -93,7 +95,7 @@ class StoreListView extends StatelessWidget {
                                         style: TextStyle(
                                             fontWeight: FontWeight.w400,
                                             fontSize: 14,
-                                            color: Colors.grey),
+                                            color: AppColors.greyColor),
                                       ),
                                     ],
                                   ),

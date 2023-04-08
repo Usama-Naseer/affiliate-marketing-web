@@ -1,3 +1,4 @@
+import 'package:discountandcodes/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class StorePage extends StatefulWidget {
@@ -11,14 +12,14 @@ class _StorePageState extends State<StorePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade300.withOpacity(0.2),
+      backgroundColor: AppColors.greyWithShade.withOpacity(0.2),
       body: Container(
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.1),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -30,7 +31,7 @@ class _StorePageState extends State<StorePage> {
                         fontSize: 30,
                         fontWeight: FontWeight.w400,
                         decoration: TextDecoration.lineThrough,
-                        color: Colors.green,
+                        color: AppColors.greenColor,
                         fontStyle: FontStyle.italic)),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.4,
@@ -43,19 +44,22 @@ class _StorePageState extends State<StorePage> {
                             const EdgeInsets.symmetric(horizontal: 20),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
-                            borderSide: const BorderSide(color: Colors.grey)),
+                            borderSide:
+                                const BorderSide(color: AppColors.greyColor)),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
-                            borderSide: const BorderSide(color: Colors.grey)),
+                            borderSide:
+                                const BorderSide(color: AppColors.greyColor)),
                         suffixIcon: Container(
                           height: 40,
                           width: 40,
                           padding: const EdgeInsets.all(10),
                           decoration: const BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.green),
+                              shape: BoxShape.circle,
+                              color: AppColors.greenColor),
                           child: const Icon(
                             Icons.search,
-                            color: Colors.white,
+                            color: AppColors.whiteColor,
                           ),
                         )),
                   ),
@@ -67,7 +71,7 @@ class _StorePageState extends State<StorePage> {
                       'Promo codes',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          color: Colors.black,
+                          color: AppColors.blackColor,
                           fontSize: 16),
                     ),
                     SizedBox(
@@ -77,7 +81,7 @@ class _StorePageState extends State<StorePage> {
                       'Categories',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          color: Colors.black,
+                          color: AppColors.blackColor,
                           fontSize: 16),
                     ),
                     SizedBox(
@@ -87,14 +91,14 @@ class _StorePageState extends State<StorePage> {
                       'Blogs',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          color: Colors.black,
+                          color: AppColors.blackColor,
                           fontSize: 16),
                     ),
                   ],
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             const Center(
@@ -102,7 +106,7 @@ class _StorePageState extends State<StorePage> {
               '35% Off ZAGG Coupon (20 Promo Codes) April 2023',
               style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             )),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Expanded(
@@ -115,7 +119,7 @@ class _StorePageState extends State<StorePage> {
                     padding: const EdgeInsets.symmetric(
                         vertical: 20, horizontal: 20),
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.whiteColor,
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
@@ -146,12 +150,14 @@ class _StorePageState extends State<StorePage> {
                                   margin: const EdgeInsets.symmetric(
                                       horizontal: 10),
                                   decoration: BoxDecoration(
-                                      color: Colors.orange.withOpacity(0.20),
+                                      color: AppColors.orangeColor
+                                          .withOpacity(0.20),
                                       borderRadius: BorderRadius.circular(20)),
                                   child: const Center(
                                       child: Text(
                                     'Top Coupon',
-                                    style: TextStyle(color: Colors.orange),
+                                    style:
+                                        TextStyle(color: AppColors.orangeColor),
                                   )),
                                 ),
                                 const Spacer(),
@@ -211,14 +217,14 @@ class _StorePageState extends State<StorePage> {
                                         vertical: 5, horizontal: 20),
                                     height: 30,
                                     decoration: BoxDecoration(
-                                      color: Colors.green,
+                                      color: AppColors.greenColor,
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: const Center(
                                         child: Text(
                                       'Copy',
                                       style: TextStyle(
-                                          color: Colors.white,
+                                          color: AppColors.whiteColor,
                                           fontWeight: FontWeight.w400),
                                     )),
                                   )

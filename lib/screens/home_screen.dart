@@ -1,3 +1,4 @@
+import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/widgets/home_deals.dart';
 import 'package:discountandcodes/widgets/store_listview.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.whiteColor,
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 30,
                           fontWeight: FontWeight.w400,
                           decoration: TextDecoration.lineThrough,
-                          color: Colors.green,
+                          color: AppColors.greenColor,
                           fontStyle: FontStyle.italic)),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.4,
@@ -45,19 +46,22 @@ class _HomeScreenState extends State<HomeScreen> {
                               const EdgeInsets.symmetric(horizontal: 20),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
-                              borderSide: const BorderSide(color: Colors.grey)),
+                              borderSide:
+                                  const BorderSide(color: AppColors.greyColor)),
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
-                              borderSide: const BorderSide(color: Colors.grey)),
+                              borderSide:
+                                  const BorderSide(color: AppColors.greyColor)),
                           suffixIcon: Container(
                             height: 40,
                             width: 40,
                             padding: const EdgeInsets.all(10),
                             decoration: const BoxDecoration(
-                                shape: BoxShape.circle, color: Colors.green),
+                                shape: BoxShape.circle,
+                                color: AppColors.greenColor),
                             child: const Icon(
                               Icons.search,
-                              color: Colors.white,
+                              color: AppColors.whiteColor,
                             ),
                           )),
                     ),
@@ -69,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         'Promo codes',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
-                            color: Colors.black,
+                            color: AppColors.blackColor,
                             fontSize: 16),
                       ),
                       SizedBox(
@@ -79,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         'Categories',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
-                            color: Colors.black,
+                            color: AppColors.blackColor,
                             fontSize: 16),
                       ),
                       SizedBox(
@@ -89,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         'Blogs',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
-                            color: Colors.black,
+                            color: AppColors.blackColor,
                             fontSize: 16),
                       ),
                     ],
@@ -123,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white),
                 child: Row(
-                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
@@ -273,9 +277,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-
                     SizedBox(
-                      width: MediaQuery.of(context).size.width*0.3,
+                      width: MediaQuery.of(context).size.width * 0.3,
                       child: const Expanded(
                         child: Text(
                           "Discount&Codes finds coupon codes, discount sales and promotions for e-commerce stores listed in our store directory. While promo codes are time-sensitive and may expire, we have human editors verify discount codes at retailer websites to ensure they work at the time of test.To redeem a promo code for a discount, simply copy the code to your clipboard, then paste it into the coupon code entry box during checkout on the retailer's website. Look for a confirmation mes entry box during checkout on the retailer's website. Look for a confirmation",
