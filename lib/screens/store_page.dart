@@ -18,7 +18,9 @@ class _StorePageState extends State<StorePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,7 +40,7 @@ class _StorePageState extends State<StorePage> {
                         isDense: true,
                         hintText: 'Search stores and deals',
                         contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 20),
+                            const EdgeInsets.symmetric(horizontal: 20),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: const BorderSide(color: Colors.grey)),
@@ -100,7 +102,9 @@ class _StorePageState extends State<StorePage> {
               '35% Off ZAGG Coupon (20 Promo Codes) April 2023',
               style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             )),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Expanded(
               child: GridView.count(
                 crossAxisCount: 4,
@@ -110,13 +114,16 @@ class _StorePageState extends State<StorePage> {
                     margin: const EdgeInsets.all(20),
                     padding: const EdgeInsets.symmetric(
                         vertical: 20, horizontal: 20),
-                    decoration:  BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12),boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        offset: const Offset(0.5, 0.5),
-                        blurRadius: 2,
-                      )
-                    ]),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.3),
+                            offset: const Offset(0.5, 0.5),
+                            blurRadius: 2,
+                          )
+                        ]),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -187,7 +194,8 @@ class _StorePageState extends State<StorePage> {
                             Container(
                               height: 50,
                               color: Colors.grey.shade300.withOpacity(0.4),
-                              padding: const EdgeInsets.only(left:30,right: 10),
+                              padding:
+                                  const EdgeInsets.only(left: 30, right: 10),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -222,8 +230,10 @@ class _StorePageState extends State<StorePage> {
                         const SizedBox(
                           height: 20,
                         ),
-                        const Divider(height: 0.7,thickness: 0.7,),
-
+                        const Divider(
+                          height: 0.7,
+                          thickness: 0.7,
+                        ),
                       ],
                     ),
                   ),
