@@ -20,7 +20,7 @@ class _StorePageState extends State<StorePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 10,
+              height: 100,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
