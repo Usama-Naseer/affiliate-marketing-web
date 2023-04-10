@@ -72,7 +72,7 @@ class StoreListView extends StatelessWidget {
                                         style: TextStyle(
                                             fontWeight: FontWeight.w400,
                                             fontSize: 14,
-                                            color: AppColors.greyColor)  kjnk,
+                                            color: AppColors.greyColor),
                                       ),
                                       Container(
                                         height: 10,
