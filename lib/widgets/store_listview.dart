@@ -2,6 +2,7 @@ import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/screens/store_page.dart';
 import 'package:flutter/material.dart';
 
+
 class StoreListView extends StatelessWidget {
   const StoreListView({Key? key}) : super(key: key);
 
@@ -18,7 +19,7 @@ class StoreListView extends StatelessWidget {
                 fontSize: 20, fontWeight: FontWeight.w400, color: AppColors.greyColor),
           ),
           SizedBox(
-            height: 300,
+            height: 300 ,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Container(
@@ -52,7 +53,7 @@ class StoreListView extends StatelessWidget {
                                       topLeft: Radius.circular(12)),
                                   image: DecorationImage(
                                       image: AssetImage(
-                                          'assets/images/ronaldo.jpeg'),
+                                          'assets/images/model'),
                                       fit: BoxFit.fill)),
                             ),
                             const SizedBox(
@@ -103,7 +104,7 @@ class StoreListView extends StatelessWidget {
                                     height: 10,
                                   ),
                                   const Text(
-                                    'Free one month douling  over order of \$100. Grab your order now',
+                                    'Free one month shipping over order of \$100. Grab your order now',
                                     style:
                                         TextStyle(fontWeight: FontWeight.w600),
                                   ),

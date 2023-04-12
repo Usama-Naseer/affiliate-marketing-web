@@ -41,15 +41,15 @@ class _StorePageState extends State<StorePage> {
                         isDense: true,
                         hintText: 'Search stores and deals',
                         contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 20),
+                        const EdgeInsets.symmetric(horizontal: 20),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide:
-                                const BorderSide(color: AppColors.greyColor)),
+                            const BorderSide(color: AppColors.greyColor)),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide:
-                                const BorderSide(color: AppColors.greyColor)),
+                            const BorderSide(color: AppColors.greyColor)),
                         suffixIcon: Container(
                           height: 40,
                           width: 40,
@@ -103,9 +103,9 @@ class _StorePageState extends State<StorePage> {
             ),
             const Center(
                 child: Text(
-              '35% Off ZAGG Coupon (20 Promo Codes) April 2023',
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-            )),
+                  '35% Off ZAGG Coupon (20 Promo Codes) April 2023',
+                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                )),
             const SizedBox(
               height: 10,
             ),
@@ -114,7 +114,7 @@ class _StorePageState extends State<StorePage> {
                 crossAxisCount: 4,
                 children: List.generate(
                   20,
-                  (index) => Container(
+                      (index) => Container(
                     margin: const EdgeInsets.all(20),
                     padding: const EdgeInsets.symmetric(
                         vertical: 20, horizontal: 20),
@@ -139,28 +139,8 @@ class _StorePageState extends State<StorePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
 
-                                const Text(
-                                  '20% off',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 18),
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 5, vertical: 5),
-                                  margin: const EdgeInsets.symmetric(
-                                      horizontal: 10),
-                                  decoration: BoxDecoration(
-                                      color: AppColors.orangeColor
-                                          .withOpacity(0.20),
-                                      borderRadius: BorderRadius.circular(20)),
-                                  child: const Center(
-                                      child: Text(
-                                    'Top Coupon',
-                                    style:
-                                        TextStyle(color: AppColors.orangeColor),
-                                  )),
-                                ),
+
+
                                 const Spacer(),
                                 Image.asset(
                                   'assets/images/meow.png',
@@ -172,23 +152,16 @@ class _StorePageState extends State<StorePage> {
                             const SizedBox(
                               height: 20,
                             ),
-                            RichText(
-                                text: const TextSpan(children: [
-                              TextSpan(
-                                  text: 'Southwest airline coupon code ',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600))
-                                  ,
-
-                              TextSpan(
-                                  text:
-                                      'Earn upto 24000 points on southwest arline')
-                            ]))
+                            const Text(
+                              'Furniture',
+                              style:
+                              TextStyle(fontWeight: FontWeight.w600),
+                            ),
                           ],
                         ),
                         const SizedBox(
                           height: 10,
+
                         ),
                         const Divider(
                           height: 0.7,
@@ -204,7 +177,7 @@ class _StorePageState extends State<StorePage> {
                               height: 50,
                               color: Colors.grey.shade300.withOpacity(0.4),
                               padding:
-                                  const EdgeInsets.only(left: 30, right: 10),
+                              const EdgeInsets.only(left: 30, right: 10),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -225,11 +198,11 @@ class _StorePageState extends State<StorePage> {
                                     ),
                                     child: const Center(
                                         child: Text(
-                                      'Copy',
-                                      style: TextStyle(
-                                          color: AppColors.whiteColor,
-                                          fontWeight: FontWeight.w400),
-                                    )),
+                                          'Copy',
+                                          style: TextStyle(
+                                              color: AppColors.whiteColor,
+                                              fontWeight: FontWeight.w400),
+                                        )),
                                   )
                                 ],
                               ),

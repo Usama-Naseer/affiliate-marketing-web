@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: TextField(
                       decoration: InputDecoration(
                           isDense: true,
-                          hintText: 'Search stores and deals',
+                          hintText: 'Search Stores & Coupons',
                           contentPadding:
                               const EdgeInsets.symmetric(horizontal: 20),
                           border: OutlineInputBorder(
