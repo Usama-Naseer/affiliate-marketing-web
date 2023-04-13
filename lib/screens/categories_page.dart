@@ -1,14 +1,14 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class StorePage extends StatefulWidget {
-  const StorePage({Key? key}) : super(key: key);
+class CategoriesPage extends StatefulWidget {
+  const CategoriesPage({Key? key}) : super(key: key);
 
   @override
-  State<StorePage> createState() => _StorePageState();
+  State<CategoriesPage> createState() => _CategoriesPageState();
 }
 
-class _StorePageState extends State<StorePage> {
+class _CategoriesPageState extends State<CategoriesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,7 +103,7 @@ class _StorePageState extends State<StorePage> {
             ),
             const Center(
                 child: Text(
-                  '35% Off ZAGG Coupon (20 Promo Codes) April 2023',
+                  'Categories',
                   style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                 )),
             const SizedBox(
@@ -139,29 +139,56 @@ class _StorePageState extends State<StorePage> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
 
-
-
+                                const Text(
+                                  '20% off',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 5, vertical: 5),
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  decoration: BoxDecoration(
+                                      color: AppColors.orangeColor
+                                          .withOpacity(0.20),
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: const Center(
+                                      child: Text(
+                                        'Top Coupon',
+                                        style:
+                                        TextStyle(color: AppColors.orangeColor),
+                                      )),
+                                ),
                                 const Spacer(),
                                 Image.asset(
-                                  'assets/images/meow.png',
-                                  height: 50,
-                                  width: 60,
+                                  'assets/images/modell',
+                                  height: 10,
+                                  width: 108,
                                 )
                               ],
                             ),
                             const SizedBox(
                               height: 20,
                             ),
-                            const Text(
-                              'Furniture',
-                              style:
-                              TextStyle(fontWeight: FontWeight.w600),
-                            ),
+                            RichText(
+                                text: const TextSpan(children: [
+                                  TextSpan(
+                                      text: 'Southwest airline coupon code ',
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600))
+                                  ,
+
+                                  TextSpan(
+                                      text:
+                                      'Earn up to 24000 points on southwest arline')
+                                ]))
                           ],
                         ),
                         const SizedBox(
                           height: 10,
-
                         ),
                         const Divider(
                           height: 0.7,

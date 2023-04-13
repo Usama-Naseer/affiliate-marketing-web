@@ -1,6 +1,7 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/widgets/home_deals.dart';
 import 'package:discountandcodes/widgets/store_listview.dart';
+import 'package:discountandcodes/screens//categories_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -68,34 +69,48 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         'Promo codes',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             color: AppColors.blackColor,
                             fontSize: 16),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Text(
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>  const CategoriesPage())),
+
+
+                      child: const Text (
                         'Categories',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             color: AppColors.blackColor,
                             fontSize: 16),
-                      ),
-                      SizedBox(
+                      ),  ),
+                      const SizedBox(
                         width: 10,
                       ),
-                      Text(
-                        'Blogs',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.blackColor,
-                            fontSize: 16),
-                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>  const CategoriesPage())),
+
+
+                        child: const Text (
+                          'Stores',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.blackColor,
+                              fontSize: 16),
+                        ),  ),
                     ],
                   )
                 ],
@@ -109,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const StoreListView(),
               const SizedBox(
-                height: 25,
+                height: 50,
               ),
               const CouponsListView(),
               const SizedBox(
@@ -298,4 +313,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+
 }

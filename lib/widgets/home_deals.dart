@@ -19,7 +19,7 @@ class CouponsListView extends StatelessWidget {
                 color: AppColors.greyColor),
           ),
           SizedBox(
-            height: 310,
+            height: 400,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Container(
@@ -39,18 +39,18 @@ class CouponsListView extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                            height: MediaQuery.of(context).size.height * 0.1,
+                            height: MediaQuery.of(context).size.height * 0.19,
                             decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                     topRight: Radius.circular(12),
                                     topLeft: Radius.circular(12)),
                                 image: DecorationImage(
-                                    image:
-                                        AssetImage('assets/images/model.jpeg'),
+                                    image: AssetImage(
+                                        'assets/images/model'),
                                     fit: BoxFit.fill)),
                           ),
                           const SizedBox(
-                            height: 20,
+                            height: 5,
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -69,7 +69,7 @@ class CouponsListView extends StatelessWidget {
                                   height: 10,
                                 ),
                                 const Text(
-                                  '\$50 Off Storewide (Minimum Order: \$4.000) at XOTIC...',
+                                  '\$50 Off Storewide (Minimum Order: \$4.000) at Zaful...',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       color: AppColors.greyColor),
@@ -82,7 +82,7 @@ class CouponsListView extends StatelessWidget {
                                       decoration: TextDecoration.underline),
                                 ),
                                 const SizedBox(
-                                  height: 20,
+                                  height: 10,
                                 ),
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,

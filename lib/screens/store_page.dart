@@ -1,5 +1,6 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:discountandcodes/screens//categories_page.dart';
 
 class StorePage extends StatefulWidget {
   const StorePage({Key? key}) : super(key: key);
@@ -66,28 +67,34 @@ class _StorePageState extends State<StorePage> {
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Promo codes',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           color: AppColors.blackColor,
                           fontSize: 16),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    Text(
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>  const CategoriesPage())),
+
+
+                      child: const Text(
                       'Categories',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           color: AppColors.blackColor,
                           fontSize: 16),
                     ),
-                    SizedBox(
-                      width: 10,
                     ),
-                    Text(
+                     const SizedBox(width: 10,),
+                     const Text(
                       'Blogs',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
