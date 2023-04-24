@@ -15,7 +15,9 @@ class StoreListView extends StatelessWidget {
           const Text(
             'Stores',
             style: TextStyle(
-                fontSize: 20, fontWeight: FontWeight.w400, color: AppColors.greyColor),
+                fontSize: 20,
+                fontWeight: FontWeight.w400,
+                color: AppColors.greyColor),
           ),
           SizedBox(
             height: 300,
@@ -84,7 +86,7 @@ class StoreListView extends StatelessWidget {
                                         child: const Icon(
                                           Icons.check,
                                           size: 8,
-                                          color:  AppColors.whiteColor,
+                                          color: AppColors.whiteColor,
                                         ),
                                       ),
                                       const SizedBox(

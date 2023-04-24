@@ -14,12 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          textTheme: const TextTheme(
-
-          ),
           fontFamily: 'Alkatra',
           primaryColor: Colors.red,
-          secondaryHeaderColor: Colors.yellow,
 
           // This is the theme of your application.
           //
