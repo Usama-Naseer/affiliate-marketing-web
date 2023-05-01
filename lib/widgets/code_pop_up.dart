@@ -42,7 +42,7 @@ showCouponCodePopUp(context){
               ),
               Container(
                 padding:
-                EdgeInsets.all(20),
+                const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                     border: Border.all(
                         color: AppColors
@@ -153,7 +153,7 @@ showCouponCodePopUp(context){
                 height: 20,
               ),
               Container(
-                  height: 30,
+                  height: 42,
                   width: MediaQuery.of(
                       context)
                       .size
@@ -163,7 +163,7 @@ showCouponCodePopUp(context){
                   const EdgeInsets
                       .symmetric(
                       horizontal:
-                      20,vertical: 10),
+                      20,vertical: 5),
                   decoration: BoxDecoration(
                       color: AppColors
                           .greenColor,
@@ -316,7 +316,7 @@ showCouponCodePopUp(context){
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Container(

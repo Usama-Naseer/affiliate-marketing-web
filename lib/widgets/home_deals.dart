@@ -1,6 +1,5 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/widgets/code_pop_up.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CouponsListView extends StatelessWidget {

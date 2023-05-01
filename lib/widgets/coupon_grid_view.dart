@@ -6,8 +6,9 @@ class CouponGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return             Expanded(
+    return Expanded(
       child: GridView.count(
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
         crossAxisCount: 4,
         children: List.generate(
           20,

@@ -1,4 +1,5 @@
 import 'package:discountandcodes/core/app_colors.dart';
+import 'package:discountandcodes/screens/all_stores.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
@@ -46,28 +47,34 @@ class Header extends StatelessWidget {
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Text(
+          children:  [
+            const Text(
               'Promo codes',
               style: TextStyle(
                   fontWeight: FontWeight.w400,
                   color: AppColors.blackColor,
                   fontSize: 16),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
-            Text(
-              'Categories',
-              style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.blackColor,
-                  fontSize: 16),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AllStores()));
+
+              },
+              child: const Text(
+                'Stores',
+                style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.blackColor,
+                    fontSize: 16),
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
-            Text(
+            const Text(
               'Blogs',
               style: TextStyle(
                   fontWeight: FontWeight.w400,
