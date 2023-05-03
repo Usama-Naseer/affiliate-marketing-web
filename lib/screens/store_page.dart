@@ -170,10 +170,9 @@ class _StorePageState extends State<StorePage> {
                                 ),
                                 const Spacer(),
                                 Image.asset(
-                                  'assets/images/meow.png',
-                                  height: 50,
-                                  width: 60,
-                                )
+                                  'assets/images/model.jpeg',
+height: 50,
+width: 60,                    )
                               ],
                             ),
                             const SizedBox(
@@ -182,7 +181,7 @@ class _StorePageState extends State<StorePage> {
                             RichText(
                                 text: const TextSpan(children: [
                               TextSpan(
-                                  text: 'Southwest airline coupon code ',
+                                  text: 'Southwest airline coupon code:',
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600))
