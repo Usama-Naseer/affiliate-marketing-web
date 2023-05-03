@@ -27,7 +27,7 @@ class CouponsListView extends StatelessWidget {
                       type: MaterialType.transparency,
                       child: Container(
                         height: MediaQuery.of(context).size.height * 0.1,
-                        width: MediaQuery.of(context).size.width * 0.12,
+                        width: MediaQuery.of(context).size.width * 0.11,
                         margin: const EdgeInsets.only(
                             right: 20, bottom: 10, top: 10),
                         decoration: BoxDecoration(
@@ -49,7 +49,7 @@ class CouponsListView extends StatelessWidget {
                                       topLeft: Radius.circular(12)),
                                   image: DecorationImage(
                                       image: AssetImage(
-                                          'assets/images/model.jpeg'),
+                                          'assets/images/meow.png'),
                                       fit: BoxFit.fill)),
                             ),
                             const SizedBox(

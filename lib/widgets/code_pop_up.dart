@@ -74,7 +74,7 @@ showCouponCodePopUp(context){
                 height: 30,
               ),
               Container(
-                height: 80,
+                height:70,
                 width: 200,
                 padding:
                 const EdgeInsets
@@ -91,7 +91,7 @@ showCouponCodePopUp(context){
                     child: Text(
                       'MEGAN10',
                       style: TextStyle(
-                          fontSize: 23,
+                          fontSize: 15,
                           fontWeight:
                           FontWeight
                               .w900,
@@ -206,7 +206,7 @@ showCouponCodePopUp(context){
                     ],
                   )),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
               Center(
                 child: Material(
@@ -252,7 +252,7 @@ showCouponCodePopUp(context){
                 height: 20,
               ),
               SizedBox(
-                height: 50,
+                height: 20,
                 width: MediaQuery.of(
                     context)
                     .size

@@ -39,7 +39,7 @@ class StoreTile extends StatelessWidget {
                       topLeft: Radius.circular(12)),
                   image: DecorationImage(
                       image: AssetImage(
-                          'assets/images/ronaldo.jpeg'),
+                          'assets/images/meow.png'),
                       fit: BoxFit.fill)),
             ),
             const SizedBox(

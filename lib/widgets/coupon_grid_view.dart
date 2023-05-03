@@ -62,7 +62,7 @@ class CouponGridView extends StatelessWidget {
                         Image.asset(
                           'assets/images/meow.png',
                           height: 50,
-                          width: 80,
+                          width: 60,
                         )
                       ],
                     ),

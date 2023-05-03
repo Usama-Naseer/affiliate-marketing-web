@@ -3,6 +3,8 @@ import 'package:discountandcodes/widgets/footer.dart';
 import 'package:discountandcodes/widgets/header.dart';
 import 'package:discountandcodes/widgets/home_deals.dart';
 import 'package:discountandcodes/widgets/store_listview.dart';
+import 'package:discountandcodes/widgets/storeinfo.dart';
+import 'package:discountandcodes/widgets/stores_grid.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,10 +37,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 thickness: 1,
               ),
               StoreListView(),
+
               SizedBox(
                 height: 25,
               ),
               CouponsListView(),
+
+              SizedBox(
+                height: 50,
+              ),
+              StoreInfo(),
               SizedBox(
                 height: 50,
               ),
