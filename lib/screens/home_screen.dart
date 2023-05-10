@@ -4,7 +4,6 @@ import 'package:discountandcodes/widgets/header.dart';
 import 'package:discountandcodes/widgets/home_deals.dart';
 import 'package:discountandcodes/widgets/store_listview.dart';
 import 'package:discountandcodes/widgets/storeinfo.dart';
-import 'package:discountandcodes/widgets/stores_grid.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

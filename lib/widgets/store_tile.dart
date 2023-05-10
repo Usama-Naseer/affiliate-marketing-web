@@ -11,8 +11,7 @@ class StoreTile extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * 0.20,
       width: MediaQuery.of(context).size.width * 0.18,
-      margin:
-      const EdgeInsets.only(right: 20, bottom: 10, top: 10),
+      margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: AppColors.whiteColor,
@@ -24,35 +23,30 @@ class StoreTile extends StatelessWidget {
           ]),
       child: GestureDetector(
         onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const StorePage()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const StorePage()));
         },
         child: Column(
           children: [
             Container(
               height: MediaQuery.of(context).size.height * 0.19,
               decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(12),
-                      topLeft: Radius.circular(12)),
-                  image: DecorationImage(
-                      image: AssetImage(
-                          'assets/images/meow.png'),
-                      fit: BoxFit.fill)),
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(12),
+                    topLeft: Radius.circular(12)),
+              ),
+              child:Image.asset('assets/images/meow.png',height: 200,),
+
             ),
             const SizedBox(
               height: 20,
             ),
             Padding(
-              padding:
-              const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 children: [
                   Row(
-                    crossAxisAlignment:
-                    CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const Text(
                         'Meow Wolf ',
@@ -91,8 +85,7 @@ class StoreTile extends StatelessWidget {
                   ),
                   const Text(
                     'Free one month douling  over order of \$100. Grab your order now',
-                    style:
-                    TextStyle(fontWeight: FontWeight.w600),
+                    style: TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ],
               ),

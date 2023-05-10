@@ -1,8 +1,6 @@
 import 'package:discountandcodes/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'models/user_model.dart';
-
 void main() {
   runApp(const MyApp());
 }

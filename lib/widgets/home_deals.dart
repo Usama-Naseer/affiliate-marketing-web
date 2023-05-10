@@ -43,14 +43,11 @@ class CouponsListView extends StatelessWidget {
                           children: [
                             Container(
                               height: MediaQuery.of(context).size.height * 0.1,
-                              decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(12),
-                                      topLeft: Radius.circular(12)),
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/meow.png'),
-                                      fit: BoxFit.fill)),
+                              padding: const EdgeInsets.all(10),
+                              child: Image.asset(
+                                'assets/images/meow.png',
+                                width: 140,
+                              ),
                             ),
                             const SizedBox(
                               height: 20,

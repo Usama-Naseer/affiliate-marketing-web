@@ -8,14 +8,13 @@ class CouponGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: GridView.count(
-        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
         crossAxisCount: 4,
         children: List.generate(
           20,
-              (index) => Container(
+          (index) => Container(
             margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.symmetric(
-                vertical: 20, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             decoration: BoxDecoration(
                 color: AppColors.whiteColor,
                 borderRadius: BorderRadius.circular(12),
@@ -39,24 +38,20 @@ class CouponGridView extends StatelessWidget {
                         const Text(
                           '20% off',
                           style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18),
+                              fontWeight: FontWeight.w600, fontSize: 18),
                         ),
                         Container(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 5, vertical: 5),
-                          margin: const EdgeInsets.symmetric(
-                              horizontal: 10),
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
                           decoration: BoxDecoration(
-                              color: AppColors.orangeColor
-                                  .withOpacity(0.20),
+                              color: AppColors.orangeColor.withOpacity(0.20),
                               borderRadius: BorderRadius.circular(20)),
                           child: const Center(
                               child: Text(
-                                'Top Coupon',
-                                style:
-                                TextStyle(color: AppColors.orangeColor),
-                              )),
+                            'Top Coupon',
+                            style: TextStyle(color: AppColors.orangeColor),
+                          )),
                         ),
                         const Spacer(),
                         Image.asset(
@@ -71,15 +66,13 @@ class CouponGridView extends StatelessWidget {
                     ),
                     RichText(
                         text: const TextSpan(children: [
-                          TextSpan(
-                              text: 'Southwest airlien coupon code ',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600)),
-                          TextSpan(
-                              text:
-                              'Earn upto 24000 points on southwest arline')
-                        ]))
+                      TextSpan(
+                          text: 'Southwest airlien coupon code ',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w600)),
+                      TextSpan(
+                          text: 'Earn upto 24000 points on southwest arline')
+                    ]))
                   ],
                 ),
                 const SizedBox(
@@ -98,15 +91,13 @@ class CouponGridView extends StatelessWidget {
                     Container(
                       height: 50,
                       color: Colors.grey.shade300.withOpacity(0.4),
-                      padding:
-                      const EdgeInsets.only(left: 30, right: 10),
+                      padding: const EdgeInsets.only(left: 30, right: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           const Text('FREE-SHIP-25',
                               style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600)),
+                                  fontSize: 16, fontWeight: FontWeight.w600)),
                           const SizedBox(
                             width: 10,
                           ),
@@ -120,11 +111,11 @@ class CouponGridView extends StatelessWidget {
                             ),
                             child: const Center(
                                 child: Text(
-                                  'Copy',
-                                  style: TextStyle(
-                                      color: AppColors.whiteColor,
-                                      fontWeight: FontWeight.w400),
-                                )),
+                              'Copy',
+                              style: TextStyle(
+                                  color: AppColors.whiteColor,
+                                  fontWeight: FontWeight.w400),
+                            )),
                           )
                         ],
                       ),

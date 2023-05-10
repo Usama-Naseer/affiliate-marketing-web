@@ -80,13 +80,13 @@ class AllStores extends StatelessWidget {
           Expanded(
               child: Container(
             margin: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.15),
+                horizontal: MediaQuery.of(context).size.width * 0.1),
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(color: Colors.grey.withOpacity(0.2)),
             ),
             child: GridView.count(
-              crossAxisCount: 2,
+              crossAxisCount: 3,
               mainAxisSpacing: 0,
               childAspectRatio: 4,
               children: List.generate(
@@ -95,11 +95,23 @@ class AllStores extends StatelessWidget {
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
+                      Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration:  BoxDecoration(
+                          border: Border.all(color: Colors.grey.withOpacity(0.5))
+                        ),
+                        child: Image.asset(
+                          'assets/images/meow.png',
+                          height: 60,
+                        ),
+                      ),
+                      const SizedBox(width: 20,),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
                             'Meow Wolf',
@@ -109,43 +121,12 @@ class AllStores extends StatelessWidget {
                                 fontWeight: FontWeight.w500),
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 5,
                           ),
-                          const Text(
-                            'meowolf.com',
-                            style: TextStyle(
-                                fontSize: 16, color: AppColors.greyColor),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: const [
-                              Text(
-                                'Coupons:',
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    color: AppColors.blackColor,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              Text(
-                                '9',
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    color: AppColors.greyColor,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                            ],
-                          ),
-                           const SizedBox(height: 5,),
-                           Text('Offers coupon:Sometimes',style: TextStyle(color: AppColors.blackColor.withOpacity(0.7),fontSize: 14),)
+                          Text('Coupons, promo codes & deals',style: TextStyle(color: AppColors.blackColor.withOpacity(0.7),fontSize: 14),)
                         ],
                       ),
-                      Image.asset(
-                        'assets/images/meow.png',
-                        height: 60,
-                        width: 200,
-                      ),
+
                     ],
                   ),
                 ),

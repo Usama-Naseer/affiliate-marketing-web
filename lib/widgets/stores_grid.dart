@@ -8,14 +8,14 @@ class StoreGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: GridView.count(
-        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.1),
         crossAxisCount: 4,
         children: List.generate(
           4,
-              (index) => Container(
+          (index) => Container(
             margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.symmetric(
-                vertical: 20, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             decoration: BoxDecoration(
                 color: AppColors.whiteColor,
                 borderRadius: BorderRadius.circular(12),
