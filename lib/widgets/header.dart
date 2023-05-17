@@ -1,5 +1,6 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/screens/all_stores.dart';
+import 'package:discountandcodes/screens/blogs_page.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
@@ -11,13 +12,11 @@ class Header extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const Text('Discount&Codes',
-            style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w400,
-                decoration: TextDecoration.lineThrough,
-                color: AppColors.greenColor,
-                fontStyle: FontStyle.italic)),
+        Image.asset(
+          'assets/images/logo.png',
+          height: 60,
+          width: 200,
+        ),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.4,
           height: 50,
@@ -74,12 +73,18 @@ class Header extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            const Text(
-              'Blogs',
-              style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.blackColor,
-                  fontSize: 16),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const BlogsPage()));
+
+              },
+              child: const Text(
+                'Blog',
+                style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.blackColor,
+                    fontSize: 16),
+              ),
             ),
           ],
         )

@@ -1,5 +1,6 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/widgets/coupon_grid_view.dart';
+import 'package:discountandcodes/widgets/footer.dart';
 import 'package:discountandcodes/widgets/header.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +35,6 @@ class _StorePageState extends State<StorePage> {
             const SizedBox(
               height: 10,
             ),
-            const CouponGridView(),
             const SizedBox(
               height: 40,
             ),
@@ -98,10 +98,10 @@ class _StorePageState extends State<StorePage> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: List.generate(
                                       5,
-                                      (index) => const Icon(
-                                            Icons.star,
-                                            color: AppColors.yellowColor,
-                                          )),
+                                          (index) => const Icon(
+                                        Icons.star,
+                                        color: AppColors.yellowColor,
+                                      )),
                                 )
                               ],
                             )
@@ -163,23 +163,25 @@ class _StorePageState extends State<StorePage> {
                       ),
                       const SizedBox(height:20,),
                       RichText(text: const TextSpan(
-                        children: [
-                          TextSpan(text:"We have 1 Texas Roadhouse coupon codes today, good for discounts at",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400),),
-                          TextSpan(text:" texasroadhouse.com",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600),),
-                          TextSpan(text:" Shoppers save an average of 12.0% on purchases with coupons at texasroadhouse.com, with today's biggest discount being 20% off your purchase.Our most recent Texas Roadhouse promo code was added on May 10, 2023. On average, we find a new Texas Roadhouse coupon code every 60 days. Over the past year, we've found an average of 5.0 discount codes per month for Texas Roadhouse",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400),),
-                          TextSpan(text:" biggest discount being 20% off",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600),),
-                          TextSpan(text:" your purchase.Our most recent Texas Roadhouse promo code was added on May 10, 2023. On average, we find a new Texas Roadhouse coupon code every 60 days. Over the past year, we've found an average of 5.0 discount codes per month for Texas Roadhouse",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400),),
+                          children: [
+                            TextSpan(text:"We have 1 Texas Roadhouse coupon codes today, good for discounts at",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400),),
+                            TextSpan(text:" texasroadhouse.com",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600),),
+                            TextSpan(text:" Shoppers save an average of 12.0% on purchases with coupons at texasroadhouse.com, with today's biggest discount being 20% off your purchase.Our most recent Texas Roadhouse promo code was added on May 10, 2023. On average, we find a new Texas Roadhouse coupon code every 60 days. Over the past year, we've found an average of 5.0 discount codes per month for Texas Roadhouse",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400),),
+                            TextSpan(text:" biggest discount being 20% off",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600),),
+                            TextSpan(text:" your purchase.Our most recent Texas Roadhouse promo code was added on May 10, 2023. On average, we find a new Texas Roadhouse coupon code every 60 days. Over the past year, we've found an average of 5.0 discount codes per month for Texas Roadhouse",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w400),),
 
-                        ]
+                          ]
                       )),
                     ],
                   ))
                 ],
               ),
             ),
+            const CouponGridView(),
             const SizedBox(
               height: 40,
             ),
+            const AppFooter(),
           ],
         ),
       ),

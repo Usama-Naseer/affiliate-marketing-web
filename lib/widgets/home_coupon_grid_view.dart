@@ -1,19 +1,18 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class CouponGridView extends StatelessWidget {
-  const CouponGridView({Key? key}) : super(key: key);
+class HomeCouponGridView extends StatelessWidget {
+  const HomeCouponGridView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       child: GridView.count(
-        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
         crossAxisCount: 4,
         children: List.generate(
           8,
-          (index) => Container(
+              (index) => Container(
             margin: const EdgeInsets.all(20),
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             decoration: BoxDecoration(
@@ -50,9 +49,9 @@ class CouponGridView extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20)),
                           child: const Center(
                               child: Text(
-                            'Top Coupon',
-                            style: TextStyle(color: AppColors.orangeColor),
-                          )),
+                                'Top Coupon',
+                                style: TextStyle(color: AppColors.orangeColor),
+                              )),
                         ),
                         const Spacer(),
                         Image.asset(
@@ -67,13 +66,13 @@ class CouponGridView extends StatelessWidget {
                     ),
                     RichText(
                         text: const TextSpan(children: [
-                      TextSpan(
-                          text: 'Southwest airlien coupon code ',
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w600)),
-                      TextSpan(
-                          text: 'Earn upto 24000 points on southwest arline')
-                    ]))
+                          TextSpan(
+                              text: 'Southwest airlien coupon code ',
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w600)),
+                          TextSpan(
+                              text: 'Earn upto 24000 points on southwest arline')
+                        ]))
                   ],
                 ),
                 const SizedBox(
@@ -112,11 +111,11 @@ class CouponGridView extends StatelessWidget {
                             ),
                             child: const Center(
                                 child: Text(
-                              'Copy',
-                              style: TextStyle(
-                                  color: AppColors.whiteColor,
-                                  fontWeight: FontWeight.w400),
-                            )),
+                                  'Copy',
+                                  style: TextStyle(
+                                      color: AppColors.whiteColor,
+                                      fontWeight: FontWeight.w400),
+                                )),
                           )
                         ],
                       ),

@@ -2,6 +2,7 @@ import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/widgets/footer.dart';
 import 'package:discountandcodes/widgets/header.dart';
 import 'package:discountandcodes/widgets/home_deals.dart';
+import 'package:discountandcodes/widgets/home_coupon_grid_view.dart';
 import 'package:discountandcodes/widgets/store_listview.dart';
 import 'package:discountandcodes/widgets/storeinfo.dart';
 import 'package:flutter/material.dart';
@@ -40,12 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 25,
               ),
-              CouponsListView(),
-
-              SizedBox(
-                height: 50,
-              ),
-              StoreInfo(),
+              HomeCouponGridView(),
               SizedBox(
                 height: 50,
               ),

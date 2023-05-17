@@ -9,9 +9,9 @@ class StoreTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.20,
+      height: MediaQuery.of(context).size.height * 0.19,
       width: MediaQuery.of(context).size.width * 0.18,
-      margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10),
+      margin: const EdgeInsets.only(left: 4, right: 20, bottom: 10, top: 10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: AppColors.whiteColor,

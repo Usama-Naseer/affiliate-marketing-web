@@ -1,4 +1,7 @@
+import 'package:discountandcodes/screens/terms_of_use.dart';
+import 'package:discountandcodes/widgets/terms_conditions.dart';
 import 'package:flutter/material.dart';
+import 'package:discountandcodes/core/app_colors.dart';
 
 class AppFooter extends StatelessWidget {
   const AppFooter({Key? key}) : super(key: key);
@@ -17,46 +20,51 @@ class AppFooter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
-            children: const [
-              Text(
-                'About Us',
-                style: TextStyle(
-                    fontWeight: FontWeight.w500, fontSize: 16),
+            children:  [
+              const SizedBox(
+                width: 10,
               ),
-              SizedBox(
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const Terms()));
+
+                },
+                child: const Text(
+                  'Terms Of Use',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.blackColor,
+                      fontSize: 16),
+                ),
+              ),
+              const SizedBox(
                 height: 20,
               ),
-              Text(
-                'Terms of service',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 16,
-                    color: Colors.grey),
-              ),
-              SizedBox(
+
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 'Privacy policy',
                 style: TextStyle(
                     fontWeight: FontWeight.w300,
                     fontSize: 16,
                     color: Colors.grey),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 'Scholarship',
                 style: TextStyle(
                     fontWeight: FontWeight.w300,
                     fontSize: 16,
                     color: Colors.grey),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 'Influenced marketing',
                 style: TextStyle(
                     fontWeight: FontWeight.w300,
