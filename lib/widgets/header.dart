@@ -1,8 +1,8 @@
-import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/screens/all_stores.dart';
 import 'package:discountandcodes/screens/blogs_page.dart';
 import 'package:flutter/material.dart';
+import 'package:searchbar_animation/searchbar_animation.dart';
 
 class Header extends StatefulWidget {
   const Header({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
+      margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.075),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,15 +27,52 @@ class _HeaderState extends State<Header> {
             width: 200,
           ),
           const SizedBox(width: 30,),
-          AnimSearchBar(
-            width: MediaQuery.of(context).size.width*0.3,
-            textController: controller,
-            onSuffixTap: () {
-              setState(() {
-                controller.clear();
-              });
-            }, onSubmitted: (String ) {  },
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: SearchBarAnimation(
+              textEditingController: TextEditingController(),
+              searchBoxWidth: MediaQuery.of(context).size.width*0.3,
+              isOriginalAnimation: true,
+              enableKeyboardFocus: true,
+              onExpansionComplete: () {
+                debugPrint(
+                    'do something just after searchbox is opened.');
+              },
+              onCollapseComplete: () {
+                debugPrint(
+                    'do something just after searchbox is closed.');
+              },
+              onPressButton: (isSearchBarOpens) {
+                debugPrint(
+                    'do something before animation started. It\'s the ${isSearchBarOpens ? 'opening' : 'closing'} animation');
+              },
+              trailingWidget: const Icon(
+                Icons.search,
+                size: 20,
+                color: Colors.black,
+              ),
+              secondaryButtonWidget: const Icon(
+                Icons.close,
+                size: 20,
+                color: Colors.black,
+              ),
+              buttonWidget: const Icon(
+                Icons.search,
+                size: 20,
+                color: Colors.black,
+              ),
+            ),
           ),
+          // AnimSearchBar(
+          //   width: MediaQuery.of(context).size.width*0.3,
+          //   prefixIcon: Icon(Icons.add),
+          //   textController: controller,
+          //   onSuffixTap: () {
+          //     setState(() {
+          //       controller.clear();
+          //     });
+          //   }, onSubmitted: (String ) {  },
+          // ),
           Spacer(),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
