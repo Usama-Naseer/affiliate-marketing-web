@@ -8,22 +8,23 @@ class StoreListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding:  EdgeInsets.symmetric(vertical: 20,horizontal: MediaQuery.of(context).size.width*0.1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'Stores',
+            'Trending Stores',
             style: TextStyle(
                 fontSize: 20,
-                fontWeight: FontWeight.w400,
-                color: AppColors.greyColor),
+                fontWeight: FontWeight.w600,
+                color: AppColors.greenColor),
           ),
+          const SizedBox(height: 10,),
           SizedBox(
             height: 300,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => const StoreTile()),
+                itemBuilder: (context, index) => const StoreTile(),itemCount: 20,),
           ),
         ],
       ),

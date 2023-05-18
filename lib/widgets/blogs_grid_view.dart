@@ -9,11 +9,12 @@ class BlogsGridView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       child: GridView.count(
-        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.1),
         crossAxisCount: 2,
         children: List.generate(
           4,
-              (index) => Container(
+          (index) => Container(
             margin: const EdgeInsets.all(20),
             decoration: BoxDecoration(
                 color: AppColors.whiteColor,
@@ -34,16 +35,14 @@ class BlogsGridView extends StatelessWidget {
                     topRight: Radius.circular(10),
                     topLeft: Radius.circular(10),
                   ),
-                        child: Image.asset(
-
-                          'assets/images/ronaldo.jpeg',
-                          fit: BoxFit.fitWidth,
-                        ),
+                  child: Image.asset(
+                    'assets/images/ronaldo.jpeg',
+                    fit: BoxFit.fitWidth,
+                  ),
                 ),
-
-
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: const Text(
                     "Why Ronaldo doesn't like Coca-Cola?",
                     style: TextStyle(
@@ -57,9 +56,9 @@ class BlogsGridView extends StatelessWidget {
                   thickness: 1,
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: const Text(
-                    "No wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of added sugar which clearly won't help you reach the very top of the sport with The World Health organisation recommending consuming no more than six teaspoons of added sugar daily.",
+                    "No wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of added sugar which clearly won't help you reach the very top of the sport with The World Health organisation recommending consuming no more than six teaspoons of added sugar daily.No wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of aNo wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of a,A single bottle reportedly has 10 teaspoons of aNo wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of aA single bottle reportedly has 10 teaspoons of aNo wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of aA single bottle reportedly has 10 teaspoons of aNo wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of aA single bottle reportedly has 10 teaspoons of aNo wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of a",overflow: TextOverflow.ellipsis,maxLines: 10,
                     style: TextStyle(
                         fontWeight: FontWeight.w300,
                         fontSize: 15,

@@ -7,7 +7,7 @@ class CouponGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height,
+      height: MediaQuery.of(context).size.height*0.9,
       child: GridView.count(
         padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
         crossAxisCount: 4,

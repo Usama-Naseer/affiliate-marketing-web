@@ -1,5 +1,4 @@
 import 'package:discountandcodes/screens/terms_of_use.dart';
-import 'package:discountandcodes/widgets/terms_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:discountandcodes/core/app_colors.dart';
 
@@ -10,13 +9,13 @@ class AppFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
       height: MediaQuery.of(context).size.height * 0.4,
-      padding:
-      const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 50),
+      // margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: Colors.white),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(

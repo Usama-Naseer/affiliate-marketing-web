@@ -29,7 +29,7 @@ class _BlogsPageState extends State<BlogsPage> {
             ),
             Center(
                 child: Text(
-                  '35% Off ZAGG Coupon (20 Promo Codes) April 2023',
+                  'Our most read blogs',
                   style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                 )),
             SizedBox(
