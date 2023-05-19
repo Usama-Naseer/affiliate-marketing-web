@@ -60,7 +60,7 @@ class StoreInfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
 
               children: [
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Container(
                     // width: 160.0,
                     height: 60.0,
@@ -135,7 +135,7 @@ class StoreInfo extends StatelessWidget {
           const SizedBox(width: 20,),
           const VerticalDivider(),
           const SizedBox(width: 20,),
-          Expanded(
+          const Expanded(
             child:Text(
               "Discount&Codes finds coupon codes, discount sales and promotions for e-commerce stores listed in our store directory. While promo codes are time-sensitive and may expire, we have human editors verify discount codes at retailer websites to ensure they work at the time of test.To redeem a promo code for a discount, simply copy the code to your clipboard, then paste it into the coupon code entry box during checkout on the retailer's website. Look for a confirmation mes entry box during checkout on the retailer's website. Look for a confirmation",
               style: TextStyle(

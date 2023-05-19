@@ -1,7 +1,7 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/screens/all_stores.dart';
 import 'package:discountandcodes/screens/blogs_page.dart';
-import 'package:discountandcodes/screens/coupons_by_category.dart';
+import 'package:discountandcodes/screens/all_coupons.dart';
 import 'package:flutter/material.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 

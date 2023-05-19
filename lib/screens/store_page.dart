@@ -27,17 +27,7 @@ class _StorePageState extends State<StorePage> {
             const SizedBox(
               height: 20,
             ),
-            const Center(
-                child: Text(
-              '35% Off ZAGG Coupon (20 Promo Codes) April 2023',
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-            )),
-            const SizedBox(
-              height: 10,
-            ),
-            const SizedBox(
-              height: 40,
-            ),
+            
             Container(
               margin: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.15),
@@ -178,6 +168,33 @@ class _StorePageState extends State<StorePage> {
               ),
             ),
             const CouponGridView(),
+
+            Container(
+              width: MediaQuery.of(context).size.width*0.78,
+              padding:  EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.01, vertical: 20),
+              decoration: BoxDecoration(
+                  color: AppColors.whiteColor,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.green.withOpacity(0.3),
+                      offset: const Offset(0.5, 0.5),
+                      blurRadius: 2,
+                    )
+                  ]),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text("All discount codes labelled as"),
+                      Text( ' EXCLUSIVE ',
+                      style: TextStyle(color: Colors.green,fontSize: 15,),),
+                    Text( "must not be copied in any form whatsoever without first gaining written permission. All details correct at time of publishing."
+                  , style: TextStyle(
+                      fontSize: 15,
+                    ),),
+                ],
+              ),
+            ),
             const SizedBox(
               height: 40,
             ),

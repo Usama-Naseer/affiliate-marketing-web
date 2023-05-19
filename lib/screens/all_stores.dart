@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../core/app_colors.dart';
+import '../widgets/footer.dart';
 import '../widgets/header.dart';
+import 'package:alphabet_scroll_view/alphabet_scroll_view.dart';
 
 class AllStores extends StatelessWidget {
   const AllStores({Key? key}) : super(key: key);
@@ -26,7 +28,7 @@ class AllStores extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Find Coupons by Store',
+                  'Find Stores By Category',
                   style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
@@ -72,6 +74,7 @@ class AllStores extends StatelessWidget {
                     onChanged: (_) {},
                     value: 'Electronic',
                   ),
+
                 ),
               ],
             ),
@@ -133,6 +136,14 @@ class AllStores extends StatelessWidget {
               ),
             ),
           )),
+          const SizedBox(
+            height: 50,
+          ),
+          const Divider(
+            height: 1,
+            thickness: 1,
+          ),
+          const AppFooter(),
         ],
       ),
     );
