@@ -1,6 +1,7 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/screens/all_stores.dart';
 import 'package:discountandcodes/screens/blogs_page.dart';
+import 'package:discountandcodes/screens/coupons_by_category.dart';
 import 'package:flutter/material.dart';
 import 'package:searchbar_animation/searchbar_animation.dart';
 
@@ -94,6 +95,22 @@ class _HeaderState extends State<Header> {
                 },
                 child: const Text(
                   'Stores',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.blackColor,
+                      fontSize: 16),
+                ),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const CouponsByCat()));
+
+                },
+                child: const Text(
+                  'Coupons',
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: AppColors.blackColor,

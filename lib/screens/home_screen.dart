@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       body: SingleChildScrollView(
-        child: Padding(
+        child: Container(
           padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
           child: Column(
             children:  const [
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Divider(
                 height: 1,
-                thickness: 1,
+                thickness: 0.5,
               ),
               StoreListView(),
 
