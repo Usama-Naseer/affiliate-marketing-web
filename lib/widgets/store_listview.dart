@@ -1,4 +1,5 @@
 import 'package:discountandcodes/core/app_colors.dart';
+import 'package:discountandcodes/core/dummy.dart';
 import 'package:discountandcodes/widgets/store_tile.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class StoreListView extends StatelessWidget {
             height: 300,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => const StoreTile(),itemCount: 20,),
+                itemBuilder: (context, index) =>  StoreTile(store: DummyData.stores[index],),itemCount: DummyData.stores.length,),
           ),
         ],
       ),

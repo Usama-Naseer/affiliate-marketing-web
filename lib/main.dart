@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          fontFamily: 'Alkatra',
+          fontFamily: 'Alcatraz',
           primaryColor: Colors.red,
+
 
           // This is the theme of your application.
           //
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
           primarySwatch: Colors.blue,
+
         ),
         home: const HomeScreen());
   }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-
 import '../core/app_colors.dart';
+import '../models/store_model.dart';
 import '../screens/store_page.dart';
 
 class StoreTile extends StatelessWidget {
-  const StoreTile({Key? key}) : super(key: key);
+  const StoreTile({required this.store, Key? key}) : super(key: key);
+  final Store store;
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +38,11 @@ class StoreTile extends StatelessWidget {
                     topRight: Radius.circular(12),
                     topLeft: Radius.circular(12)),
               ),
-              child: Image.asset(
-                'assets/images/meow.png',
-                height: 200,
-              ),
+              // child: Image.asset(
+              //   'assets/images/meow.png',
+              //   height: 200,
+              // ),
+              child: Image.network(store.image,fit:BoxFit.fill ,),
             ),
             const SizedBox(
               height: 20,
@@ -51,9 +54,9 @@ class StoreTile extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text(
-                        'Meow Wolf ',
-                        style: TextStyle(
+                      Text(
+                        store.storeName,
+                        style: const TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
                             color: AppColors.greyColor),
@@ -86,9 +89,11 @@ class StoreTile extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Free one month douling  over order of \$100. Grab your order now',
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                  Text(
+                    store.description,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ],
               ),

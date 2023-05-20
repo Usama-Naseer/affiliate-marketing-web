@@ -100,15 +100,17 @@ class AllStores extends StatelessWidget {
                     children: [
                       Container(
                         padding: const EdgeInsets.all(20),
-                        decoration:  BoxDecoration(
-                          border: Border.all(color: Colors.grey.withOpacity(0.5))
-                        ),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Colors.grey.withOpacity(0.5))),
                         child: Image.asset(
                           'assets/images/meow.png',
                           height: 60,
                         ),
                       ),
-                      const SizedBox(width: 20,),
+                      const SizedBox(
+                        width: 20,
+                      ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -123,10 +125,14 @@ class AllStores extends StatelessWidget {
                           const SizedBox(
                             height: 5,
                           ),
-                          Text('Coupons, promo codes & deals',style: TextStyle(color: AppColors.blackColor.withOpacity(0.7),fontSize: 14),)
+                          Text(
+                            'Coupons, promo codes & deals',
+                            style: TextStyle(
+                                color: AppColors.blackColor.withOpacity(0.7),
+                                fontSize: 14),
+                          )
                         ],
                       ),
-
                     ],
                   ),
                 ),
