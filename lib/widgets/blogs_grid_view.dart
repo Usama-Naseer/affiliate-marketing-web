@@ -11,9 +11,10 @@ class BlogsGridView extends StatelessWidget {
       child: GridView.count(
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.1),
-        crossAxisCount: 2,
+        crossAxisCount: 3,
+        childAspectRatio: 0.9,
         children: List.generate(
-          4,
+          3,
           (index) => Container(
             margin: const EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -41,30 +42,104 @@ class BlogsGridView extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: const Text(
-                    "Why Ronaldo doesn't like Coca-Cola?",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20,
-                        color: AppColors.blackColor),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Category",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                              color: AppColors.pinkColor.withOpacity(0.5)),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "What you wanna know about hubspot?",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                              color: AppColors.blackColor.withOpacity(0.9)),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 10,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15,
+                              color: AppColors.greyColor.withOpacity(0.9)),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Read full story..',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.blueColor.withOpacity(0.8),
+                            decorationColor: Colors.blue.withOpacity(0.5),
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'By asad yousaf',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                  color: AppColors.greyColor.withOpacity(0.9)),
+                            ),
+                            Container(
+                              height: 10,
+                              color: AppColors.greyColor,
+                              width: 0.9,
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                            ),
+                            Text(
+                              '22 Jan 2024',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                  color: AppColors.greyColor.withOpacity(0.9)),
+                            ),
+                            Container(
+                              height: 10,
+                              color: AppColors.greyColor,
+                              width: 0.9,
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                            ),
+                            Text(
+                              '5 minutes read',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                  color: AppColors.greyColor.withOpacity(0.9)),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                const Divider(
-                  height: 1,
-                  thickness: 1,
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: const Text(
-                    "No wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of added sugar which clearly won't help you reach the very top of the sport with The World Health organisation recommending consuming no more than six teaspoons of added sugar daily.No wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of aNo wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of a,A single bottle reportedly has 10 teaspoons of aNo wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of aA single bottle reportedly has 10 teaspoons of aNo wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of aA single bottle reportedly has 10 teaspoons of aNo wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of aA single bottle reportedly has 10 teaspoons of aNo wonder Ronaldo is scared to even look at a bottle of Coke again. A single bottle reportedly has 10 teaspoons of a",overflow: TextOverflow.ellipsis,maxLines: 10,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 15,
-                        color: AppColors.blackColor),
-                  ),
-                ),
+                )
               ],
             ),
           ),
