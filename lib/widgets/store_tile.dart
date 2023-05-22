@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-
 import '../core/app_colors.dart';
 import '../screens/store_page.dart';
+import '../core/dummy.dart';
+import '../models/store_model.dart';
 
 class StoreTile extends StatelessWidget {
   const StoreTile({Key? key}) : super(key: key);
@@ -48,9 +49,9 @@ class StoreTile extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text(
-                        'Meow Wolf ',
-                        style: TextStyle(
+                       Text(
+                       store.storeName,
+                        style: const TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
                             color: AppColors.greyColor),

@@ -1,6 +1,8 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/widgets/store_tile.dart';
 import 'package:flutter/material.dart';
+import '../core/dummy.dart';
+import '../models/store_model.dart';
 
 class StoreListView extends StatelessWidget {
   const StoreListView({Key? key}) : super(key: key);
