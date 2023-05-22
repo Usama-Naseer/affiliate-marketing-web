@@ -20,7 +20,6 @@ class StoreListView extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 color: AppColors.greenColor),
           ),
-          const SizedBox(height: 10,),
           SizedBox(
             height: 300,
             child: ListView.builder(

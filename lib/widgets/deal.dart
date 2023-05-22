@@ -50,7 +50,7 @@ class HomeDeal extends StatelessWidget {
                     coupon.title,
                     style: const TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 14,
+                        fontSize: 15,
                         color: AppColors.blackColor),
                   ),
                   const SizedBox(
@@ -59,8 +59,8 @@ class HomeDeal extends StatelessWidget {
                    Text(
                     coupon.description,
                     style: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.greyColor),
+                        fontWeight: FontWeight.w300,
+                        color: AppColors.blackColor),
                   ),
                   const Text(
                     'Visit the store now',
@@ -97,7 +97,7 @@ class HomeDeal extends StatelessWidget {
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
-                            color: AppColors.greyColor),
+                            color: AppColors.greenColor),
                       ),
                     ],
                   ),

@@ -8,48 +8,104 @@ class DummyData {
         description:
             "Zaful.com is a leading one-stop online shop for today's most daring, exciting and edgy fashion apparels.",
         image:
-            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVIAAACVCAMAAAA9kYJlAAAAhFBMVEUAAAD///9JSUnl5eUzMzPY2Nhubm7i4uL09PRkZGQHBwcrKyuPj4+tra15eXm3t7cdHR3x8fHr6+tBQUHb29uAgICenp6np6ddXV3Hx8e/v79SUlIwMDCKioq1tbWWlpbPz88SEhIZGRk7OztgYGBGRkaEhIRpaWklJSVzc3M+Pj4WFhbPMmUOAAAJV0lEQVR4nO2c61rqOhCGOVMFFMpBoCBFFOvy/u9vm7TATDuZTJC1FPa8v3zM+WsOk0lCraYoiqIoiqIoiqIoiqIoiqIoiqIoiqIoiqIoiqIoiqIoiqIoiqIoiqIoyq9lniSNn67DzzFsBbDaivLs1Ov1+EUScxVS+hAkzJh49554K2HzYXkhrOOmnEkiynPxJWl9KonZDig83oOEA3e14x2INyPiLUD4lMkHlhfCUz2AaC7JchebuI+SqKOQ0jcg4YKJNwbxnonwLgjvC8sLYRDSKJmk0zxuJogaJOkMJFwy8aCkVPOkkvYljSWgPqMTmaRFcz8EUYMkfQIJv9NLmyD8b/RS7nNXK9OTZFlETgVRP6brWVda+gAknO/3G0LW0WC9n8JlJZnuN48gwmS2nr6D8PF033+s5lN/7O+nb5LGEqSn0hazj/l41YPscHtfJTk+HJq388e14EImoPhW0nlKjz25OjuX+mD8TuRuOPTFrsO0K/XV6NwhnzM5tOSOshn2qKhUlOOx86yldVjFoJB2OTQ5fPVlNWUb1c9tC+dT6shpsGBNv6fofdGaGRn6iUoajclIJcZHfRb+yAUPoJSKpMfJiZB0Dus3qIYfaDX5CPcpyKfrjCbiPuJqg2cZ2XQ9PSWQrPmWjJf0Je+MaTVkF4GUHaYEK9mDOxwuKcynkbDl+tMHUlT48cCiIbeVeUlrK5ekQzjyOXPESsasNxuQD6O8hBebiWMSglMc3wkAHnVoRp5EC0fIPfiAEedWsJPpyh0OxlbdtcgJ6Zk8iEnKMEOKPssyhNPiSOw7AR+PlLTjGiZgwLKS2rYwm3ZY7TtprWl2Jg96gCZwnqpHIpO0ZIOLl05gRpGSDk2EJhEQJOm9O7xzOUkTt1pwERTPi2M0WaTSavgktdKNHP+XSLr5d5LefWURkyFwdpGLg1OJ13yvpJ1vStr/d5KaOYRc71d4bZLOirhri7fJXkmNmRUR//+NksYOvyDe6z1RUSiwovWJMJlX0lqn80GtxL9QUhdoW1KPP4XJSuNe6LqSSOrgeiQd4s2z2FKrOIfojW6F/4Gk2I0g3qzb9b49AUkpw4fAIWmj0+m02IRXI+kYm6TMrgNjx/0D+h68Igcckpo9D789vBpJsbtEOHhr+XofNebwg8gWNoekzzcjKXaXpLKT5lrhg0mxF3MiOnymJbU7+JuQ9P4MV77FOqz7pZlYVEFa0qx7K5LiU0Whu8Rg1/sadn/KRj4tqdkt34SkY6Ro/Eee0LjorHEP91DUnqcCLenSLymY9X+xpNgkFV0aybHrvT1wWsMcJHtZStJVPlpuQFIkR5DhbfpmfmI2hufzkpkDSBpv+ptNf/Y8KZwM1y/pEJuksktQFjuDpvnf6HRM4GllzvKvX1JskordJbWi1oXTGZlhghOWW5b0HTWH8lA6set9YcNmsK8LRv4tS9oMaA7GbmKPUy/q7P7ENyzpBrXGccxHYw/Eji5n5OXzO7KApKNHy/LwryuXNME36YKuARvb63RD5gXm5P80hBG13S1uQVJ8zCF3l3zRM+MeOPHh9Y2m1x1Fm/rt65cUu0vaTA2q2CkDHDKjYwHvVVNa0terl7SH1ybhGUeB7ZXAAu3B40DvyKcltTeeLiPpPzx0huATvLDLVn9MkhT+BzlffB2elvQlvZik9moEE/53JP2DFBVfuM2x6z2afGElvZ4Chwt66ZUUdANW0qefkPQFHhnJbtoDTOLSjVg48n2nVw5JHy8m6eAnJMXukjQscevo1zsBn//4+rxD0v1iueSndDhZcf6I5x+QtIcUDXGXGPAWgcCzDzv70Fkq6cE77kIo6XYrPjX6jrvEwL2ZsaR8+rMlhYsg158vI+m62Y3Fna104TngWxhWPkV9dykvIik3YNOLSLrwlILAl8ocw3T9PJiR0uCHJyT8hbOzJYXXipkV1d6e4fxqMklNLtLTTfyS1LE+Z1/LekyuM2a9jwZlnqCHb8GapmdLCm8vM4+C8mswTD4iSXummsIdUIIUjRyPccy16AnVS99GdIWRtc++8Dlb0gb4bMzmxLqBuT2cSNK7SC4pdpe4xqjpEW3KO2XXe8KaR/t89mHZ2ZLWgKTMzcs11y6DSFLrKJBJik1S52McYxSQV0/sFyG8TVlbkq3hfElBEczxtq0hd2AjknQiljTDa5Nz/jUdIiX+3zKpyLkSjnzW1D1fUtgd3CWY0Jh7ZgsldXnMM08hAGySOmckuxKkRIAVjhxVyG3A2brnS5pISrAzE7sphpK6evNSLOkdUjRyXQvLn1kS9Ro23X0Q9v8Jc5UauBUDJd2CdaDreG0xtCOW3cBBu9xhjBWPlgSSbrG7xFlwbnsSktpJm36Vgi+cMbMQWGQCJUVFON5ZWeOVP+2F8we9kG6L7iG4PIMvPKcu8zHLD5MIQ8T2sJROhdZ8ZuQJOzMJ+Bwj8kQm4eQugFsGev4oTn5Yf1dOA90ucT6zzIq+XJ1p947/W3pwCLhrAze0cegvTMGtW5eo/6vtDG3+S8GjMsoYyw7zS+T/LQn8QxyutemYY+WIb9V09V7DJ7J4neeD6Ig69KHxEH62tLIU5Ip6bB/03INYF96OZfglxe6SCX3M3Dr57irzTKGZY6bK8DVAh8X3gg69QifT2goOtBFeXIrrf75jH+ykaJYGyitwIca+33nI8DUPosnD3ccSrNulLvR5LIzugdiaqMe0zVv6yZrgX755QMkXp0ZvN0XVyU3fidL9hfroeZ4n+GzN+4sJ/GTe+7ZBP7xlAGbwZ/IxA4V1Z9P522lx2ybJ+7qa/XL9CodVY/6+H0TlSPFs+po0hE+rDXc4i+5s3bl7Bz/R49659ZLXh01argAD7TcCeF3HZYAejbgcGKWnzvAnGlWkyiPBfWM3oiPVv1KH3MyYVy5VwYxT99dZuyrgonlxScFMklRDuydJx9XQA6B87qe3wk69q339APttuJ/eIvHenAmWFBgpl5C00tEBgb/a8ka3JVqyRlmwpJSZ9j1JgY1CSBqfJH1z5wHK50ZdwFOWnPFgUs6jPfOMU+85ZKWJvl66awQC0n5WQ8dgeRLl8cYUJX5meSJL1mmcz+HRaJSuG967h71QAcZBN8VuhF7SeZh25rLHq4qiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKLfFf2arfGBDpgz4AAAAAElFTkSuQmCC",
-        totalCoupons: 28),
+            "https://cdn.dealspotr.com/io-images/logo/zafulcom.jpg",     totalCoupons: 28),
     Store(
         storeName: 'Abba Patio',
         description:
             "We are a top designer and manufacturer of high-quality outdoor products. Our mission at Abba Patio is to help you transform your entire outdoor living space into one that is comfortable, durable and luxurious.",
         image:
-            "https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/3/AmazonStores/ATVPDKIKX0DER/26f5f97733909a7a5661cdbaf611752c.w400.h400.jpg",
-        totalCoupons: 10),
+            "https://cdn.dealspotr.com/io-images/logo/abbapatiocom.jpg", totalCoupons: 10),
     Store(
         storeName: "AllBeauty",
         description:
             "Perfumes, aftershaves and gift sets for men and women. UK retailer ships worldwide.",
         image:
-            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeMAAABoCAMAAAD1qWilAAAAhFBMVEX///8AAACtra34+Pg5OTkKCgpKSkry8vJZWVmjo6O9vb3IyMjj4+NdXV1hYWH7+/tTU1N9fX2Xl5fs7Ozd3d3u7u60tLQeHh7m5ua6urrS0tJvb2+EhIQwMDCLi4vV1dVDQ0MWFhZ1dXUqKipnZ2eZmZmnp6caGhotLS1HR0ckJCQ+Pj7wAaCwAAAQN0lEQVR4nO1daXuyOhBF0aLVigtuWNdq+9b+//93qzJLNpIAtbc+nE8tQkhykpnJZDIEQXUIBxliujYdXq+8HNh9vc71Wue9wnc/GrI+enn97YpIiBoZQrrWzy6t2X3N7Nro7jX8O4A++vztikgAjtsajlvsvppjO6CPnn67IhJqjqtDzfHjo+b48VFz/PioOX581Bw/PmqOHx81x4+PmuPHR83x46Pm+PFRc/z4qDl+fNQcPz5qjh8fNcc2xIskTXu9XrpNJj/2kh/FXTiOo/5sszoOXl4Gx9WmN43sj+g4XvhwHEb95uh4e+eom05D+QYXROlm8LTet29V+WgNj6fEofIahFHSvHXBpT6zRbFSimH28xwnp8G+IWC9WQp3PI9vSOlSSY6fx0PxlY3dpudZ73i2amjw8epbUBCkSnXah3dBKkyzLmhi/Nqy+35BN3F5wXv2ON68vT19BTRj3XwX0V3mlclApel+7XfPuo5qNDas7qPsGiuhDMfJRv/Kxtipv7JCXg2FfGO/9JEK/fFeX8zwmYpJ4Bpe6mRXmi7v2GU3I2ldc+05HMXJAO7XqMTFyMDwpaMOOJChO1lziuvjxdHQpd/4ODiq1OnIXMgFQ+e5PMnpgsbXEqYttK2D7X1RO8WMp+zmZ7jgyLFbOGuC96fyT+HY8oZx1sIKOQ5NcxjQdWlUd2/tnVe3qWzr62Eitu3OHHfivFIB2KdKZOesbX3F/jYuquO4Z2/Wv76tScmnS/ecHQR/+mYvZxzytt2Z48bWofAQJdFM/CEa5RWNuE6rqjiObZP4ir3F0nh2IMalHNeOfpoGv8exS1z9Em6eT4Xri5Zc2tvTatRRrl5fUhXHHbHoRvtrMFo9qfpwnNeimXTzvnPYdGfdzaoz9yonCLRmuQZv/d/jeO8grKEm0oDYCgV9vjJdvRiLVKziijjuCyL22GU2Y28kDq6c0SvaEAPBFF90V3vh5zySI2nEHbvPt7X1Ip2NvoSf3ra/xrEsfjVY4L2CluvxruhsJQs97I+4ql5Vw3F/R0XuNwupotP0qcFgdIsJ0n6wVUb54iRIcrNdOnnh93VmohUwTQ+8nHO/ao6XT0MEjO99h66t4dVHa9nYJTt+lc/iT+0qIzmyW7pQSgmOX4M1FXjQmlXPfC4bZnKT3bLS2yPhOx+gz9p7vk0DPqSGupIivgBvQZdVxTGHzs+V4qunukcYpihzuP3BKF4b7ZKUSVYopQTHA5KMHaPB22SqWbuGYrr4rCwFqW4Hxo7+ZSGbxcY+SAZ001v75zjW+qtRjFiMCrK4WkwcT0jZfMkik2EqCLOyHBOOOQvX7T+6T9MdyQf+mr/CmtFgaWlfxxYVR7PbJVa15t04xlc/WRb6KJA27CKNzkHu47Fid1bBcf4G1JTkdVsdfyTuvyxOPiaqNpqfGXer3HLef43jPq4SzALrAvJxsf6iautaL0D2g1XAsc2NFdLAGsq/kb21sykpps8aqiimfrGuP59/i+MAFU6+1YWdwgbrZA8XD+YHAZKfpDzH1mEVREPd6y4gZtoOXm1S3WfZ+I6HHvVBdXdvjsklmCdtY6STFY3D48vFFSpuuZXm+MXhlRO8+02kkqw2p+0pevNJ+oUk2cChHFEn34/jGG2TvDfgEGzTNRwdbznmFmEqOAPKcrx22ipLce0j6G6aUE7bFsz90xDHCmm6ndO+haCx7sdxcIJ3DnNmIzaSdQpaYfmaHAG8VcKxi4OdPyPIZKz50IkZLtvF5QdqsLljfdgS6p4cU/3Nawi8Z073oL3pnEOGi6qSHMsy0wgcnExdUoudAwlwAra4iRZiQY7yIFgwp8odOaZRbSYL/TTM4gJtvHeS1BeEzD9VjuOWc4wUGcVUOrbGwVSEOqKi4TzgoF0bH5TBpPU9OUabvmVaRoR7uIXE8hSu2e1JpQalOXadNgEz9bBPaOHsEa2F3OzoWoxCwu7tB0xonN+T44m1zbh4+CQawOJ684hSDcmzW4rjfx6hjmgZrpQrPkmsMIkYc/qigbHzKIhacU+OSXYprgKpDnzvBUS1xzTmGrkUxx7TOIjAWb4GnTLS1MEO7CTqA5zbXtGbv8MxGbz6OUm/EwshKCiv9tGCtRTHzhbABUgp6BncIfGKk8fZT6swoMao47RA79tdOSadpZ8gOhsFbRmXahFwPVmG473XK5GcrHEL2GQYegW3x7CJgTsTqOP8Dm7g4vy+HGPvaVfypK/ZIhBqmu+HV4ALyjIce6kHMhgzTxSOTs+8oTgRYNZiQV4yn8bYfTmOoBu0rgW0uLj7EHSRu0V5BQ7iMhx7Hl44imXhMsIzfy7aEiDzUUB4HnaBwXJfjklH6FaMGFjD+QSTy7O/sV9KcPxmjagVAaomE/E4ZLs9L6BrGsYGjjm/6mDX3ZljFDtr1ZxBfxbnAAZj29GHh4W11eb4crzznDfgrG3fnlP2cX0BMh7GjrsD5AbQV3fmOERlo8peVKGCqzbbyZh7zil04pfg2LTCMwGF7G382k50WAGyDoSfb31gkN2ZY9qY2Mm/kI9LcO5m89HHG3Etba02x5djl11FjqbYgJwDbG6AjXZgxt0jegMYBPfmmNw48sRE9SU+puHACWCjWzjOO7doDyE1tOCmV0pzDDvF0Nm2SDgZPxmXmXvGHPf75RrjdrpoXWk4cEIFHPvOG4ljp0M0eZA59vG6XQB2Z0GOQa36c0wbE+ISGS0uydLJrvrK6uhNbY4vx55LcjKybhyjWiqKTlZu0XkM7SCOYVfZiWNw0/lzTEG44nxFT6DUkkwf+9pcGPJaJr7a75Vkc/WFYhrv3WKAwD2Yfb5jTrWrvTgGSViAYzQ3BXUX4+iVJmxmH7cdY0AAaQVrJ187Flt280+j6PYsRkFRu1pdH4OXxskrA26yAhxjcMS5r3lGUYJgH3v6QFAl3HF9DH3avsUyoavNrxQVIOJ818cw/1WOnTT7vjjH+CI+mmKDxUWmmGsqEakOZTi2nxwXgDtk59v/IEra+Y/ZUdTPBfVROXbS7PDWIhzjFDvTNdxVVMYqKBW//QHaiS5hc3nKDtzPzNqNewJ+NVeBflmvrc5gu1c4BknjtEtShmNSveSfRItLkSIwIjxnA76jzJ6E34ZRV34MDFNPN6wCtC2cAwivwGYQx9DNLqvCaRmOaeGIfYjBR2dlqKKH2yNHEj8Ocr/9Y9RBMP3BCeK7rpWBSsDPKYOijDjeeBSE0qMQx7gUnoNRgyaougsegQnvtTokH1OpOBAfhYy733sYjdBLvr4UBTB65l7CGltBHIOocQn3xl4oxDFtIsLjuuAAADTQduyPY0JpNkpx7COsSTTCEYEJKGQ/PaoCnSs+hqcuZg9GnWbXTwGuBItxjNM28+TgxNYFMOISxEMbsXNt5WJvPRREW60nVMMnRqeXpRjsMoMPrTkPjy47MUscYxoOBxMB+7AYxxPwde0l773O/zKFOXl2nsjsHGdJjt3FLEWCUoQeTJu2+1BZoATiXYuq3j3ah50VIY5DXeF6YJhpQY5pjFzHfAR+xw8ti/p95TzwxCAlz8K4utcoionbMzCW3T1UuGUjPEJn41yTakYsKRTjGGxbu1uUYmQLckxH5vn9BplGcbSO00E4fluSY1fpSOk8+KIaa2KfNzdQx4hPIGOubgJ+Cps4xmrOrQWcDDXJ4JC/Gg9qXHoEY0MMHGIQmFt8cSrkWyx7btHN7KK4nh2/HIN1+emmZ/D+xlqcsFQlN7+MkPSNcazEAxpB6rwox/iuEVsBm/Z5EiStY7iDg9J7VcKxk6nHsjyk+h/cFDvNPqljWdoml/WcmOKTcYw/eOSbKMpxH7PdTEjMGQUayQ27qIql1Irlc0XYo36TPd4s993I9IMO1E5luNMocjj0PhGzczKOA6xp/uqJn/wsyjHfmIC/zF6lkDIDWH1GcvRFBTlfbOIxYcNK1iYU22Tfz6P3fqhai6Z4XiKp2ztZdkCZY+z3/DHHe7Ewxyg0OtiyHLOZLYYsQo+b1FVxbFmx8JWa2h80AW3Lgm7uC0Oam63881MLNgcVjkmK52lkIZ9IYY5xrLVBarfzFA2zIY45siriKRKq4zhXJ/NMSfl5tfJqzhNA6Vc2uI1kSXOdKGmUOccRKvY3c23EDijMsRp9nB/pyoIch8YRuGUpfSqIr+bkGeUjb8eLNtEJVX1n5mbB0kCu9S/jSRnNNsIzpetTcykGfMgZbX0pU19xjicNCRatxxPorbRTfsFTTnZBaJfg+EkoUFurJU9kbWov0x+velMn4vrPeJieL4i0KVG/JzEb5S1QEwLHMTlH1trJ0heS+TbKcCyl0bKmWGRpja55hqXb48WJp/t+0YWn+cfQ8+Z+9uS+n26F7ngyzYuYjZWPTV/NbdwUxKt5sgsTbLRQ8rT1BYMzgVWkwLEwUl6VyZJslK85lOBYSgZnNZhj0ZzqbNhI7o8HQtW+xVAFHHd4zolvrEcz6tZ4KeUof8rJUypk8Ryc+J3hciTmos+TZ6IWGZy4FT85icbIUpOj/Ao+Wdor/smh8J33MfRoCY4jli+24XTuUj14YPjWwGV3z5HjvFifi4VwaEj4+DyOjjvlEwEWc0Iq5t/L5VsDze5mJNvA63x/rZwKc9edzZbL2ekol3MZKgaOI6nDzqvT7FKX44dweQxjoQTHYmJLJz9Q0/5VmAuubu9K5nHgfNrBY2GUB6O8B6Rf9kK+8ZUERo4p0CwPryXOwhD4utLRDbsVh5oetzpVxXGwdBlY9uqnLsUc7NtKE/kjJjqsprxtMsfcL2fCpsx5J0LIavtlbdsN9i/xrDJlVxnHQaj4VWQ4fanN+iWwxpNbcF9TVRT6cowc6/wIIi5OuSo4NmRKs6C/ypkQc/rqQ3UcB0EvV0Ca1+sStmqWfIaWc2hftMn7WtTw2fwtPkTcVK0YQufai5VwTFFlPvnVgtT4jaMTM1g0n49E37GG43+a+tM2fc4XAPXfLzGgtzMV05r5HMpYGOuzYtVRv6nJMDFaCLuMVOWbmhx4lsRWVbQ2Pb8mPemq4rM1Fjt7+3wDGz2x5mOsYfa1WC5IUvimLC9vphNvrY3nMawg6Wr0aevVt5ggno0Ukf0xmglshlkXmApfvqryoEVL0lTtQd4Oxy/horD2D1yM0vGqs1u/zefr3fD4upR9ItUjnj6vXnbn+QVv693Latwr9JHreDJbdb7m+0u79+f17tidFKt71O8eXj5b/87z9ddwMGoW+FJ2tJgdBp3ddxnfsvSrc9wklXcjDKOiH8OOFv0kuevnu6Pkiv6k5EujZJuml0/Vl619OCnfBdFkkaRp/0f6EbfdPHNv1fg7AHVs2Gep8feBqdI9jyTW+DvA6CWv02o1/hBi93juGn8UuIXimQWixt8BOvZ+uyI1fgoY6l72BHaN/y1gF8Y38VaNPwM8Huub6KzGnwFGc3l742v8FUA4sTUcs8ZfRVpbXA8PjNf77YrU+ClgXorSaY1q/F+Bx+5rH9ejAo8f+GbrrfFngIdg6+CAh8WpM7jCeiI+CP4D1L/rJM+uCgwAAAAASUVORK5CYII=",
-        totalCoupons: 10),
+            "https://cdn.dealspotr.com/io-images/logo/allbeautycom.jpg",     totalCoupons: 10),
+    Store(
+        storeName: "Macy's",
+        description:
+        "Macy's is a major apparel department brand that markets products and services at macys.com. Macy's competes with other top apparel department brands such as Kohl's, JCPenney and Marshalls. Macy's sells mid-range purchase size items on its own website and partner sites in the competitive online apparel department industry.",
+        image:
+        "https://cdn.dealspotr.com/io-images/logo/macyscom.jpg",     totalCoupons: 10),
+    Store(
+        storeName: "Walmart",
+        description:
+        "Walmart is a major grocery that markets products and services at walmart.com. Walmart competes with other top grocery such as Target, Costco and Sam's Club. Walmart sells mid-range purchase size items on its own website and partner sites in the extremely competitive online grocery industry.",  image:
+        "https://cdn.dealspotr.com/io-images/logo/walmartcom.jpg", totalCoupons: 10),
+    Store(
+        storeName: "Home Depot",
+        description:
+        "Home Depot is a major home improvement that markets products and services at homedepot.com. Home Depot competes with other top home improvement such as Houzz, Build with Ferguson and Thumbtack. Home Depot sells bigger ticket items or higher priced products or services in the extremely competitive online home improvement industry.",
+        image:
+        "https://www.couponflick.com/logos/Disnep-Coupons.jpg",  totalCoupons: 10),
+    Store(
+        storeName: 'Brucemore',
+        description:
+        "Best Buy is a major household electronic parts brand that markets products and services at bestbuy.com. Best Buy competes with other top household electronic parts brands such as Newegg, Monoprice and Abt Electronics. Best Buy sells bigger ticket items or higher priced products or services in the extremely competitive online household electronic parts industry.", image:
+        "https://cdn.dealspotr.com/io-images/logo/bestbuycom.jpg",  totalCoupons: 28),
+    Store(
+        storeName: 'Best Buy',
+        description:
+        "Best Buy is a major household electronic parts brand that markets products and services at bestbuy.com. Best Buy competes with other top household electronic parts brands such as Newegg, Monoprice and Abt Electronics. Best Buy sells bigger ticket items or higher priced products or services in the extremely competitive online household electronic parts industry.",
+        image:
+        "https://cdn.dealspotr.com/io-images/logo/bestbuycom.jpg", totalCoupons: 28),
+    Store(
+        storeName: 'Walgreens',
+        description:
+        "Walgreens is a major medicine cabinet store that markets products and services at walgreens.com. Walgreens competes with other top pharmacy solutions such as Happy Mammoth, American Red Cross and Pharmaca. Walgreens sells mid-range purchase size items on its own website and partner sites in the extremely competitive online medicine cabinet industry.",
+        image:
+        "https://cdn.dealspotr.com/io-images/logo/walgreenscom.jpg",
+        totalCoupons: 28),
     //Store(storeName: storeName, description: description, image: image, totalCoupons: totalCoupons)
   ];
   static List<Coupon> coupons = [
     Coupon(
-        title: '20% Off',
-        description: 'Valentines Day 2023! Extra 18% Off Orders',
-        code: "LOVEYOU",
+        title: '35% Off',
+        description: 'Walmart Deal: Get Up to 35% Off Select Items at Walmart',
+        code: "wowfresh",
         image:
-            "https://cdn.dealspotr.com/io-images/logo/hak5org.jpg?fit=contain&trim=true&extend=10&width=200&height=100"),
+            "https://cdn.dealspotr.com/io-images/logo/walmartcom.jpg"),
+    Coupon(
+        title: '15% Off',
+        description: 'Extra 15% Off Select Tempaper Wallpaper at Homedepot.com',
+        code: "TEMPAPER15",
+        image:
+            'https://cdn.shopify.com/s/files/1/0252/8310/0734/files/COROS_canada_white_-_copie.png'),
+    Coupon(
+        title: "25% Off",
+        description: "Extra 25% Off Your Order at Bestbuy.com w/Coupon Code",
+        code: "FREEBEST",
+        image:
+            "https://cdn.dealspotr.com/io-images/logo/bestbuycom.jpg"),
+    Coupon(
+        title: '10% Flat',
+        description: 'Get 10% flat discount using this Zaful coupon code.',
+        code: "FLAT10",
+        image:
+        "https://cdn.dealspotr.com/io-images/logo/zafulcom.jpg"),
     Coupon(
         title: '10% Off',
-        description: '10% Off Storewide (United States Only) at Ring',
-        code: "LOVEYOU",
+        description: '10% Off on orders above 75. Exclusions: New Customer Only.',
+        code: "SAVE10",
         image:
-            'https://cdn.shopify.com/s/files/1/0252/8310/0734/files/COROS_canada_white_-_copie.png?height=628&pad_color=fff&v=1614301923&width=1200'),
+        "https://cdn.dealspotr.com/io-images/logo/allbeautycom.jpg"),
+    Coupon(
+        title: '15% Off',
+        description: 'Up To 15% Off over 100 (Sitewide) at Allbeauty.com ',
+        code: "WEEKEND15",
+        image:
+        "https://cdn.dealspotr.com/io-images/logo/allbeautycom.jpg"),
+    Coupon(
+        title: '20% Off',
+        description: 'Save 20% Off Store-wide at Zaful.com. Visit Now.',
+        code: "EMILY18",
+        image:
+        "https://cdn.dealspotr.com/io-images/logo/zafulcom.jpg"),
     Coupon(
         title: "10% off",
-        description: "10% Off Storewide (Members Only) at Ringke",
-        code: "LoveYou",
+        description: "50% Off Everything Photo at Walgreens.com",
+        code: 'ALLSUNNY',
         image:
-            "https://cdn.shopify.com/s/files/1/0059/0630/1017/files/keychron-blacktext2_564ecef7-85a4-458a-b79e-74b63fbcb70d.png?v=1647510916s"),
-    Coupon(
-        title: "10% off",
-        description: "10% Off Storewide at GetFPV",
-        code: '9xjd',
-        image:
-            'https://cdn.shopify.com/s/files/1/0037/7798/6630/files/logo_1_07cbd49b-dafc-4fda-a49c-abcf5a9ca727.jpg?height=628&pad_color=fff&v=1667904074&width=1200')
+            'https://cdn.dealspotr.com/io-images/logo/walgreenscom.jpg')
   ];
 }
