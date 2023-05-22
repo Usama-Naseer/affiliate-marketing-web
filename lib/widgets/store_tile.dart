@@ -1,32 +1,34 @@
 import 'package:flutter/material.dart';
 import '../core/app_colors.dart';
-import '../screens/store_page.dart';
 import '../models/store_model.dart';
 import '../screens/store_page.dart';
 
 class StoreTile extends StatelessWidget {
   const StoreTile({required this.store, Key? key}) : super(key: key);
   final Store store;
+
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.19,
-      width: MediaQuery.of(context).size.width * 0.18,
-      margin: const EdgeInsets.only(left: 4, right: 20, bottom: 10, top: 10),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: AppColors.whiteColor,
-          boxShadow: [
-            BoxShadow(
-                offset: const Offset(2, 2),
-                blurRadius: 2,
-                color: AppColors.blackColor.withOpacity(0.2))
-          ]),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const StorePage()));
-        },
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const StorePage()));
+      },
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.19,
+        width: MediaQuery.of(context).size.width * 0.18,
+        margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: AppColors.whiteColor,
+            boxShadow: [
+              BoxShadow(
+                  offset: const Offset(2, 2),
+                  blurRadius: 4,
+                  spreadRadius: 1,
+                  color: AppColors.blackColor.withOpacity(0.2))
+            ]),
         child: Column(
           children: [
             Container(
@@ -36,8 +38,11 @@ class StoreTile extends StatelessWidget {
                     topRight: Radius.circular(12),
                     topLeft: Radius.circular(12)),
               ),
-              child:Image.asset(store.image,fit: BoxFit.fill,),
-
+              // child: Image.asset(
+              //   'assets/images/meow.png',
+              //   height: 200,
+              // ),
+              child: Image.network(store.image,fit:BoxFit.fill ,),
             ),
             const SizedBox(
               height: 20,
@@ -49,8 +54,8 @@ class StoreTile extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                       Text(
-                       store.storeName,
+                      Text(
+                        store.storeName,
                         style: const TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
@@ -84,9 +89,11 @@ class StoreTile extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    .description
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                  Text(
+                    store.description,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
