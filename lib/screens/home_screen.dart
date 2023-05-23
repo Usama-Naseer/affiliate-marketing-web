@@ -4,6 +4,7 @@ import 'package:discountandcodes/widgets/header.dart';
 import 'package:discountandcodes/widgets/home_coupon_grid_view.dart';
 import 'package:discountandcodes/widgets/store_listview.dart';
 import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,32 +22,49 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
           child: Column(
-            children:  const [
+            children:  [
               SizedBox(
+                height: 15,
+                child: Marquee(
+                  text: '10% Zaful Discount Code',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  scrollAxis: Axis.horizontal,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  blankSpace: 20.0,
+                  velocity: 100.0,
+                  pauseAfterRound: const Duration(seconds: 1),
+                  startPadding: 10.0,
+                  accelerationDuration: const Duration(seconds: 1),
+                  accelerationCurve: Curves.linear,
+                  decelerationDuration: const Duration(milliseconds: 500),
+                  decelerationCurve: Curves.easeOut,
+                ),
+              ),
+              const SizedBox(
                 height: 10,
               ),
-              Header(),
-              SizedBox(
+              const Header(),
+              const SizedBox(
                 height: 10,
               ),
-              Divider(
+              const Divider(
                 height: 1,
                 thickness: 0.5,
               ),
-              StoreListView(),
+              const StoreListView(),
 
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
-              HomeCouponGridView(),
-              SizedBox(
+              const HomeCouponGridView(),
+              const SizedBox(
                 height: 50,
               ),
-              Divider(
+              const Divider(
                 height: 1,
                 thickness: 1,
               ),
-              AppFooter(),
+              const AppFooter(),
             ],
           ),
         ),

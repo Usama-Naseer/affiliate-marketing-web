@@ -125,10 +125,7 @@ class HomeCouponGridView extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Divider(
-                  height: 0.7,
-                  thickness: 0.7,
-                ),
+
               ],
             ),
           ),

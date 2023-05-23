@@ -1,5 +1,4 @@
 import 'package:discountandcodes/screens/terms_of_use.dart';
-import 'package:discountandcodes/widgets/terms_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:discountandcodes/core/app_colors.dart';
 
