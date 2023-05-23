@@ -10,12 +10,6 @@ class DummyData {
         image:
             "https://cdn.dealspotr.com/io-images/logo/zafulcom.jpg",     totalCoupons: 28),
     Store(
-        storeName: 'Abba Patio',
-        description:
-            "We are a top designer and manufacturer of high-quality outdoor products. Our mission at Abba Patio is to help you transform your entire outdoor living space into one that is comfortable, durable and luxurious.",
-        image:
-            "https://cdn.dealspotr.com/io-images/logo/abbapatiocom.jpg", totalCoupons: 10),
-    Store(
         storeName: "AllBeauty",
         description:
             "Perfumes, aftershaves and gift sets for men and women. UK retailer ships worldwide.",
@@ -27,6 +21,12 @@ class DummyData {
         "Macy's is a major apparel department brand that markets products and services at macys.com. Macy's competes with other top apparel department brands such as Kohl's, JCPenney and Marshalls. Macy's sells mid-range purchase size items on its own website and partner sites in the competitive online apparel department industry.",
         image:
         "https://cdn.dealspotr.com/io-images/logo/macyscom.jpg",     totalCoupons: 10),
+    Store(
+        storeName: 'Abba Patio',
+        description:
+        "We are a top designer and manufacturer of high-quality outdoor products. Our mission at Abba Patio is to help you transform your entire outdoor living space into one that is comfortable, durable and luxurious.",
+        image:
+        "https://cdn.dealspotr.com/io-images/logo/abbapatiocom.jpg", totalCoupons: 10),
     Store(
         storeName: "Walmart",
         description:
@@ -54,8 +54,7 @@ class DummyData {
         description:
         "Walgreens is a major medicine cabinet store that markets products and services at walgreens.com. Walgreens competes with other top pharmacy solutions such as Happy Mammoth, American Red Cross and Pharmaca. Walgreens sells mid-range purchase size items on its own website and partner sites in the extremely competitive online medicine cabinet industry.",
         image:
-        "https://cdn.dealspotr.com/io-images/logo/walgreenscom.jpg",
-        totalCoupons: 28),
+        "https://cdn.dealspotr.com/io-images/logo/walgreenscom.jpg", totalCoupons: 28),
     //Store(storeName: storeName, description: description, image: image, totalCoupons: totalCoupons)
   ];
   static List<Coupon> coupons = [
