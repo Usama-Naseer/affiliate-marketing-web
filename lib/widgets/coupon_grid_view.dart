@@ -1,9 +1,11 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/widgets/code_pop_up.dart';
 import 'package:flutter/material.dart';
+import '../models/coupon_model.dart';
 
 class CouponGridView extends StatelessWidget {
-  const CouponGridView({Key? key}) : super(key: key);
+  const CouponGridView({required this.coupons, Key? key}) : super(key: key);
+  final List<Coupon> coupons;
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +16,10 @@ class CouponGridView extends StatelessWidget {
             horizontal: MediaQuery.of(context).size.width * 0.1),
         crossAxisCount: 4,
         children: List.generate(
-          8,
+          coupons.length,
           (index) => GestureDetector(
             onTap: () {
-              showCouponCodePopUp(context);
+              showCouponCodePopUp(context,coupons[index]);
             },
             child: Container(
               margin: const EdgeInsets.all(20),
@@ -42,9 +44,9 @@ class CouponGridView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
-                            '20% off',
-                            style: TextStyle(
+                           Text(
+                            coupons[index].title,
+                            style: const TextStyle(
                                 fontWeight: FontWeight.w600, fontSize: 18),
                           ),
                           Container(
@@ -61,8 +63,8 @@ class CouponGridView extends StatelessWidget {
                             )),
                           ),
                           const Spacer(),
-                          Image.asset(
-                            'assets/images/meow.png',
+                          Image.network(
+                            coupons[index].image,
                             height: 50,
                             width: 60,
                           )
@@ -72,13 +74,13 @@ class CouponGridView extends StatelessWidget {
                         height: 20,
                       ),
                       RichText(
-                          text: const TextSpan(children: [
+                          text: TextSpan(children: [
                         TextSpan(
-                            text: 'Southwest airlien coupon code ',
-                            style: TextStyle(
+                            text: '${coupons[index].storeName} coupon code ',
+                            style: const TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w600)),
-                        TextSpan(
-                            text: 'Earn upto 24000 points on southwest arline')
+                         TextSpan(
+                            text:coupons[index].description,)
                       ]))
                     ],
                   ),
@@ -102,8 +104,8 @@ class CouponGridView extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            const Text('FREE-SHIP-25',
-                                style: TextStyle(
+                             Text(coupons[index].code,
+                                style: const TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.w600)),
                             const SizedBox(
                               width: 10,

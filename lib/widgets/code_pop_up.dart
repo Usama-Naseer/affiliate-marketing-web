@@ -1,9 +1,10 @@
+import 'package:discountandcodes/models/coupon_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../core/app_colors.dart';
 
-showCouponCodePopUp(context) {
+showCouponCodePopUp(context, Coupon coupon) {
   showCupertinoModalPopup(
       context: context,
       builder: (context) => Center(
@@ -30,8 +31,8 @@ showCouponCodePopUp(context) {
                     decoration: BoxDecoration(
                         border: Border.all(
                             color: AppColors.greyColor.withOpacity(0.2))),
-                    child: Image.asset(
-                      'assets/images/meow.png',
+                    child: Image.network(
+                      coupon.image,
                       height: 50,
                       width: 80,
                     ),
@@ -59,11 +60,11 @@ showCouponCodePopUp(context) {
                         color: Colors.white,
                         border: Border.all(
                             color: AppColors.greyColor.withOpacity(0.2))),
-                    child: const Center(
+                    child: Center(
                       child: Material(
                         child: Text(
-                          'MEGAN10',
-                          style: TextStyle(
+                          coupon.code,
+                          style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w900,
                               color: AppColors.blackColor),
@@ -120,19 +121,19 @@ showCouponCodePopUp(context) {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const [
+                        children: [
                           Material(
                             color: Colors.transparent,
                             child: Text(
-                              'Continue at whoosh.com',
-                              style: TextStyle(
+                              'Continue at ${coupon.storeName} ',
+                              style: const TextStyle(
                                 fontSize: 17,
                                 fontWeight: FontWeight.w400,
                                 color: AppColors.whiteColor,
                               ),
                             ),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.arrow_forward,
                             color: Colors.white,
                             size: 18,
@@ -157,7 +158,7 @@ showCouponCodePopUp(context) {
                                       color: AppColors.blackColor),
                                   children: [
                                     TextSpan(
-                                        text: 'whoosh.com ',
+                                        text: '${coupon.storeName} ',
                                         style: TextStyle(
                                             fontSize: 14,
                                             fontWeight: FontWeight.w600,

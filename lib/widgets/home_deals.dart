@@ -19,8 +19,8 @@ class CouponsListView extends StatelessWidget {
             'Coupons',
             style: TextStyle(
                 fontSize: 20,
-                fontWeight: FontWeight.w400,
-                color: AppColors.greyColor),
+                fontWeight: FontWeight.w600,
+                color: AppColors.greenColor),
           ),
           SizedBox(
             height: 310,

@@ -1,12 +1,29 @@
+import 'package:discountandcodes/core/dummy.dart';
 import 'package:flutter/material.dart';
 import '../core/app_colors.dart';
+import '../models/store_model.dart';
 import '../widgets/header.dart';
 
-class AllStores extends StatelessWidget {
+class AllStores extends StatefulWidget {
   const AllStores({Key? key}) : super(key: key);
 
   @override
+  State<AllStores> createState() => _AllStoresState();
+}
+
+class _AllStoresState extends State<AllStores> {
+  List<String> categories = [
+    'Electronic',
+    'Home & Garden',
+    'Clothing & Fashion',
+    'Gaming',
+    "Travel"
+  ];
+  String cat = 'Electronic';
+  List<Store> stores = DummyData.stores;
+  @override
   Widget build(BuildContext context) {
+    stores = DummyData.stores.where((element) => element.category==cat).toList();
     return Scaffold(
       backgroundColor: AppColors.greyWithShade.withOpacity(0.2),
       body: Column(
@@ -58,19 +75,18 @@ class AllStores extends StatelessWidget {
                     underline: const SizedBox.shrink(),
                     borderRadius: BorderRadius.circular(12),
                     focusColor: Colors.white,
-                    items: <String>[
-                      'Electronic',
-                      'Home & Garden',
-                      'Clothing',
-                      'Gaming'
-                    ].map((String value) {
+                    items: categories.map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
                         child: Text(value),
                       );
                     }).toList(),
-                    onChanged: (_) {},
-                    value: 'Electronic',
+                    onChanged: (val) {
+                      cat = val ?? '';
+                      stores= DummyData.stores.where((element) => element.category==cat).toList();
+                      setState(() {});
+                    },
+                    value: cat,
                   ),
                 ),
               ],
@@ -90,7 +106,7 @@ class AllStores extends StatelessWidget {
               mainAxisSpacing: 0,
               childAspectRatio: 4,
               children: List.generate(
-                20,
+                stores.length,
                 (index) => Container(
                   margin:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -99,13 +115,13 @@ class AllStores extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(20),
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             border: Border.all(
                                 color: Colors.grey.withOpacity(0.5))),
-                        child: Image.asset(
-                          'assets/images/meow.png',
-                          height: 60,
+                        child: Image.network(
+                          stores[index].image,
+                          height: 80,
                         ),
                       ),
                       const SizedBox(
@@ -115,8 +131,8 @@ class AllStores extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
-                            'Meow Wolf',
+                          Text(
+                            stores[index].storeName,
                             style: TextStyle(
                                 color: AppColors.blackColor,
                                 fontSize: 20,

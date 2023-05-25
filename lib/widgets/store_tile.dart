@@ -12,8 +12,7 @@ class StoreTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const StorePage()));
+        Navigator.pushNamed(context,'/store',arguments: store.storeName);
       },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.19,

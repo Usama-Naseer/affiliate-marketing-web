@@ -26,7 +26,6 @@ class AppFooter extends StatelessWidget {
               GestureDetector(
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const Terms()));
-
                 },
                 child: const Text(
                   'Terms Of Use',

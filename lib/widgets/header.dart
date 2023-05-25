@@ -93,10 +93,7 @@ class _HeaderState extends State<Header> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const AllStores()));
+                      Navigator.pushNamed(context,'/allStores');
                     },
                     child: const Text(
                       'Stores',

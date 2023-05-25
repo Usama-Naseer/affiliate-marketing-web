@@ -1,4 +1,6 @@
+import 'package:discountandcodes/screens/all_stores.dart';
 import 'package:discountandcodes/screens/home_screen.dart';
+import 'package:discountandcodes/screens/store_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,6 +32,13 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
 
         ),
-        home: const HomeScreen());
+        routes: {
+          '/':(context)=> const HomeScreen(),
+          '/allStores':(context)=> const AllStores(),
+          '/store':(context)=> const StorePage(),
+        },
+      initialRoute: '/',
+
+    );
   }
 }
