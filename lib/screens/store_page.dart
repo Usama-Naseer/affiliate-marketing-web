@@ -36,7 +36,7 @@ class _StorePageState extends State<StorePage> {
               height: 20,
             ),
             Text(
-              '20% Off ${widget.storeName} Coupon (20 Promo Codes) April 2023',
+              '20% Off $storeName Coupon (20 Promo Codes) April 2023',
               style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
