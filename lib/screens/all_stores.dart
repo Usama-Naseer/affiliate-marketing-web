@@ -115,13 +115,13 @@ class _AllStoresState extends State<AllStores> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             border: Border.all(
-                                color: Colors.grey.withOpacity(0.5))),
+                                color: Colors.grey.withOpacity(0.3))),
                         child: Image.network(
                           stores[index].image,
                           height: 80,
+                          width: 120,
                         ),
                       ),
                       const SizedBox(
@@ -133,9 +133,9 @@ class _AllStoresState extends State<AllStores> {
                         children: [
                           Text(
                             stores[index].storeName,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: AppColors.blackColor,
-                                fontSize: 20,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w500),
                           ),
                           const SizedBox(

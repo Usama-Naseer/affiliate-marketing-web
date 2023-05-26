@@ -32,7 +32,7 @@ class HomeDeal extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Image.network(
                 coupon.image,
-                width: 140,
+                fit: BoxFit.fill,
               ),
             ),
             const SizedBox(
@@ -91,7 +91,7 @@ class HomeDeal extends StatelessWidget {
                       const SizedBox(
                         width: 5,
                       ),
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
                       const Text(
                         'Verified',
                         style: TextStyle(
