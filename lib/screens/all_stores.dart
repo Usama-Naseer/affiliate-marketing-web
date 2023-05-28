@@ -117,26 +117,24 @@ class _AllStoresState extends State<AllStores> {
                     margin: const EdgeInsets.only(right: 20, top: 20, bottom: 20),
                     padding:
                         const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      // border: Border.all(color: AppColors.greyColor.withOpacity(0.2)),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
-                            offset: const Offset(1, 1),
-                            blurRadius: 2,
-                            spreadRadius: 1)
-                      ],
-                      color: AppColors.whiteColor,
-                    ),
+
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: Colors.grey.withOpacity(0.2))),
+                            borderRadius: BorderRadius.circular(4),
+                            // border: Border.all(color: AppColors.greyColor.withOpacity(0.2)),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black.withOpacity(0.2),
+                                  offset: const Offset(1, 1),
+                                  blurRadius: 2,
+                                  spreadRadius: 1)
+                            ],
+                            color: AppColors.whiteColor,
+                          ),
                           child: Image.network(
                             stores[index].image,
                             height: 80,
