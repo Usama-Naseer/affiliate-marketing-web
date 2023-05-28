@@ -8,6 +8,8 @@ import 'package:discountandcodes/widgets/header.dart';
 import 'package:discountandcodes/widgets/store_description.dart';
 import 'package:flutter/material.dart';
 
+import '../models/store_model.dart';
+
 class StorePage extends StatefulWidget {
   const StorePage({ this.storeName ='',Key? key}) : super(key: key);
  final String  storeName;
@@ -17,13 +19,14 @@ class StorePage extends StatefulWidget {
 }
 
 class _StorePageState extends State<StorePage> {
+ late String storeName ;
 
   @override
   Widget build(BuildContext context) {
-    String? storeName = ModalRoute.of(context)?.settings.arguments as String?;
+    storeName= ModalRoute.of(context)?.settings.arguments as String??'';
 
     return Scaffold(
-      backgroundColor: AppColors.greyWithShade.withOpacity(0.2),
+      backgroundColor: AppColors.whiteColor,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,11 +46,18 @@ class _StorePageState extends State<StorePage> {
               height: 20,
             ),
             CouponGridView(coupons: DummyData.coupons.where((element) => element.storeName==storeName).toList(),),
-            const StoreDescription(),
+            const SizedBox(
+              height: 20,
+            ),
+            StoreDescription(store: getStore(),),
             const AppFooter(),
           ],
         ),
       ),
     );
+  }
+  Store getStore(){
+    return DummyData.stores.firstWhere((element) => element.storeName==storeName);
+
   }
 }

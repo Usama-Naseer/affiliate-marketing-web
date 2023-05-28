@@ -9,12 +9,13 @@ class CouponGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.9,
+    return Center(
       child: GridView.count(
-        padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.1),
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
         crossAxisCount: 4,
+
         children: List.generate(
           coupons.length,
           (index) => GestureDetector(
@@ -22,8 +23,8 @@ class CouponGridView extends StatelessWidget {
               showCouponCodePopUp(context,coupons[index]);
             },
             child: Container(
-              margin: const EdgeInsets.all(20),
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              margin: const EdgeInsets.only(top: 20,bottom: 20,right: 20,left: 20),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
               decoration: BoxDecoration(
                   color: AppColors.whiteColor,
                   borderRadius: BorderRadius.circular(12),

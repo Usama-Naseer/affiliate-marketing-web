@@ -5,51 +5,51 @@ class DummyData {
   static List<Store> stores = [
     Store(
         storeName: 'Zaful',
-        description:
+        shortDescription:
             "Zaful.com is a leading one-stop online shop for today's most daring, exciting and edgy fashion apparels.",
         image:
-            "https://cdn.dealspotr.com/io-images/logo/zafulcom.jpg",     totalCoupons: 28, category: 'Clothing & Fashion'),
+            "https://cdn.dealspotr.com/io-images/logo/zafulcom.jpg",     totalCoupons: 28, category: 'Clothing & Fashion', longDescription: '', url: 'zuful.com', affiliateUrl: 'zaful.com'),
     Store(
         storeName: 'Abba Patio',
-        description:
+        shortDescription:
             "We are a top designer and manufacturer of high-quality outdoor products. Our mission at Abba Patio is to help you transform your entire outdoor living space into one that is comfortable, durable and luxurious.",
         image:
-            "https://cdn.dealspotr.com/io-images/logo/abbapatiocom.jpg", totalCoupons: 10, category: 'Home & Garden'),
+            "https://cdn.dealspotr.com/io-images/logo/abbapatiocom.jpg", totalCoupons: 10, category: 'Home & Garden', longDescription: '', url: 'abbapatio.com', affiliateUrl: 'abbapatio.com'),
     Store(
         storeName: "AllBeauty",
-        description:
+        shortDescription:
             "Perfumes, aftershaves and gift sets for men and women. UK retailer ships worldwide.",
         image:
-            "https://cdn.dealspotr.com/io-images/logo/allbeautycom.jpg",     totalCoupons: 10, category: 'Clothing & Fashion'),
+            "https://cdn.dealspotr.com/io-images/logo/allbeautycom.jpg",     totalCoupons: 10, category: 'Clothing & Fashion', longDescription: '', url: 'allebauty.com', affiliateUrl: 'allebauty.com'),
     Store(
         storeName: "Macy's",
-        description:
+        shortDescription:
         "Macy's is a major apparel department brand that markets products and services at macys.com. Macy's competes with other top apparel department brands such as Kohl's, JCPenney and Marshalls. Macy's sells mid-range purchase size items on its own website and partner sites in the competitive online apparel department industry.",
         image:
-        "https://cdn.dealspotr.com/io-images/logo/macyscom.jpg",     totalCoupons: 10, category: 'Clothing & Fashion'),
+        "https://cdn.dealspotr.com/io-images/logo/macyscom.jpg",     totalCoupons: 10, category: 'Clothing & Fashion', longDescription: '', url: 'www.macys.com', affiliateUrl: 'www.macys.com',),
     Store(
         storeName: "Walmart",
-        description:
+        shortDescription:
         "Walmart is a major grocery that markets products and services at walmart.com. Walmart competes with other top grocery such as Target, Costco and Sam's Club. Walmart sells mid-range purchase size items on its own website and partner sites in the extremely competitive online grocery industry.",  image:
-        "https://cdn.dealspotr.com/io-images/logo/walmartcom.jpg", totalCoupons: 10, category: 'Home & Garden'),
+        "https://cdn.dealspotr.com/io-images/logo/walmartcom.jpg", totalCoupons: 10, category: 'Home & Garden', longDescription: '', url: 'walmart.com', affiliateUrl: 'walmart.com'),
     Store(
         storeName: 'Brucemore',
-        description:
+        shortDescription:
         "Best Buy is a major household electronic parts brand that markets products and services at bestbuy.com. Best Buy competes with other top household electronic parts brands such as Newegg, Monoprice and Abt Electronics. Best Buy sells bigger ticket items or higher priced products or services in the extremely competitive online household electronic parts industry.", image:
-        "https://cdn.dealspotr.com/io-images/logo/bestbuycom.jpg",  totalCoupons: 28, category: 'Travel'),
+        "https://cdn.dealspotr.com/io-images/logo/bestbuycom.jpg",  totalCoupons: 28, category: 'Travel', longDescription: '', url: 'Brucemore.com',affiliateUrl: 'Brucemore.com'),
     Store(
         storeName: 'Best Buy',
-        description:
+        shortDescription:
         "Best Buy is a major household electronic parts brand that markets products and services at bestbuy.com. Best Buy competes with other top household electronic parts brands such as Newegg, Monoprice and Abt Electronics. Best Buy sells bigger ticket items or higher priced products or services in the extremely competitive online household electronic parts industry.",
         image:
-        "https://cdn.dealspotr.com/io-images/logo/bestbuycom.jpg", totalCoupons: 28, category: 'Electronic'),
+        "https://cdn.dealspotr.com/io-images/logo/bestbuycom.jpg", totalCoupons: 28, category: 'Electronic', longDescription: '', url: 'bestbuy.com',affiliateUrl: 'bestbuy.com'),
     Store(
         storeName: 'Walgreens',
-        description:
+        shortDescription:
         "Walgreens is a major medicine cabinet store that markets products and services at walgreens.com. Walgreens competes with other top pharmacy solutions such as Happy Mammoth, American Red Cross and Pharmaca. Walgreens sells mid-range purchase size items on its own website and partner sites in the extremely competitive online medicine cabinet industry.",
         image:
         "https://cdn.dealspotr.com/io-images/logo/walgreenscom.jpg",
-        totalCoupons: 28, category: 'Clothing & Fashion'),
+        totalCoupons: 28, category: 'Clothing & Fashion', longDescription: '', url: 'Walgreens.com', affiliateUrl: 'Walgreens.com',),
     //Store(storeName: storeName, description: description, image: image, totalCoupons: totalCoupons)
   ];
   static List<Coupon> coupons = [

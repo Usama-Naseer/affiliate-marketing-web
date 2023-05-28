@@ -1,8 +1,12 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
+import '../models/store_model.dart';
+
 class StoreDescription extends StatefulWidget {
-  const StoreDescription({Key? key}) : super(key: key);
+  const StoreDescription({required this.store,Key? key}) : super(key: key);
+  final Store store;
+
 
   @override
   State<StoreDescription> createState() => _StoreDescriptionState();
@@ -37,8 +41,8 @@ class _StoreDescriptionState extends State<StoreDescription> {
                           decoration: BoxDecoration(
                               border: Border.all(
                                   color: Colors.grey.withOpacity(0.5))),
-                          child: Image.asset(
-                            'assets/images/meow.png',
+                          child: Image.network(
+                            widget.store.image,
                             height: 60,
                           ),
                         ),
@@ -52,16 +56,16 @@ class _StoreDescriptionState extends State<StoreDescription> {
                             const SizedBox(
                               height: 5,
                             ),
-                            const Text(
-                              'Texas Roadhouse',
-                              style: TextStyle(
+                            Text(
+                              widget.store.storeName,
+                              style: const TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.w600),
                             ),
                             const SizedBox(
                               height: 5,
                             ),
                             Text(
-                              'texasroadhouse.com',
+                              widget.store.url,
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w400,

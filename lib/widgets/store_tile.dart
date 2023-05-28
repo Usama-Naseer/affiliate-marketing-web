@@ -89,7 +89,7 @@ class StoreTile extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    store.description,
+                    store.shortDescription,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(fontWeight: FontWeight.w600),

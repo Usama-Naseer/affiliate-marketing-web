@@ -1,4 +1,5 @@
 import 'package:discountandcodes/core/dummy.dart';
+import 'package:discountandcodes/widgets/footer.dart';
 import 'package:flutter/material.dart';
 import '../core/app_colors.dart';
 import '../models/store_model.dart';
@@ -23,139 +24,164 @@ class _AllStoresState extends State<AllStores> {
   List<Store> stores = DummyData.stores;
   @override
   Widget build(BuildContext context) {
-    stores = DummyData.stores.where((element) => element.category==cat).toList();
+    stores =
+        DummyData.stores.where((element) => element.category == cat).toList();
     return Scaffold(
-      backgroundColor: AppColors.greyWithShade.withOpacity(0.2),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
-          const Header(),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.1),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Find Coupons by Store',
-                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10),
-                        bottomLeft: Radius.circular(10),
-                        bottomRight: Radius.circular(10)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 2,
-                        offset:
-                            const Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                  child: DropdownButton<String>(
-                    dropdownColor: AppColors.whiteColor,
-                    autofocus: true,
-                    elevation: 20,
-                    underline: const SizedBox.shrink(),
-                    borderRadius: BorderRadius.circular(12),
-                    focusColor: Colors.white,
-                    items: categories.map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (val) {
-                      cat = val ?? '';
-                      stores= DummyData.stores.where((element) => element.category==cat).toList();
-                      setState(() {});
-                    },
-                    value: cat,
-                  ),
-                ),
-              ],
+      backgroundColor: AppColors.whiteColor,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 10,
             ),
-          ),
-          const SizedBox(height: 20),
-          Expanded(
-              child: Container(
-            margin: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.1),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.grey.withOpacity(0.2)),
+            const Header(),
+            const SizedBox(
+              height: 20,
             ),
-            child: GridView.count(
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.1),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Find Coupons by Store',
+                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 2,
+                          blurRadius: 2,
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: DropdownButton<String>(
+                      dropdownColor: AppColors.whiteColor,
+                      autofocus: true,
+                      elevation: 20,
+                      underline: const SizedBox.shrink(),
+                      borderRadius: BorderRadius.circular(12),
+                      focusColor: Colors.white,
+                      items: categories.map((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (val) {
+                        cat = val ?? '';
+                        stores = DummyData.stores
+                            .where((element) => element.category == cat)
+                            .toList();
+                        setState(() {});
+                      },
+                      value: cat,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            GridView.count(
               crossAxisCount: 3,
               mainAxisSpacing: 0,
-              childAspectRatio: 4,
+              childAspectRatio: 3,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.1),
               children: List.generate(
                 stores.length,
-                (index) => Container(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: Colors.grey.withOpacity(0.3))),
-                        child: Image.network(
-                          stores[index].image,
-                          height: 80,
-                          width: 120,
+                (index) => GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, '/store',arguments: stores[index].storeName);
+                  },
+                  child: Container(
+                    height: 100,
+                    margin: const EdgeInsets.only(right: 20, top: 20, bottom: 20),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      // border: Border.all(color: AppColors.greyColor.withOpacity(0.2)),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black.withOpacity(0.2),
+                            offset: const Offset(1, 1),
+                            blurRadius: 2,
+                            spreadRadius: 1)
+                      ],
+                      color: AppColors.whiteColor,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Colors.grey.withOpacity(0.2))),
+                          child: Image.network(
+                            stores[index].image,
+                            height: 80,
+                            width: 120,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            stores[index].storeName,
-                            style: const TextStyle(
-                                color: AppColors.blackColor,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            'Coupons, promo codes & deals',
-                            style: TextStyle(
-                                color: AppColors.blackColor.withOpacity(0.7),
-                                fontSize: 14),
-                          )
-                        ],
-                      ),
-                    ],
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              stores[index].storeName,
+                              style: const TextStyle(
+                                  color: AppColors.blackColor,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Coupons, promo codes & deals',
+                              style: TextStyle(
+                                  color: AppColors.blackColor.withOpacity(0.7),
+                                  fontSize: 14),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          )),
-        ],
+            const SizedBox(height: 20),
+            const Divider(
+              height: 1,
+              thickness: 1,
+            ),
+            const AppFooter(),
+          ],
+        ),
       ),
     );
   }
