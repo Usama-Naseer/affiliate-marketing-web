@@ -7,26 +7,26 @@ class StoreTile extends StatelessWidget {
   const StoreTile({required this.store, Key? key}) : super(key: key);
   final Store store;
 
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context,'/store',arguments: store.storeName);
+        Navigator.pushNamed(context, '/store', arguments: store.storeName);
       },
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.19,
-        width: MediaQuery.of(context).size.width * 0.18,
-        margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10),
+        height: MediaQuery.of(context).size.height * 0.24,
+        width: MediaQuery.of(context).size.width * 0.188,
+        margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10,left: 2),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: AppColors.whiteColor,
             boxShadow: [
               BoxShadow(
-                  offset: const Offset(2, 2),
-                  blurRadius: 4,
-                  spreadRadius: 1,
-                  color: AppColors.blackColor.withOpacity(0.2))
+                color: Colors.grey.withOpacity(0.4),
+                blurRadius: 2,
+                spreadRadius: 0.5,
+                offset: const Offset(0, 0), // changes position of shadow
+              ),
             ]),
         child: Column(
           children: [
@@ -41,7 +41,15 @@ class StoreTile extends StatelessWidget {
               //   'assets/images/meow.png',
               //   height: 200,
               // ),
-              child: Image.network(store.image,fit:BoxFit.fill ,),
+              child: Image.network(
+                store.image,
+                fit: BoxFit.fill,
+              ),
+            ),
+            Divider(
+              height: 1,
+              thickness: 1,
+              color: Colors.grey.withOpacity(0.2),
             ),
             const SizedBox(
               height: 20,
@@ -61,15 +69,16 @@ class StoreTile extends StatelessWidget {
                             color: AppColors.greyColor),
                       ),
                       Container(
-                        height: 10,
-                        width: 10,
+                        height: 12,
+                        width: 12,
+                        margin: const EdgeInsets.only(left: 5),
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: AppColors.greenColor,
                         ),
                         child: const Icon(
                           Icons.check,
-                          size: 8,
+                          size: 10,
                           color: AppColors.whiteColor,
                         ),
                       ),

@@ -55,7 +55,7 @@ class _AllStoresState extends State<AllStores> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: AppColors.whiteColor,
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10),
@@ -63,11 +63,10 @@ class _AllStoresState extends State<AllStores> {
                           bottomRight: Radius.circular(10)),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 2,
-                          offset:
-                              const Offset(0, 3), // changes position of shadow
+                          color: Colors.grey.withOpacity(0.4),
+                          blurRadius: 1,
+                          spreadRadius: 1,
+                          offset: const Offset(0, 0), // changes position of shadow
                         ),
                       ],
                     ),
@@ -77,11 +76,13 @@ class _AllStoresState extends State<AllStores> {
                       elevation: 20,
                       underline: const SizedBox.shrink(),
                       borderRadius: BorderRadius.circular(12),
-                      focusColor: Colors.white,
                       items: categories.map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
-                          child: Text(value),
+
+                          child: Container(
+                            child: Text(value),
+                          )
                         );
                       }).toList(),
                       onChanged: (val) {

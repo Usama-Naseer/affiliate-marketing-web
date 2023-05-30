@@ -13,17 +13,18 @@ class CouponGridView extends StatelessWidget {
       child: GridView.count(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.1),
         crossAxisCount: 4,
-
         children: List.generate(
           coupons.length,
           (index) => GestureDetector(
             onTap: () {
-              showCouponCodePopUp(context,coupons[index]);
+              showCouponCodePopUp(context, coupons[index]);
             },
             child: Container(
-              margin: const EdgeInsets.only(top: 20,bottom: 20,right: 20,left: 20),
+              margin: const EdgeInsets.only(
+                  top: 20, bottom: 20, right: 20, left: 20),
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
               decoration: BoxDecoration(
                   color: AppColors.whiteColor,
@@ -45,7 +46,7 @@ class CouponGridView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                           Text(
+                          Text(
                             coupons[index].title,
                             style: const TextStyle(
                                 fontWeight: FontWeight.w600, fontSize: 18),
@@ -80,8 +81,9 @@ class CouponGridView extends StatelessWidget {
                             text: '${coupons[index].storeName} coupon code ',
                             style: const TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w600)),
-                         TextSpan(
-                            text:coupons[index].description,)
+                        TextSpan(
+                          text: coupons[index].description,
+                        )
                       ]))
                     ],
                   ),
@@ -105,7 +107,7 @@ class CouponGridView extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                             Text(coupons[index].code,
+                            Text(coupons[index].code,
                                 style: const TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.w600)),
                             const SizedBox(

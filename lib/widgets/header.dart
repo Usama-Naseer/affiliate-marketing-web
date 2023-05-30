@@ -22,7 +22,7 @@ class _HeaderState extends State<Header> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset(
@@ -30,54 +30,36 @@ class _HeaderState extends State<Header> {
                 height: 60,
                 width: 200,
               ),
-              const SizedBox(
-                width: 30,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: SearchBarAnimation(
-                  textEditingController: TextEditingController(),
-                  searchBoxWidth: MediaQuery.of(context).size.width * 0.5,
-                  isOriginalAnimation: true,
-                  enableKeyboardFocus: true,
-                  onExpansionComplete: () {
-                    debugPrint('do something just after searchbox is opened.');
-                  },
-                  onCollapseComplete: () {
-                    debugPrint('do something just after searchbox is closed.');
-                  },
-                  onPressButton: (isSearchBarOpens) {
-                    debugPrint(
-                        'do something before animation started. It\'s the ${isSearchBarOpens ? 'opening' : 'closing'} animation');
-                  },
-                  trailingWidget: const Icon(
-                    Icons.search,
-                    size: 20,
-                    color: Colors.black,
-                  ),
-                  secondaryButtonWidget: const Icon(
-                    Icons.close,
-                    size: 20,
-                    color: Colors.black,
-                  ),
-                  buttonWidget: const Icon(
-                    Icons.search,
-                    size: 20,
-                    color: Colors.black,
-                  ),
+
+              Container(
+                width: MediaQuery.of(context).size.width * 0.35,
+                alignment: Alignment.center,
+                child: TextField(
+                  decoration: InputDecoration(
+                      hintText: 'Search stores and deals',
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: const BorderSide(color: AppColors.greyColor)),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          borderSide: const BorderSide(color: AppColors.greyColor)),
+                      suffixIcon: Container(
+                        height: 35,
+                        width: 35,
+                        margin: const EdgeInsets.only(right: 5,bottom: 5,top: 5),
+                        padding: const EdgeInsets.all(5),
+                        decoration:  BoxDecoration(
+                            shape: BoxShape.circle, color: AppColors.greenColor.withOpacity(0.8)),
+                        child: const Center(
+                          child: Icon(
+                            Icons.search_rounded,
+                            color: AppColors.whiteColor,
+                          ),
+                        ),
+                      )),
                 ),
               ),
-              // AnimSearchBar(
-              //   width: MediaQuery.of(context).size.width*0.3,
-              //   prefixIcon: Icon(Icons.add),
-              //   textController: controller,
-              //   onSuffixTap: () {
-              //     setState(() {
-              //       controller.clear();
-              //     });
-              //   }, onSubmitted: (String ) {  },
-              // ),
-              const Spacer(),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -127,13 +109,13 @@ class _HeaderState extends State<Header> {
             ],
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           const Divider(
             height: 1,
             thickness: 1,
           ),
-          const SizedBox(height: 10,),
+          const SizedBox(height: 30,),
         ],
       ),
     );

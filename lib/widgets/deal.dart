@@ -13,17 +13,18 @@ class HomeDeal extends StatelessWidget {
       type: MaterialType.transparency,
       child: Container(
         height: MediaQuery.of(context).size.height * 0.1,
-        width: MediaQuery.of(context).size.width * 0.13,
-        margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10),
+        width: MediaQuery.of(context).size.width * 0.14,
+        margin: const EdgeInsets.only(right: 25, bottom: 10, top: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                  offset: const Offset(2, 2),
-                  blurRadius: 3,
-                  spreadRadius: 1,
-                  color: AppColors.blackColor.withOpacity(0.2))
+                color: Colors.grey.withOpacity(0.4),
+                blurRadius: 2,
+                spreadRadius: 0.5,
+                offset: const Offset(0, 0),
+              )
             ]),
         child: Column(
           children: [
@@ -62,13 +63,21 @@ class HomeDeal extends StatelessWidget {
                         fontWeight: FontWeight.w300,
                         color: AppColors.blackColor),
                   ),
-                  // const Text(
-                  //   'Visit the store now',
-                  //   style: TextStyle(
-                  //       fontWeight: FontWeight.w400,
-                  //       color: AppColors.blueColor,
-                  //       decoration: TextDecoration.underline),
-                  // ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '/store',arguments: coupon.storeName);
+                    },
+                    child: Text(
+                      'More ${coupon.storeName} coupons',
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.blackColor,
+                          decoration: TextDecoration.underline,decorationColor: AppColors.blackColor),
+                    ),
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -91,6 +100,7 @@ class HomeDeal extends StatelessWidget {
                       const SizedBox(
                         width: 5,
                       ),
+
                       const SizedBox(height: 20,),
                       const Text(
                         'Verified',
