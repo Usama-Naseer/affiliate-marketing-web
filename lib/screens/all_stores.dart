@@ -80,9 +80,7 @@ class _AllStoresState extends State<AllStores> {
                         return DropdownMenuItem<String>(
                           value: value,
 
-                          child: Container(
-                            child: Text(value),
-                          )
+                          child: Text(value)
                         );
                       }).toList(),
                       onChanged: (val) {

@@ -24,7 +24,7 @@ class CouponGridView extends StatelessWidget {
             },
             child: Container(
               margin: const EdgeInsets.only(
-                  top: 20, bottom: 20, right: 20, left: 20),
+                  top: 20, bottom: 20, right: 20, left: 4),
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
               decoration: BoxDecoration(
                   color: AppColors.whiteColor,
@@ -79,10 +79,11 @@ class CouponGridView extends StatelessWidget {
                           text: TextSpan(children: [
                         TextSpan(
                             text: '${coupons[index].storeName} coupon code ',
-                            style: const TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600)),
+                            style:TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.8))),
                         TextSpan(
                           text: coupons[index].description,
+                           style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400,color: Colors.black)
                         )
                       ]))
                     ],

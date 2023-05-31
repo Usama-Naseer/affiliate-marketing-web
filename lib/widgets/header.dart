@@ -98,6 +98,7 @@ class _HeaderState extends State<Header> {
                           fontWeight: FontWeight.w500,
                           color: AppColors.blackColor,
                           fontSize: 18),
+
                     ),
                   ),
                   const SizedBox(width: 20,),
@@ -105,7 +106,6 @@ class _HeaderState extends State<Header> {
               )
             ],
           ),
-
         ],
       ),
     );
