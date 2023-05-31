@@ -1,9 +1,6 @@
 import 'package:discountandcodes/core/app_colors.dart';
-import 'package:discountandcodes/screens/all_stores.dart';
 import 'package:discountandcodes/screens/blogs_page.dart';
 import 'package:flutter/material.dart';
-import 'package:searchbar_animation/searchbar_animation.dart';
-
 class Header extends StatefulWidget {
   const Header({Key? key}) : super(key: key);
 
@@ -37,20 +34,20 @@ class _HeaderState extends State<Header> {
                 child: TextField(
                   decoration: InputDecoration(
                       hintText: 'Search stores and deals',
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: const BorderSide(color: AppColors.greyColor)),
+                          borderRadius: BorderRadius.circular(24),
+                          borderSide: BorderSide(color: AppColors.greyColor.withOpacity(0.3))),
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: const BorderSide(color: AppColors.greyColor)),
+                          borderRadius: BorderRadius.circular(24),
+                          borderSide: BorderSide(color: AppColors.greyColor.withOpacity(0.3))),
                       suffixIcon: Container(
                         height: 35,
                         width: 35,
                         margin: const EdgeInsets.only(right: 5,bottom: 5,top: 5),
                         padding: const EdgeInsets.all(5),
-                        decoration:  BoxDecoration(
-                            shape: BoxShape.circle, color: AppColors.greenColor.withOpacity(0.8)),
+                        decoration:  const BoxDecoration(
+                            shape: BoxShape.circle, color: Color(0xff00da24)),
                         child: const Center(
                           child: Icon(
                             Icons.search_rounded,
@@ -67,7 +64,7 @@ class _HeaderState extends State<Header> {
                     'Coupons',
                     style: TextStyle(
                         fontWeight: FontWeight.w500,
-                        color: AppColors.blueColor,
+                        color: AppColors.blackColor,
                         fontSize: 18),
                   ),
                   const SizedBox(
@@ -81,7 +78,7 @@ class _HeaderState extends State<Header> {
                       'Stores',
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          color: AppColors.blueColor,
+                          color: AppColors.blackColor,
                           fontSize: 18),
                     ),
                   ),
@@ -99,7 +96,7 @@ class _HeaderState extends State<Header> {
                       'Blogs',
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          color: AppColors.blueColor,
+                          color: AppColors.blackColor,
                           fontSize: 18),
                     ),
                   ),
@@ -108,14 +105,7 @@ class _HeaderState extends State<Header> {
               )
             ],
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Divider(
-            height: 1,
-            thickness: 1,
-          ),
-          const SizedBox(height: 30,),
+
         ],
       ),
     );

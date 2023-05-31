@@ -2,7 +2,7 @@ import 'package:discountandcodes/models/coupon_model.dart';
 import 'package:flutter/material.dart';
 import '../core/app_colors.dart';
 import 'code_pop_up.dart';
-
+Color myHexColor = const Color(0xff2b2b2b);
 class HomeDeal extends StatelessWidget {
   const HomeDeal({required this.coupon, Key? key}) : super(key: key);
   final Coupon coupon;
@@ -12,19 +12,18 @@ class HomeDeal extends StatelessWidget {
     return Material(
       type: MaterialType.transparency,
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.1,
+        height: MediaQuery.of(context).size.height * 0.2,
         width: MediaQuery.of(context).size.width * 0.14,
-        margin: const EdgeInsets.only(right: 25, bottom: 10, top: 10),
+        margin: const EdgeInsets.only(right: 15, left: 15, bottom: 10, top: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.4),
-                blurRadius: 2,
-                spreadRadius: 0.5,
-                offset: const Offset(0, 0),
-              )
+                color: myHexColor.withOpacity(0.1),
+                blurRadius: 10.0,
+                offset: const Offset(2.0, 2.0),
+              ),
             ]),
         child: Column(
           children: [
@@ -119,7 +118,7 @@ class HomeDeal extends StatelessWidget {
                       height: 30,
                       width: 150,
                       padding: const EdgeInsets.symmetric(horizontal: 5),
-                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      margin: const EdgeInsets.only(top: 10.0, right: 20.0, bottom: 10.0, left: 20.0),
                       decoration: BoxDecoration(
                         color: AppColors.greenColor,
                         borderRadius: BorderRadius.circular(8),

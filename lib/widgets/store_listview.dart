@@ -20,22 +20,22 @@ class StoreListView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Trending Stores',
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 25,
                     fontWeight: FontWeight.w600,
-                    color: AppColors.blackColor.withOpacity(0.8)),
+                    color: AppColors.blackColor),
               ),
               GestureDetector(
                 onTap: (){
                   Navigator.pushNamed(context, '/allStores');
                 },
                 child: Container(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.only(top: 10.0, right: 20.0, bottom: 10.0, left: 20.0),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      border:Border.all(color: Colors.black.withOpacity(0.5),width: 1.2)
+                      borderRadius: BorderRadius.circular(8),
+                      border:Border.all(color: Colors.black,style: BorderStyle.solid,width: 0.7)
                   ),
                   child: const Text(
                     'Explore all',

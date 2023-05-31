@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../core/app_colors.dart';
 import '../models/store_model.dart';
-import '../screens/store_page.dart';
 
 class StoreTile extends StatelessWidget {
   const StoreTile({required this.store, Key? key}) : super(key: key);
@@ -22,10 +21,9 @@ class StoreTile extends StatelessWidget {
             color: AppColors.whiteColor,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.4),
-                blurRadius: 2,
-                spreadRadius: 0.5,
-                offset: const Offset(0, 0), // changes position of shadow
+                color: const Color(0xff2b2b2b).withOpacity(0.1),
+                blurRadius: 10.0,
+                offset: const Offset(2.0, 2.0),
               ),
             ]),
         child: Column(
@@ -101,7 +99,7 @@ class StoreTile extends StatelessWidget {
                     store.shortDescription,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
+                    style: const TextStyle(fontSize:16, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),

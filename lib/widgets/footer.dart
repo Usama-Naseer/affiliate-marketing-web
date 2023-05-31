@@ -8,8 +8,7 @@ class AppFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      height: MediaQuery.of(context).size.height * 0.4,
-      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 30),
       // margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
@@ -19,7 +18,28 @@ class AppFooter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children:  [
+              Image.asset(
+                'assets/images/logo.png',
+                height: 50,
+                width: 200,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.3,
+                child: const Expanded(
+                  child: Text(
+                    "Discount&Codes finds coupon codes, discount sales and promotions for e-commerce stores listed in our store directory. While promo codes are time-sensitive and may expire, we have human editors verify discount codes at retailer websites to ensure they work at the time of test.To redeem a promo code for a discount, simply copy the code to your clipboard, then paste it into the coupon code entry box during checkout on the retailer's website. Look for a confirmation mes entry box during checkout on the retailer's website. Look for a confirmation",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w100,
+                        fontSize: 15,
+                        color: Colors.black),
+                  ),
+                ),
+              ),]),
+              Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children:  [
               const SizedBox(
                 width: 10,
               ),
@@ -36,7 +56,7 @@ class AppFooter extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
 
               const SizedBox(
@@ -72,6 +92,7 @@ class AppFooter extends StatelessWidget {
             ],
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               Text(
                 'Connect',
@@ -121,6 +142,7 @@ class AppFooter extends StatelessWidget {
             ],
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               Text(
                 'Connect',
@@ -169,18 +191,7 @@ class AppFooter extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.3,
-            child: const Expanded(
-              child: Text(
-                "Discount&Codes finds coupon codes, discount sales and promotions for e-commerce stores listed in our store directory. While promo codes are time-sensitive and may expire, we have human editors verify discount codes at retailer websites to ensure they work at the time of test.To redeem a promo code for a discount, simply copy the code to your clipboard, then paste it into the coupon code entry box during checkout on the retailer's website. Look for a confirmation mes entry box during checkout on the retailer's website. Look for a confirmation",
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 16,
-                    color: Colors.grey),
-              ),
-            ),
-          )
+
         ],
       ),
     );

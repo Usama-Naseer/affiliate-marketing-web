@@ -16,12 +16,12 @@ class CouponsListView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Coupons',
+          const Text(
+            '    Coupons',
             style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
-                color: AppColors.blackColor.withOpacity(0.8)),
+                color: AppColors.blackColor),
           ),
           const SizedBox(height: 15,),
           SizedBox(

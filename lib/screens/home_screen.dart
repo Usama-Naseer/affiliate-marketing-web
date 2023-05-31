@@ -27,6 +27,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 10,
               ),
               Header(),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                height: 1,
+                thickness: 1,
+              ),
+              SizedBox(height: 30,),
               StoreListView(),
               // SizedBox(
               //   height: 15,
@@ -37,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Divider(
                 height: 1,
-                thickness: 1,
+                thickness: 0.5,
               ),
               AppFooter(),
             ],
