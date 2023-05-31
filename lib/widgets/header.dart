@@ -66,9 +66,9 @@ class _HeaderState extends State<Header> {
                   const Text(
                     'Coupons',
                     style: TextStyle(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w400,
                         color: AppColors.blueColor,
-                        fontSize: 18),
+                        fontSize: 17),
                   ),
                   const SizedBox(
                     width: 10,
@@ -80,9 +80,9 @@ class _HeaderState extends State<Header> {
                     child: const Text(
                       'Stores',
                       style: TextStyle(
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w400,
                           color: AppColors.blueColor,
-                          fontSize: 18),
+                          fontSize: 17),
                     ),
                   ),
                   const SizedBox(
@@ -98,9 +98,9 @@ class _HeaderState extends State<Header> {
                     child: const Text(
                       'Blogs',
                       style: TextStyle(
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w400,
                           color: AppColors.blueColor,
-                          fontSize: 18),
+                          fontSize: 17),
                     ),
                   ),
                   const SizedBox(width: 20,),

@@ -1,5 +1,6 @@
 import 'package:discountandcodes/screens/all_stores.dart';
 import 'package:discountandcodes/screens/home_screen.dart';
+import 'package:discountandcodes/screens/privacy_policy.dart';
 import 'package:discountandcodes/screens/store_page.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           '/':(context)=> const HomeScreen(),
           '/allStores':(context)=> const AllStores(),
           '/store':(context)=> const StorePage(),
+          '/privacyPolicy':(context)=> const PrivacyPolicy()
         },
       initialRoute: '/',
 

@@ -28,16 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Header(),
               StoreListView(),
-              // SizedBox(
-              //   height: 15,
-              // ),
+
               CouponsListView(),
               SizedBox(
                 height: 50,
               ),
               Divider(
-                height: 1,
-                thickness: 1,
+                height: 0.4,
+                thickness: 0.4,
               ),
               AppFooter(),
             ],

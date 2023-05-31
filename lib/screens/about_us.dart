@@ -26,7 +26,10 @@ class _TermsState extends State<Terms> {
                 height: 10,
               ),
               Header(),
-              Divider(),
+              Divider(
+                height: 0.4,
+                thickness: 0.4,
+              ),
               TermsConditions(),
               AppFooter(),
             ],

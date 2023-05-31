@@ -4,14 +4,14 @@ import 'package:discountandcodes/widgets/header.dart';
 import 'package:discountandcodes/widgets/terms_conditions.dart';
 import 'package:flutter/material.dart';
 
-class Terms extends StatefulWidget {
-  const Terms({Key? key}) : super(key: key);
+class PrivacyPolicy extends StatefulWidget {
+  const PrivacyPolicy({Key? key}) : super(key: key);
 
   @override
-  State<Terms> createState() => _TermsState();
+  State<PrivacyPolicy> createState() => _PrivacyPolicyState();
 }
 
-class _TermsState extends State<Terms> {
+class _PrivacyPolicyState extends State<PrivacyPolicy> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,8 +26,9 @@ class _TermsState extends State<Terms> {
                 height: 10,
               ),
               Header(),
-              Divider(),
-              TermsConditions(),
+              Divider(height: 0.4,
+                thickness: 0.4,),
+                Text("At Discount&Codes, we value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and disclose your personal data when you visit our affiliate marketing website."),
               AppFooter(),
             ],
           ),

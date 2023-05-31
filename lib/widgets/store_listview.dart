@@ -53,6 +53,7 @@ class StoreListView extends StatelessWidget {
             height: 300,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
+              physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => StoreTile(
                 store: DummyData.stores[index],
               ),
