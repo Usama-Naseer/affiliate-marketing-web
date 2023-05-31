@@ -112,8 +112,8 @@ class _HeaderState extends State<Header> {
             height: 20,
           ),
           const Divider(
-            height: 1,
-            thickness: 1,
+            height: 0.4,
+            thickness: 0.4,
           ),
           const SizedBox(height: 30,),
         ],
