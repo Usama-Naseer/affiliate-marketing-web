@@ -15,7 +15,7 @@ class AppFooter extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12), color: Colors.white),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
@@ -31,7 +31,7 @@ class AppFooter extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Terms()));
                 },
                 child: const Text(
-                  'Terms Of Use',
+                  'Contact us',
                   style: TextStyle(
                       fontWeight: FontWeight.w300,
                       color: AppColors.blackColor,
@@ -56,12 +56,17 @@ class AppFooter extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                'Contact us',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 14,
-                    color: Colors.grey),
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, '/terms');
+                },
+                child: const Text(
+                  'Terms Of Use',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w300,
+                      fontSize: 14,
+                      color: Colors.grey),
+                ),
               ),
               const SizedBox(
                 height: 10,
@@ -176,7 +181,7 @@ class AppFooter extends StatelessWidget {
                     color: Colors.grey),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
