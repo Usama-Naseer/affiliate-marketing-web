@@ -7,10 +7,10 @@ class AppFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.35,
-      padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width * 0.1, vertical: 50),
+
+    return  Container(
+      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 30),
+
       // margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12), color: Colors.white),
