@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/core/dummy.dart';
 import 'package:discountandcodes/widgets/coupon_grid_view.dart';
@@ -23,7 +21,7 @@ class _StorePageState extends State<StorePage> {
 
   @override
   Widget build(BuildContext context) {
-    storeName= ModalRoute.of(context)?.settings.arguments as String??'';
+    storeName= ModalRoute.of(context)?.settings.arguments as String;
 
     return Scaffold(
       backgroundColor: AppColors.whiteColor,

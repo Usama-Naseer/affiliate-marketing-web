@@ -171,11 +171,6 @@ class _AllStoresState extends State<AllStores> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
-            const Divider(
-              height: 1,
-              thickness: 1,
-            ),
             const AppFooter(),
           ],
         ),
