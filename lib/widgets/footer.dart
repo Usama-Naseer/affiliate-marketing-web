@@ -58,8 +58,20 @@ class AppFooter extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 10,
+                          height: 10,
               ),
+      GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, '/privacyPolicy');
+        },
+        child: const Text(
+          'Privacy policy',
+          style: TextStyle(
+              fontWeight: FontWeight.w300,
+              fontSize: 14,
+              color: Colors.grey),
+        ),
+      ),
               const SizedBox(
                 height: 10,
               ),

@@ -91,9 +91,9 @@ class _StoreDescriptionState extends State<StoreDescription> {
                       height: 10,
                     ),
                     Text(
-                      "Texas Roadhouse is a major casual dining store that markets products and services at texasroadhouse.com. Texas Roadhouse competes with other top casual dining stores such as Buffalo Wild Wings, Panera Bread and Casey's. Texas Roadhouse sells mid-range purchase size items on its own website and partner sites in the highly competitive online casual dining industry.\n\nWhen it comes to offering discount codes, Texas Roadhouse very rarely issues promotional discount codes. Texas Roadhouse is among the most sought-after brands when it comes to coupons and discount offers, with hundreds of thousands of searches for coupons each month, offset against its relatively low volume of coupons issued.",
-                      style:
-                      TextStyle(fontSize: 12, fontWeight: FontWeight.w300,color: Colors.black.withOpacity(0.9)),
+                        widget.store.shortDescription,
+                         style:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.w300,color: Colors.black.withOpacity(0.9)),
                     )
                   ],
                 ),
