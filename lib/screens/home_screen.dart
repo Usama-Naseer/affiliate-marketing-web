@@ -34,7 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 1,
                 thickness: 1,
               ),
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               StoreListView(),
 
               CouponsListView(),

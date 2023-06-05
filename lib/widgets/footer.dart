@@ -9,13 +9,13 @@ class AppFooter extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return  Container(
-      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
 
       // margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12), color: Colors.white),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
@@ -50,7 +50,7 @@ class AppFooter extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Terms()));
                 },
                 child: const Text(
-                  'Terms Of Use',
+                  'Contact us',
                   style: TextStyle(
                       fontWeight: FontWeight.w300,
                       color: AppColors.blackColor,
@@ -75,12 +75,17 @@ class AppFooter extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                'Contact us',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 14,
-                    color: Colors.grey),
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, '/terms');
+                },
+                child: const Text(
+                  'Terms Of Use',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w300,
+                      fontSize: 14,
+                      color: Colors.grey),
+                ),
               ),
               const SizedBox(
                 height: 10,
@@ -182,6 +187,7 @@ class AppFooter extends StatelessWidget {
               ),
             ],
           ),
+
         ],
       ),
     );
