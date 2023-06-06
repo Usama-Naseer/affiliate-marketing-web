@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../core/app_colors.dart';
 import '../models/store_model.dart';
 
@@ -61,10 +62,9 @@ class StoreTile extends StatelessWidget {
                     children: [
                       Text(
                         store.storeName,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: AppColors.greyColor),
+                        style: GoogleFonts.lato(
+                          textStyle: const TextStyle(
+                              fontSize:15, fontWeight: FontWeight.w600),),
                       ),
                       Container(
                         height: 12,
@@ -99,8 +99,11 @@ class StoreTile extends StatelessWidget {
                     store.shortDescription,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize:16, fontWeight: FontWeight.w600),
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                    fontSize:16, fontWeight: FontWeight.w500),),
                   ),
+
                 ],
               ),
             )

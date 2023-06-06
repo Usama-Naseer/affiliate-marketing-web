@@ -1,6 +1,7 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/screens/blogs_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 class Header extends StatefulWidget {
   const Header({Key? key}) : super(key: key);
 
@@ -60,12 +61,11 @@ class _HeaderState extends State<Header> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text(
+                   Text(
                     'Coupons',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.blackColor,
-                        fontSize: 18),
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize:18, fontWeight: FontWeight.w500),),
                   ),
                   const SizedBox(
                     width: 10,
@@ -74,12 +74,11 @@ class _HeaderState extends State<Header> {
                     onTap: () {
                       Navigator.pushNamed(context,'/allStores');
                     },
-                    child: const Text(
+                    child: Text(
                       'Stores',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.blackColor,
-                          fontSize: 18),
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                            fontSize:18, fontWeight: FontWeight.w500),),
                     ),
                   ),
                   const SizedBox(
@@ -92,12 +91,11 @@ class _HeaderState extends State<Header> {
                           MaterialPageRoute(
                               builder: (context) => const BlogsPage()));
                     },
-                    child: const Text(
+                    child: Text(
                       'Blogs',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.blackColor,
-                          fontSize: 18),
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                            fontSize:18, fontWeight: FontWeight.w500),),
 
                     ),
                   ),

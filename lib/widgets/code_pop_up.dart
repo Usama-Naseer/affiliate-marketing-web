@@ -1,6 +1,7 @@
 import 'package:discountandcodes/models/coupon_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../core/app_colors.dart';
 
@@ -27,26 +28,25 @@ showCouponCodePopUp(context, Coupon coupon) {
                     height: 20,
                   ),
                   Container(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                         border: Border.all(
                             color: AppColors.greyColor.withOpacity(0.2))),
                     child: Image.network(
                       coupon.image,
-                      height: 50,
-                      width: 80,
+                      height: 30,
+                      width: 120,
                     ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  const Material(
+                   Material(
                     child: Text(
                       '10% Off Storewide at Klassy Network',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
-                          color: Colors.black),
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                            fontSize:20, fontWeight: FontWeight.w700),),
                     ),
                   ),
                   const SizedBox(
@@ -64,10 +64,9 @@ showCouponCodePopUp(context, Coupon coupon) {
                       child: Material(
                         child: Text(
                           coupon.code,
-                          style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w900,
-                              color: AppColors.blackColor),
+                          style: GoogleFonts.lato(
+                            textStyle: const TextStyle(
+                                fontSize:15, fontWeight: FontWeight.w700),),
                         ),
                       ),
                     ),
@@ -126,11 +125,9 @@ showCouponCodePopUp(context, Coupon coupon) {
                             color: Colors.transparent,
                             child: Text(
                               'Continue at ${coupon.storeName} ',
-                              style: const TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.whiteColor,
-                              ),
+                              style: GoogleFonts.lato(
+                                textStyle: const TextStyle(
+                                    fontSize:17, fontWeight: FontWeight.w400, color: Colors.white),),
                             ),
                           ),
                           const Icon(
@@ -152,18 +149,16 @@ showCouponCodePopUp(context, Coupon coupon) {
                               textAlign: TextAlign.center,
                               text: TextSpan(
                                   text: 'Copy the code, then go to ',
-                                  style: const TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                      color: AppColors.blackColor),
+                                  style: GoogleFonts.lato(
+                                    textStyle: const TextStyle(
+                                        fontSize:14, fontWeight: FontWeight.w400),),
                                   children: [
                                     TextSpan(
                                         text: '${coupon.storeName} ',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w600,
-                                            color: AppColors.blueColor
-                                                .withOpacity(0.7))),
+                                      style: GoogleFonts.lato(
+                                        textStyle: const TextStyle(
+                                            fontSize:14, fontWeight: FontWeight.w400),),
+                                    ),
                                     const TextSpan(
                                         text:
                                             'and paste it in during checkout.Your savings will be applied ',

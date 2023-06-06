@@ -1,6 +1,6 @@
 import 'package:discountandcodes/screens/terms_of_use.dart';
 import 'package:flutter/material.dart';
-import 'package:discountandcodes/core/app_colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppFooter extends StatelessWidget {
   const AppFooter({Key? key}) : super(key: key);
@@ -18,6 +18,24 @@ class AppFooter extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // const SizedBox(
+          //   width: 100,
+          // ),
+          // const Icon(
+          //   FontAwesomeIcons.instagram,
+          //   size: 20,
+          // ),
+          //
+          // const Icon(
+          //   FontAwesomeIcons.facebookMessenger,
+          //   size: 20,
+          // ),
+          //
+          // const Icon(
+          //   FontAwesomeIcons.whatsapp,
+          //   size: 20,
+          // ),
+
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children:  [
@@ -28,13 +46,12 @@ class AppFooter extends StatelessWidget {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                child: const Expanded(
+                child:  Expanded(
                   child: Text(
                     "Discount&Codes finds coupon codes, discount sales and promotions for e-commerce stores listed in our store directory. While promo codes are time-sensitive and may expire, we have human editors verify discount codes at retailer websites to ensure they work at the time of test.To redeem a promo code for a discount, simply copy the code to your clipboard, then paste it into the coupon code entry box during checkout on the retailer's website. Look for a confirmation mes entry box during checkout on the retailer's website. Look for a confirmation",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w100,
-                        fontSize: 15,
-                        color: Colors.black),
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize:14, fontWeight: FontWeight.w500),),
                   ),
                 ),
               ),]),
@@ -49,12 +66,11 @@ class AppFooter extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const Terms()));
                 },
-                child: const Text(
+                child:  Text(
                   'Contact us',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      color: AppColors.blackColor,
-                      fontSize: 14),
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        fontSize:15, fontWeight: FontWeight.w400),),
                 ),
               ),
               const SizedBox(
@@ -64,12 +80,11 @@ class AppFooter extends StatelessWidget {
         onTap: () {
           Navigator.pushNamed(context, '/privacyPolicy');
         },
-        child: const Text(
+        child:  Text(
           'Privacy policy',
-          style: TextStyle(
-              fontWeight: FontWeight.w300,
-              fontSize: 14,
-              color: Colors.grey),
+          style: GoogleFonts.lato(
+            textStyle: const TextStyle(
+                fontSize:15, fontWeight: FontWeight.w400),),
         ),
       ),
               const SizedBox(
@@ -79,111 +94,106 @@ class AppFooter extends StatelessWidget {
                 onTap: (){
                   Navigator.pushNamed(context, '/terms');
                 },
-                child: const Text(
+                child:  Text(
                   'Terms Of Use',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                      color: Colors.grey),
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        fontSize:15, fontWeight: FontWeight.w400),),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
-              const Text(
+               Text(
                 'Scholarship',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 14,
-                    color: Colors.grey),
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize:15, fontWeight: FontWeight.w400),),
               ),
               const SizedBox(
                 height: 10,
               ),
-              const Text(
+               Text(
                 'Influenced marketing',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 14,
-                    color: Colors.grey),
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize:15, fontWeight: FontWeight.w400),),
               ),
             ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children:  [
               Text(
                 'Connect',
-                style: TextStyle(fontWeight: FontWeight.w300, fontSize: 16),
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize:15, fontWeight: FontWeight.w400),),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
                 'Facebook',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 14,
-                    color: Colors.grey),
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize:15, fontWeight: FontWeight.w400),),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
                 'Twitter',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 14,
-                    color: Colors.grey),
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize:15, fontWeight: FontWeight.w400),),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
                 'Instagram',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 14,
-                    color: Colors.grey),
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize:15, fontWeight: FontWeight.w400),),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
                 'LinkedIn',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 14,
-                    color: Colors.grey),
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize:15, fontWeight: FontWeight.w400),),
               ),
             ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children:  [
               Text(
                 'Shop coupons',
-                style: TextStyle(fontWeight: FontWeight.w300, fontSize: 16),
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize:15, fontWeight: FontWeight.w400),),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
                 'Shop Deals',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 14,
-                    color: Colors.grey),
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize:15, fontWeight: FontWeight.w400),),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
                 'Stores by Category',
-                style: TextStyle(
-                    fontWeight: FontWeight.w300,
-                    fontSize: 14,
-                    color: Colors.grey),
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize:15, fontWeight: FontWeight.w400),),
               ),
             ],
           ),

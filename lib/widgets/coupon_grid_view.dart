@@ -1,6 +1,7 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/widgets/code_pop_up.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../models/coupon_model.dart';
 
 class CouponGridView extends StatelessWidget {
@@ -48,8 +49,9 @@ class CouponGridView extends StatelessWidget {
                         children: [
                           Text(
                             coupons[index].title,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.w600, fontSize: 18),
+                            style: GoogleFonts.lato(
+                              textStyle: const TextStyle(
+                                  fontSize:18, fontWeight: FontWeight.w600),),
                           ),
                           Container(
                             padding: const EdgeInsets.symmetric(
@@ -79,11 +81,15 @@ class CouponGridView extends StatelessWidget {
                           text: TextSpan(children: [
                         TextSpan(
                             text: '${coupons[index].storeName} coupon code ',
-                            style:TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w600,color: Colors.black.withOpacity(0.8))),
+                          style: GoogleFonts.lato(
+                            textStyle: const TextStyle(
+                                fontSize:15, fontWeight: FontWeight.w600),),
+                        ),
                         TextSpan(
                           text: coupons[index].description,
-                           style: const TextStyle(fontSize: 13,fontWeight: FontWeight.w400,color: Colors.black)
+                          style: GoogleFonts.lato(
+                            textStyle: const TextStyle(
+                                fontSize:13, fontWeight: FontWeight.w500),),
                         )
                       ]))
                     ],
@@ -109,8 +115,10 @@ class CouponGridView extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(coupons[index].code,
-                                style: const TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.w600)),
+                              style: GoogleFonts.lato(
+                                textStyle: const TextStyle(
+                                    fontSize:16, fontWeight: FontWeight.w500),),
+                            ),
                             const SizedBox(
                               width: 10,
                             ),

@@ -1,9 +1,11 @@
 import 'package:discountandcodes/core/dummy.dart';
 import 'package:discountandcodes/widgets/footer.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../core/app_colors.dart';
 import '../models/store_model.dart';
 import '../widgets/header.dart';
+Color myHexColor = const Color(0xff2b2b2b);
 
 class AllStores extends StatefulWidget {
   const AllStores({Key? key}) : super(key: key);
@@ -45,31 +47,27 @@ class _AllStoresState extends State<AllStores> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                   Text(
                     'Find Coupons by Store',
-                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize:25, fontWeight: FontWeight.w500),),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     decoration: BoxDecoration(
-                      color: AppColors.whiteColor,
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          topRight: Radius.circular(10),
-                          bottomLeft: Radius.circular(10),
-                          bottomRight: Radius.circular(10)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.4),
-                          blurRadius: 1,
-                          spreadRadius: 1,
-                          offset: const Offset(0, 0), // changes position of shadow
-                        ),
-                      ],
-                    ),
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: myHexColor.withOpacity(0.1),
+                            blurRadius: 10.0,
+                            offset: const Offset(2.0, 2.0),
+                          ),
+                        ]),
                     child: DropdownButton<String>(
                       dropdownColor: AppColors.whiteColor,
                       autofocus: true,
@@ -123,17 +121,15 @@ class _AllStoresState extends State<AllStores> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4),
-                            // border: Border.all(color: AppColors.greyColor.withOpacity(0.2)),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.black.withOpacity(0.2),
-                                  offset: const Offset(1, 1),
-                                  blurRadius: 2,
-                                  spreadRadius: 1)
-                            ],
-                            color: AppColors.whiteColor,
-                          ),
+                              borderRadius: BorderRadius.circular(6),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: myHexColor.withOpacity(0.1),
+                                  blurRadius: 10.0,
+                                  offset: const Offset(2.0, 2.0),
+                                ),
+                              ]),
                           child: Image.network(
                             stores[index].image,
                             height: 80,
@@ -149,19 +145,19 @@ class _AllStoresState extends State<AllStores> {
                           children: [
                             Text(
                               stores[index].storeName,
-                              style: const TextStyle(
-                                  color: AppColors.blackColor,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500),
+                              style: GoogleFonts.lato(
+                                textStyle: const TextStyle(
+                                    fontSize:18, fontWeight: FontWeight.w500),),
                             ),
                             const SizedBox(
                               height: 5,
                             ),
                             Text(
                               'Coupons, promo codes & deals',
-                              style: TextStyle(
-                                  color: AppColors.blackColor.withOpacity(0.7),
-                                  fontSize: 14),
+
+                              style: GoogleFonts.lato(
+                                textStyle: const TextStyle(
+                                    fontSize:14, fontWeight: FontWeight.w500, color: Colors.grey),),
                             )
                           ],
                         ),

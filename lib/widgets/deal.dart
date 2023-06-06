@@ -1,5 +1,6 @@
 import 'package:discountandcodes/models/coupon_model.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../core/app_colors.dart';
 import 'code_pop_up.dart';
 Color myHexColor = const Color(0xff2b2b2b);
@@ -46,10 +47,9 @@ class HomeDeal extends StatelessWidget {
                 children: [
                   Text(
                     coupon.title,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15,
-                        color: AppColors.blackColor),
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize:18, fontWeight: FontWeight.w700),),
                   ),
                   const SizedBox(
                     height: 10,
@@ -58,9 +58,9 @@ class HomeDeal extends StatelessWidget {
                     coupon.description,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.w300,
-                        color: AppColors.blackColor),
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize:14, fontWeight: FontWeight.w500),),
                   ),
                   const SizedBox(
                     height: 10,
@@ -71,10 +71,9 @@ class HomeDeal extends StatelessWidget {
                     },
                     child: Text(
                       'More ${coupon.storeName} coupons',
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.blackColor,
-                          decoration: TextDecoration.underline,decorationColor: AppColors.blackColor),
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                            decoration: TextDecoration.underline, fontSize:15, fontWeight: FontWeight.w500),),
                     ),
                   ),
                   const SizedBox(
