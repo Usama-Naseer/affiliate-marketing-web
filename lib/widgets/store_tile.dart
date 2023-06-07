@@ -64,7 +64,7 @@ class StoreTile extends StatelessWidget {
                         store.storeName,
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              fontSize:15, fontWeight: FontWeight.w600),),
+                              fontSize:15, fontWeight: FontWeight.w700),),
                       ),
                       Container(
                         height: 12,
@@ -83,12 +83,11 @@ class StoreTile extends StatelessWidget {
                       const SizedBox(
                         width: 5,
                       ),
-                      const Text(
+                       Text(
                         '365 users globally ',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: AppColors.greyColor),
+                        style: GoogleFonts.lato(
+                          textStyle: const TextStyle(
+                              fontSize:13, fontWeight: FontWeight.w500),),
                       ),
                     ],
                   ),
@@ -101,7 +100,7 @@ class StoreTile extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
-                    fontSize:16, fontWeight: FontWeight.w500),),
+                          fontSize:15, fontWeight: FontWeight.w500),),
                   ),
 
                 ],
