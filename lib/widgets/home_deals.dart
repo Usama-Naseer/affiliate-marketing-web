@@ -66,5 +66,5 @@ List<Coupon> categoryCoupons(String cat) {
       coupons.add(element2);
     }
   }
-  return coupons;
+  return coupons..shuffle();
 }

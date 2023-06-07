@@ -18,13 +18,12 @@ class AppFooter extends StatelessWidget {
         thickness: 0.5,
       ),
       Container(
-        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 30),
-
-        // margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
+        padding: const EdgeInsets.symmetric(vertical: 30),
+        margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12), color: Colors.white),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -35,13 +34,13 @@ class AppFooter extends StatelessWidget {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
-                child: const Expanded(
+                child: Expanded(
                   child: Text(
                     "Discount&Codes finds coupon codes, discount sales and promotions for e-commerce stores listed in our store directory. While promo codes are time-sensitive and may expire, we have human editors verify discount codes at retailer websites to ensure they work at the time of test.To redeem a promo code for a discount, simply copy the code to your clipboard, then paste it into the coupon code entry box during checkout on the retailer's website. Look for a confirmation mes entry box during checkout on the retailer's website. Look for a confirmation",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w100,
-                        fontSize: 15,
-                        color: Colors.black),
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize: 14, fontWeight: FontWeight.w400),
+                    ),
                   ),
                 ),
               ),
@@ -49,15 +48,47 @@ class AppFooter extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(
+                  'Quick Access',
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.w600),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Shop Coupons',
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.w400),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Stores by Category',
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.w400),
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                 const SizedBox(
                   width: 10,
                 ),
-                const Text(
-                  'Contact us',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      color: AppColors.blackColor,
-                      fontSize: 14),
+                Text(
+                  'About Us',
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.w600),
+                  ),
                 ),
                 const SizedBox(
                   height: 10,
@@ -66,12 +97,12 @@ class AppFooter extends StatelessWidget {
                   onTap: () {
                     Navigator.pushNamed(context, '/privacyPolicy');
                   },
-                  child: const Text(
+                  child: Text(
                     'Privacy policy',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 14,
-                        color: Colors.grey),
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.w400),
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -81,121 +112,56 @@ class AppFooter extends StatelessWidget {
                   onTap: () {
                     Navigator.pushNamed(context, '/terms');
                   },
-                  child: const Text(
-                    'Terms of Use',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                        fontSize: 14,
-                        color: Colors.grey),
+                  child: Text(
+                    'Terms Of Use',
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.w400),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Text(
+                  'Connect',
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        fontSize: 15, fontWeight: FontWeight.w600),
                   ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
-                  'Contact us',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                      color: Colors.grey),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  'Scholarship',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                      color: Colors.grey),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  'Influenced marketing',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                      color: Colors.grey),
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  'Connect',
-                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 16),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Facebook',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                      color: Colors.grey),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Twitter',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                      color: Colors.grey),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Instagram',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                      color: Colors.grey),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'LinkedIn',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                      color: Colors.grey),
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  'Shop coupons',
-                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 16),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Shop Deals',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                      color: Colors.grey),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Stores by Category',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14,
-                      color: Colors.grey),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    SizedBox(
+                      height: 10,
+                      width: 10,
+                    ),
+                    Icon(
+                      FontAwesomeIcons.instagram,
+                      size: 30,
+                    ),
+                    SizedBox(
+                      height: 10,
+                      width: 10,
+                    ),
+                    Icon(
+                      FontAwesomeIcons.facebookMessenger,
+                      size: 30,
+                    ),
+                    SizedBox(
+                      height: 10,
+                      width: 10,
+                    ),
+                    Icon(
+                      FontAwesomeIcons.whatsapp,
+                      size: 30,
+                    ),
+                  ],
                 ),
               ],
             ),
