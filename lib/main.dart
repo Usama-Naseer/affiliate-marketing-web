@@ -1,4 +1,3 @@
-import 'package:discountandcodes/screens/about_us.dart';
 import 'package:discountandcodes/screens/all_stores.dart';
 import 'package:discountandcodes/screens/home_screen.dart';
 import 'package:discountandcodes/screens/privacy_policy.dart';

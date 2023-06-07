@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../core/app_colors.dart';
 import 'code_pop_up.dart';
-Color myHexColor = const Color(0xff2b2b2b);
 class HomeDeal extends StatelessWidget {
   const HomeDeal({required this.coupon, Key? key}) : super(key: key);
   final Coupon coupon;
@@ -15,18 +14,20 @@ class HomeDeal extends StatelessWidget {
       child: Container(
         height: MediaQuery.of(context).size.height * 0.2,
         width: MediaQuery.of(context).size.width * 0.14,
-        margin: const EdgeInsets.only(right: 15, left: 15, bottom: 10, top: 10),
+        margin: const EdgeInsets.only(right: 30, left: 0, bottom: 10, top: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: myHexColor.withOpacity(0.1),
+                color: AppColors.myHexColor.withOpacity(0.1),
                 blurRadius: 10.0,
                 offset: const Offset(2.0, 2.0),
               ),
-            ]),
+            ]
+        ),
         child: Column(
+           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               height: MediaQuery.of(context).size.height * 0.1,
@@ -79,36 +80,36 @@ class HomeDeal extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 10,
-                        width: 10,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.green,
-                        ),
-                        child: const Icon(
-                          Icons.check,
-                          size: 8,
-                          color: AppColors.whiteColor,
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-
-                      const SizedBox(height: 20,),
-                      const Text(
-                        'Verified',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                            color: AppColors.greenColor),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   crossAxisAlignment: CrossAxisAlignment.center,
+                  //   children: [
+                  //     Container(
+                  //       height: 10,
+                  //       width: 10,
+                  //       decoration: const BoxDecoration(
+                  //         shape: BoxShape.circle,
+                  //         color: Colors.green,
+                  //       ),
+                  //       child: const Icon(
+                  //         Icons.check,
+                  //         size: 8,
+                  //         color: AppColors.whiteColor,
+                  //       ),
+                  //     ),
+                  //     const SizedBox(
+                  //       width: 5,
+                  //     ),
+                  //
+                  //     const SizedBox(height: 20,),
+                  //     const Text(
+                  //       'Verified',
+                  //       style: TextStyle(
+                  //           fontWeight: FontWeight.w400,
+                  //           fontSize: 14,
+                  //           color: AppColors.greenColor),
+                  //     ),
+                  //   ],
+                  // ),
                   GestureDetector(
                     onTap: () {
                       showCouponCodePopUp(context,coupon);

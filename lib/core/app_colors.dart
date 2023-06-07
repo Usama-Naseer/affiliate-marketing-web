@@ -11,6 +11,8 @@ class AppColors{
   static const Color yellowColor= Colors.yellow;
   static const Color orangeColor= Colors.orange;
   static const Color pinkColor= Colors.pink;
+  static const Color myHexColor = Color(0xff2b2b2b);
+
 
 
 
