@@ -2,6 +2,13 @@ import 'package:discountandcodes/models/store_model.dart';
 import '../models/coupon_model.dart';
 
 class DummyData {
+  static List<String> categories = [
+    'Electronic',
+    'Home & Garden',
+    'Clothing & Fashion',
+    'Gaming',
+    "Travel"
+  ];
   static List<Store> stores = [
     Store(
         storeName: 'Zaful',
