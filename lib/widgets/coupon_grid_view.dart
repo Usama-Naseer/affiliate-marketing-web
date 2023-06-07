@@ -2,6 +2,7 @@ import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/widgets/code_pop_up.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:readmore/readmore.dart';
 import '../models/coupon_model.dart';
 
 class CouponGridView extends StatelessWidget {
@@ -42,6 +43,7 @@ class CouponGridView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +53,8 @@ class CouponGridView extends StatelessWidget {
                             coupons[index].title,
                             style: GoogleFonts.lato(
                               textStyle: const TextStyle(
-                                  fontSize:18, fontWeight: FontWeight.w600),),
+                                  fontSize: 18, fontWeight: FontWeight.w600),
+                            ),
                           ),
                           Container(
                             padding: const EdgeInsets.symmetric(
@@ -77,32 +80,28 @@ class CouponGridView extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      RichText(
-                          text: TextSpan(children: [
-                        TextSpan(
-                            text: '${coupons[index].storeName} coupon code ',
-                          style: GoogleFonts.lato(
-                            textStyle: const TextStyle(
-                                fontSize:15, fontWeight: FontWeight.w600),),
+                      SizedBox(
+                        height:60,
+                        child: ReadMoreText(
+                          coupons[index].description,
+                          trimLines: 2,
+                          colorClickableText: Colors.pink,
+                          trimMode: TrimMode.Line,
+                          textAlign: TextAlign.start,
+                          trimCollapsedText: 'Show more',
+                          trimExpandedText: '..Show less',
+                          moreStyle: GoogleFonts.lato(
+                              fontSize: 14, fontWeight: FontWeight.bold),
                         ),
-                        TextSpan(
-                          text: coupons[index].description,
-                          style: GoogleFonts.lato(
-                            textStyle: const TextStyle(
-                                fontSize:13, fontWeight: FontWeight.w500),),
-                        )
-                      ]))
+                      )
                     ],
-                  ),
-                  const SizedBox(
-                    height: 10,
                   ),
                   const Divider(
                     height: 0.7,
                     thickness: 0.7,
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -114,10 +113,12 @@ class CouponGridView extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(coupons[index].code,
+                            Text(
+                              coupons[index].code,
                               style: GoogleFonts.lato(
                                 textStyle: const TextStyle(
-                                    fontSize:16, fontWeight: FontWeight.w500),),
+                                    fontSize: 16, fontWeight: FontWeight.w500),
+                              ),
                             ),
                             const SizedBox(
                               width: 10,
@@ -144,12 +145,69 @@ class CouponGridView extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   const Divider(
                     height: 0.7,
                     thickness: 0.7,
                   ),
+                  const Spacer(),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '2128 ',
+                            style: GoogleFonts.abel(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.blackColor.withOpacity(0.7)),
+                          ),
+                          Text(
+                            'users',
+                            style: GoogleFonts.abel(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.blackColor.withOpacity(0.7)),
+                          ),
+                        ],
+                      ),
+                      // Text(
+                      //   'Last used 29 minutes ago',
+                      //   style: GoogleFonts.abel(fontSize: 12,fontWeight: FontWeight.w400,color: AppColors.blackColor.withOpacity(0.7)),
+                      // ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Verified',
+                            style: GoogleFonts.abel(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.blackColor.withOpacity(0.7)),
+                          ),
+                          SizedBox(width: 2),
+                          Container(
+                            height: 12,
+                            width: 12,
+                            margin: const EdgeInsets.only(left: 5),
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: AppColors.greenColor,
+                            ),
+                            child: const Icon(
+                              Icons.check,
+                              size: 10,
+                              color: AppColors.whiteColor,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  )
                 ],
               ),
             ),
