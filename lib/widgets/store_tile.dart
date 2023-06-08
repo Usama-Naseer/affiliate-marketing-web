@@ -22,7 +22,7 @@ class StoreTile extends StatelessWidget {
             color: AppColors.whiteColor,
             boxShadow: [
               BoxShadow(
-                color: const Color(0xff2b2b2b).withOpacity(0.1),
+                color: AppColors.myHexColor.withOpacity(0.1),
                 blurRadius: 10.0,
                 offset: const Offset(2.0, 2.0),
               ),

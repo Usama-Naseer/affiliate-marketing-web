@@ -38,7 +38,7 @@ class _StorePageState extends State<StorePage> {
               height: 20,
             ),
             Text(
-              '20% Off $storeName Coupon (20 Promo Codes) April 2023',
+              '$storeName Coupon Codes June 2023',
                 style: GoogleFonts.lato(
                   textStyle: const TextStyle(
                       fontSize:26, fontWeight: FontWeight.w500),),

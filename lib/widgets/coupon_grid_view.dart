@@ -33,10 +33,10 @@ class CouponGridView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      offset: const Offset(0.5, 0.5),
-                      blurRadius: 2,
-                    )
+                      color: AppColors.myHexColor.withOpacity(0.1),
+                      blurRadius: 10.0,
+                      offset: const Offset(2.0, 2.0),
+                    ),
                   ]),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,12 +104,22 @@ class CouponGridView extends StatelessWidget {
                     height: 10,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
                         height: 50,
-                        color: Colors.grey.shade300.withOpacity(0.4),
                         padding: const EdgeInsets.only(left: 30, right: 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.grey.shade200.withOpacity(0.4),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.shade300.withOpacity(0.1),
+                                blurRadius: 10.0,
+                                offset: const Offset(2.0, 2.0),
+                              ),
+                            ]
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -117,7 +127,7 @@ class CouponGridView extends StatelessWidget {
                               coupons[index].code,
                               style: GoogleFonts.lato(
                                 textStyle: const TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.w500),
+                                    fontSize: 12, fontWeight: FontWeight.w500),
                               ),
                             ),
                             const SizedBox(
