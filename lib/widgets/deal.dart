@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../core/app_colors.dart';
 import 'code_pop_up.dart';
+
 class HomeDeal extends StatelessWidget {
   const HomeDeal({required this.coupon, Key? key}) : super(key: key);
   final Coupon coupon;
@@ -24,16 +25,14 @@ class HomeDeal extends StatelessWidget {
                 blurRadius: 10.0,
                 offset: const Offset(2.0, 2.0),
               ),
-            ]
-        ),
+            ]),
         child: Column(
-           crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-
             SizedBox(
               height: 20,
               child: Container(
-                width: MediaQuery.of(context).size.width*0.2,
+                width: MediaQuery.of(context).size.width * 0.2,
                 height: MediaQuery.of(context).size.height * 0.1,
                 decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(
@@ -46,27 +45,27 @@ class HomeDeal extends StatelessWidget {
                         blurRadius: 10.0,
                         offset: const Offset(3.0, 3.0),
                       ),
-                    ]
-                ),
+                    ]),
                 child: Row(
-             mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                     'Verified',
+                      'Verified',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                            fontSize:10, fontWeight: FontWeight.w500, color: Colors.white),),
+                            fontSize: 10,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white),
+                      ),
                     ),
                   ],
                 ),
               ),
-
             ),
             Container(
               height: MediaQuery.of(context).size.height * 0.1,
-              width: MediaQuery.of(context).size.width*0.05,
+              width: MediaQuery.of(context).size.width * 0.05,
               padding: const EdgeInsets.all(10),
               child: Image.network(
                 coupon.image,
@@ -82,12 +81,12 @@ class HomeDeal extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Text(
                     coupon.title,
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
-                          fontSize:18, fontWeight: FontWeight.w700),),
+                          fontSize: 18, fontWeight: FontWeight.w700),
+                    ),
                   ),
                   const SizedBox(
                     height: 10,
@@ -98,20 +97,25 @@ class HomeDeal extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
-                          fontSize:14, fontWeight: FontWeight.w500),),
+                          fontSize: 14, fontWeight: FontWeight.w500),
+                    ),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   GestureDetector(
-                    onTap: (){
-                      Navigator.pushNamed(context, '/store',arguments: coupon.storeName);
+                    onTap: () {
+                      Navigator.pushNamed(context, '/store',
+                          arguments: coupon.storeName);
                     },
                     child: Text(
                       'More ${coupon.storeName} coupons',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                            decoration: TextDecoration.underline, fontSize:13, fontWeight: FontWeight.w500),),
+                            decoration: TextDecoration.underline,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -149,13 +153,14 @@ class HomeDeal extends StatelessWidget {
                   // ),
                   GestureDetector(
                     onTap: () {
-                      showCouponCodePopUp(context,coupon);
+                      showCouponCodePopUp(context, coupon);
                     },
                     child: Container(
                       height: 30,
                       width: 150,
                       padding: const EdgeInsets.symmetric(horizontal: 5),
-                      margin: const EdgeInsets.only(top: 10.0, right: 20.0, bottom: 10.0, left: 20.0),
+                      margin: const EdgeInsets.only(
+                          top: 10.0, right: 20.0, bottom: 10.0, left: 20.0),
                       decoration: BoxDecoration(
                         color: AppColors.greenColor,
                         borderRadius: BorderRadius.circular(8),

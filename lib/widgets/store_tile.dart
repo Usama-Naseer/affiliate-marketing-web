@@ -1,3 +1,4 @@
+import 'package:discountandcodes/core/dummy.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../core/app_colors.dart';
@@ -16,7 +17,7 @@ class StoreTile extends StatelessWidget {
       child: Container(
         height: MediaQuery.of(context).size.height * 0.24,
         width: MediaQuery.of(context).size.width * 0.188,
-        margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10,left: 2),
+        margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10, left: 2),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: AppColors.whiteColor,
@@ -56,6 +57,8 @@ class StoreTile extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,7 +67,8 @@ class StoreTile extends StatelessWidget {
                         store.storeName,
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              fontSize:15, fontWeight: FontWeight.w700),),
+                              fontSize: 15, fontWeight: FontWeight.w700),
+                        ),
                       ),
                       Container(
                         height: 12,
@@ -83,11 +87,12 @@ class StoreTile extends StatelessWidget {
                       const SizedBox(
                         width: 5,
                       ),
-                       Text(
+                      Text(
                         '365 users globally ',
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              fontSize:13, fontWeight: FontWeight.w500),),
+                              fontSize: 13, fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ],
                   ),
@@ -95,14 +100,17 @@ class StoreTile extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    store.shortDescription,
+                    DummyData.coupons
+                        .firstWhere(
+                            (element) => element.storeName == store.storeName)
+                        .description,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
-                          fontSize:15, fontWeight: FontWeight.w500),),
+                          fontSize: 15, fontWeight: FontWeight.w500),
+                    ),
                   ),
-
                 ],
               ),
             )

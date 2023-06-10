@@ -151,7 +151,7 @@ showCouponCodePopUp(context, Coupon coupon) {
                                   text: 'Copy the code, then go to ',
                                   style: GoogleFonts.lato(
                                     textStyle: const TextStyle(
-                                        fontSize:14, fontWeight: FontWeight.w400),),
+                                        fontSize:14, fontWeight: FontWeight.w400,color: AppColors.blackColor),),
                                   children: [
                                     TextSpan(
                                         text: '${coupon.storeName} ',
@@ -184,12 +184,13 @@ showCouponCodePopUp(context, Coupon coupon) {
                       )),
                     ),
                   ),
+                  const SizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
                         height: 30,
-                        width: 60,
+                        width: 70,
                         padding: const EdgeInsets.symmetric(horizontal: 5),
                         decoration: BoxDecoration(
                             color: AppColors.greyColor.withOpacity(0.1),
@@ -217,7 +218,7 @@ showCouponCodePopUp(context, Coupon coupon) {
                       ),
                       Container(
                         height: 30,
-                        width: 60,
+                        width: 70,
                         padding: const EdgeInsets.symmetric(horizontal: 5),
                         decoration: BoxDecoration(
                             color: AppColors.greyColor.withOpacity(0.1),
