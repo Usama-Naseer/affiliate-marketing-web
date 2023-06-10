@@ -15,7 +15,7 @@ class HomeDeal extends StatelessWidget {
       child: Container(
         height: MediaQuery.of(context).size.height * 0.2,
         width: MediaQuery.of(context).size.width * 0.14,
-        margin: const EdgeInsets.only(right: 30, left: 0, bottom: 10, top: 10),
+        margin: const EdgeInsets.only(right: 20, left: 10, bottom: 10, top: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: Colors.white,
@@ -29,33 +29,33 @@ class HomeDeal extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-width: 80 ,
+                  width: 80,
                   height: 20,
                   decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(0),
-                          topLeft: Radius.circular(12),
-                        bottomRight: Radius.circular(12),
-                        bottomLeft: Radius.circular(0),
-                      ),
-                      color: Colors.green,
-
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(0),
+                      topLeft: Radius.circular(12),
+                      bottomRight: Radius.circular(12),
+                      bottomLeft: Radius.circular(0),
+                    ),
+                    color: Colors.green,
                   ),
                   child: Row(
-                 mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                       'Verified',
+                        'Verified',
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              fontSize:10, fontWeight: FontWeight.w500, color: Colors.white),),
+                              fontSize: 10,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white),
+                        ),
                       ),
                     ],
                   ),
@@ -64,9 +64,8 @@ width: 80 ,
             ),
             Container(
               height: MediaQuery.of(context).size.height * 0.1,
-              width: MediaQuery.of(context).size.width * 1,
-              padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.1),
+              width: MediaQuery.of(context).size.width,
+              // padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
               child: Image.network(
                 coupon.image,
                 fit: BoxFit.contain,
@@ -110,6 +109,8 @@ width: 80 ,
                     },
                     child: Text(
                       'More ${coupon.storeName} coupons',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                             decoration: TextDecoration.underline,
@@ -118,39 +119,39 @@ width: 80 ,
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),
             const Spacer(),
             const Divider(),
             Container(
-              width: MediaQuery.of(context).size.width*0.2,
-              height:40,
-              margin: const EdgeInsets.only(right: 0, left: 0, bottom: 10, top: 0),
+              width: MediaQuery.of(context).size.width * 0.2,
+              height: 40,
+              margin:
+                  const EdgeInsets.only(right: 0, left: 0, bottom: 10, top: 0),
               decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(12),
-                      bottomLeft: Radius.circular(12)),
-                  color: Colors.white,
-
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(12),
+                    bottomLeft: Radius.circular(12)),
+                color: Colors.white,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-
                 children: [
                   Text(
                     'Get Code',
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
-                          fontSize:17, fontWeight: FontWeight.w600, color: Colors.black),),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black),
+                    ),
                   ),
                 ],
               ),
             ),
           ],
-
         ),
       ),
     );

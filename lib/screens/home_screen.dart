@@ -20,16 +20,16 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:  const [
-              SizedBox(
+            children:   [
+              const SizedBox(
                 height: 10,
               ),
-              Header(),
-              SizedBox(height: 30,),
-              StoreListView(),
+              const Header(),
+              const SizedBox(height: 30,),
+              const StoreListView(),
 
               CouponsListView(),
-              AppFooter(),
+              const AppFooter(),
             ],
           ),
         ),

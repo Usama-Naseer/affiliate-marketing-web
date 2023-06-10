@@ -10,11 +10,11 @@ import '../models/store_model.dart';
 class CouponsListView extends StatelessWidget {
   const CouponsListView({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.only(right: 0, left: 20, bottom: 0, top: 0),
-
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.1),
         child: ListView.builder(
@@ -41,11 +41,9 @@ class CouponsListView extends StatelessWidget {
                                   coupon: categoryCoupons(
                                 DummyData.categories[index],
                               )[index2]),
-                          itemCount: min(
-                              categoryCoupons(
-                                DummyData.categories[index],
-                              ).length,
-                              5)),
+                          itemCount: categoryCoupons(
+                            DummyData.categories[index],
+                          ).length),
                     ),
                     const SizedBox(
                       height: 25,
