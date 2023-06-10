@@ -12,7 +12,9 @@ class CouponsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+        margin: const EdgeInsets.only(right: 0, left: 20, bottom: 0, top: 0),
+
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.1),
         child: ListView.builder(

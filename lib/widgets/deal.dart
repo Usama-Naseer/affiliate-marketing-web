@@ -29,47 +29,47 @@ class HomeDeal extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 20,
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.2,
-                height: MediaQuery.of(context).size.height * 0.1,
-                decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.only(
-                        topRight: Radius.circular(12),
-                        topLeft: Radius.circular(12)),
-                    color: Colors.green,
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.myHexColor.withOpacity(0.2),
-                        blurRadius: 10.0,
-                        offset: const Offset(3.0, 3.0),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+width: 80 ,
+                  height: 20,
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(0),
+                          topLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12),
+                        bottomLeft: Radius.circular(0),
                       ),
-                    ]),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Verified',
-                      style: GoogleFonts.lato(
-                        textStyle: const TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
+                      color: Colors.green,
+
+                  ),
+                  child: Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+
+                    children: [
+                      Text(
+                       'Verified',
+                        style: GoogleFonts.lato(
+                          textStyle: const TextStyle(
+                              fontSize:10, fontWeight: FontWeight.w500, color: Colors.white),),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
             Container(
               height: MediaQuery.of(context).size.height * 0.1,
-              width: MediaQuery.of(context).size.width * 0.05,
-              padding: const EdgeInsets.all(10),
+              width: MediaQuery.of(context).size.width * 1,
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.1),
               child: Image.network(
                 coupon.image,
-                fit: BoxFit.fill,
+                fit: BoxFit.contain,
               ),
             ),
             const SizedBox(
@@ -118,67 +118,39 @@ class HomeDeal extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  // Row(
-                  //   crossAxisAlignment: CrossAxisAlignment.center,
-                  //   children: [
-                  //     Container(
-                  //       height: 10,
-                  //       width: 10,
-                  //       decoration: const BoxDecoration(
-                  //         shape: BoxShape.circle,
-                  //         color: Colors.green,
-                  //       ),
-                  //       child: const Icon(
-                  //         Icons.check,
-                  //         size: 8,
-                  //         color: AppColors.whiteColor,
-                  //       ),
-                  //     ),
-                  //     const SizedBox(
-                  //       width: 5,
-                  //     ),
-                  //
-                  //     const SizedBox(height: 20,),
-                  //     const Text(
-                  //       'Verified',
-                  //       style: TextStyle(
-                  //           fontWeight: FontWeight.w400,
-                  //           fontSize: 14,
-                  //           color: AppColors.greenColor),
-                  //     ),
-                  //   ],
-                  // ),
-                  GestureDetector(
-                    onTap: () {
-                      showCouponCodePopUp(context, coupon);
-                    },
-                    child: Container(
-                      height: 30,
-                      width: 150,
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
-                      margin: const EdgeInsets.only(
-                          top: 10.0, right: 20.0, bottom: 10.0, left: 20.0),
-                      decoration: BoxDecoration(
-                        color: AppColors.greenColor,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: const Center(
-                          child: Text(
-                        'Shop with code',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14,
-                            color: AppColors.whiteColor),
-                      )),
-                    ),
-                  )
+
                 ],
               ),
-            )
+            ),
+            const Spacer(),
+            const Divider(),
+            Container(
+              width: MediaQuery.of(context).size.width*0.2,
+              height:40,
+              margin: const EdgeInsets.only(right: 0, left: 0, bottom: 10, top: 0),
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(12),
+                      bottomLeft: Radius.circular(12)),
+                  color: Colors.white,
+
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+
+                children: [
+                  Text(
+                    'Get Code',
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize:17, fontWeight: FontWeight.w600, color: Colors.black),),
+                  ),
+                ],
+              ),
+            ),
           ],
+
         ),
       ),
     );
