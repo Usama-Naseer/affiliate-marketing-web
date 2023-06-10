@@ -29,6 +29,41 @@ class HomeDeal extends StatelessWidget {
         child: Column(
            crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+
+            SizedBox(
+              height: 20,
+              child: Container(
+                width: MediaQuery.of(context).size.width*0.2,
+                height: MediaQuery.of(context).size.height * 0.1,
+                decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(12),
+                        topLeft: Radius.circular(12)),
+                    color: Colors.green,
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.myHexColor.withOpacity(0.2),
+                        blurRadius: 10.0,
+                        offset: const Offset(3.0, 3.0),
+                      ),
+                    ]
+                ),
+                child: Row(
+             mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+
+                  children: [
+                    Text(
+                     'Verified',
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                            fontSize:10, fontWeight: FontWeight.w500, color: Colors.white),),
+                    ),
+                  ],
+                ),
+              ),
+
+            ),
             Container(
               height: MediaQuery.of(context).size.height * 0.1,
               width: MediaQuery.of(context).size.width*0.05,
@@ -47,6 +82,7 @@ class HomeDeal extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
                   Text(
                     coupon.title,
                     style: GoogleFonts.lato(
@@ -75,7 +111,7 @@ class HomeDeal extends StatelessWidget {
                       'More ${coupon.storeName} coupons',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                            decoration: TextDecoration.underline, fontSize:15, fontWeight: FontWeight.w500),),
+                            decoration: TextDecoration.underline, fontSize:13, fontWeight: FontWeight.w500),),
                     ),
                   ),
                   const SizedBox(
