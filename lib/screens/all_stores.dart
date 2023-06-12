@@ -1,5 +1,6 @@
 import 'package:discountandcodes/core/dummy.dart';
 import 'package:discountandcodes/widgets/footer.dart';
+import 'package:discountandcodes/widgets/store_tile_small.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../core/app_colors.dart';
@@ -105,66 +106,7 @@ class _AllStoresState extends State<AllStores> {
                   horizontal: MediaQuery.of(context).size.width * 0.1),
               children: List.generate(
                 stores.length,
-                (index) => GestureDetector(
-                  onTap: (){
-                    Navigator.pushNamed(context, '/store',arguments: stores[index].storeName);
-                  },
-                  child: Container(
-                    height: 100,
-                    margin: const EdgeInsets.only(right: 20, top: 20, bottom: 20),
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(6),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: myHexColor.withOpacity(0.1),
-                                  blurRadius: 10.0,
-                                  offset: const Offset(2.0, 2.0),
-                                ),
-                              ]),
-                          child: Image.network(
-                            stores[index].image,
-                            height: 80,
-                            width: 120,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              stores[index].storeName,
-                              style: GoogleFonts.lato(
-                                textStyle: const TextStyle(
-                                    fontSize:18, fontWeight: FontWeight.w500),),
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              'Coupons, promo codes & deals',
-
-                              style: GoogleFonts.lato(
-                                textStyle: const TextStyle(
-                                    fontSize:14, fontWeight: FontWeight.w500, color: Colors.grey),),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                (index) => StoreTileSmall(store: stores[index]),
               ),
             ),
             const AppFooter(),

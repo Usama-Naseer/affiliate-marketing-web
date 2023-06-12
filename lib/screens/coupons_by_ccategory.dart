@@ -1,6 +1,5 @@
 import 'package:discountandcodes/core/dummy.dart';
 import 'package:discountandcodes/widgets/coupon_grid_view.dart';
-import 'package:discountandcodes/widgets/coupon_tile.dart';
 import 'package:discountandcodes/widgets/footer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
