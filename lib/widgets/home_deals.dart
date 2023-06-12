@@ -5,6 +5,7 @@ import 'package:discountandcodes/models/coupon_model.dart';
 import 'package:discountandcodes/widgets/deal.dart';
 import 'package:flutter/material.dart';
 
+import '../core/helper_functions.dart';
 import '../models/store_model.dart';
 
 class CouponsListView extends StatelessWidget {
@@ -43,7 +44,7 @@ class CouponsListView extends StatelessWidget {
                               categoryCoupons(
                                 DummyData.categories[index],
                               ).length,
-                              5)),
+                              HelperFunctions.getPlatform(context)==Platform.web?5:HelperFunctions.getPlatform(context)==Platform.tab?3:1)),
                     ),
                     const SizedBox(
                       height: 25,

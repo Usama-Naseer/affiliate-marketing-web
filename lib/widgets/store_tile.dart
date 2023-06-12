@@ -1,3 +1,4 @@
+import 'package:discountandcodes/core/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../core/app_colors.dart';
@@ -14,8 +15,8 @@ class StoreTile extends StatelessWidget {
         Navigator.pushNamed(context, '/store', arguments: store.storeName);
       },
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.24,
-        width: MediaQuery.of(context).size.width * 0.188,
+        height: MediaQuery.of(context).size.height * 0.35,
+        width: 300,
         margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10,left: 2),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -53,6 +54,7 @@ class StoreTile extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
@@ -83,6 +85,7 @@ class StoreTile extends StatelessWidget {
                       const SizedBox(
                         width: 5,
                       ),
+                       if(HelperFunctions.getPlatform(context)==Platform.web)
                        Text(
                         '365 users globally ',
                         style: GoogleFonts.lato(

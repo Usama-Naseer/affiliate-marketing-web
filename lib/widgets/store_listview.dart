@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/core/dummy.dart';
+import 'package:discountandcodes/core/helper_functions.dart';
 import 'package:discountandcodes/widgets/store_tile.dart';
 import 'package:flutter/material.dart';
 
@@ -49,6 +50,7 @@ class StoreListView extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 30,),
+          HelperFunctions.getPlatform(context)!=Platform.mobile?
           SizedBox(
             height: 300,
             child: ListView.builder(
@@ -57,8 +59,15 @@ class StoreListView extends StatelessWidget {
               itemBuilder: (context, index) => StoreTile(
                 store: DummyData.stores[index],
               ),
-              itemCount: min(DummyData.stores.length, 4),
+              itemCount: min(DummyData.stores.length, HelperFunctions.getPlatform(context)==Platform.web?4:HelperFunctions.getPlatform(context)==Platform.tab?2:1),
             ),
+          ):ListView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.vertical,
+            itemBuilder: (context, index) => StoreTile(
+              store: DummyData.stores[index],
+            ),
+            itemCount: min(DummyData.stores.length, 4),
           ),
         ],
       ),

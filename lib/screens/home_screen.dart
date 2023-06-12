@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Header(),
               SizedBox(height: 30,),
+              // Text(MediaQuery.of(context).size.width.toString()),
               StoreListView(),
 
               CouponsListView(),

@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../core/app_colors.dart';
+import '../core/helper_functions.dart';
 
 class AppFooter extends StatelessWidget {
   const AppFooter({Key? key}) : super(key: key);
@@ -45,6 +46,7 @@ class AppFooter extends StatelessWidget {
                 ),
               ),
             ]),
+            if(HelperFunctions.getPlatform(context)!=Platform.mobile)
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -77,7 +79,8 @@ class AppFooter extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
+            if(HelperFunctions.getPlatform(context)!=Platform.mobile)
+              Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
@@ -122,7 +125,8 @@ class AppFooter extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
+            if(HelperFunctions.getPlatform(context)!=Platform.mobile)
+              Column(
               children: [
                 Text(
                   'Connect',

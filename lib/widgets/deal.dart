@@ -13,7 +13,7 @@ class HomeDeal extends StatelessWidget {
       type: MaterialType.transparency,
       child: Container(
         height: MediaQuery.of(context).size.height * 0.2,
-        width: MediaQuery.of(context).size.width * 0.14,
+        width: 230,
         margin: const EdgeInsets.only(right: 30, left: 0, bottom: 10, top: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -31,7 +31,7 @@ class HomeDeal extends StatelessWidget {
           children: [
             Container(
               height: MediaQuery.of(context).size.height * 0.1,
-              width: MediaQuery.of(context).size.width*0.05,
+              width: 100,
               padding: const EdgeInsets.all(10),
               child: Image.network(
                 coupon.image,

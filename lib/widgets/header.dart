@@ -1,4 +1,5 @@
 import 'package:discountandcodes/core/app_colors.dart';
+import 'package:discountandcodes/core/helper_functions.dart';
 import 'package:discountandcodes/screens/blogs_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,6 +31,7 @@ class _HeaderState extends State<Header> {
                 height: 60,
                 width: 200,
               ),
+              if(HelperFunctions.getPlatform(context)==Platform.web)
               Container(
                 width: MediaQuery.of(context).size.width * 0.35,
                 alignment: Alignment.center,
@@ -63,7 +65,8 @@ class _HeaderState extends State<Header> {
                       )),
                 ),
               ),
-              Row(
+              if(HelperFunctions.getPlatform(context)==Platform.web)
+                Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                    Text(
