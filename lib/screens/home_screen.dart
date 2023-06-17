@@ -20,13 +20,13 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children:  const [
+            children:   [
               SizedBox(
                 height: 10,
               ),
               Header(),
               SizedBox(height: 30,),
-              // Text(MediaQuery.of(context).size.width.toString()),
+               Text(MediaQuery.of(context).size.width.toString()),
               StoreListView(),
 
               CouponsListView(),

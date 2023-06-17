@@ -3,6 +3,7 @@ import 'package:discountandcodes/widgets/code_pop_up.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
+import '../core/helper_functions.dart';
 import '../models/coupon_model.dart';
 
 class CouponGridView extends StatelessWidget {
@@ -17,7 +18,16 @@ class CouponGridView extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.1),
-        crossAxisCount: 4,
+        crossAxisCount: MediaQuery.of(context).size.width > 1340
+            ? 4
+            : MediaQuery.of(context).size.width < 1418 && MediaQuery.of(context).size.width> 1159
+            ? 3:MediaQuery.of(context).size.width < 1159 && MediaQuery.of(context).size.width>800?2
+                : 1,
+        childAspectRatio: MediaQuery.of(context).size.width > 1340
+            ? 0.9
+            : MediaQuery.of(context).size.width < 1418 && MediaQuery.of(context).size.width> 1159
+            ? 1:MediaQuery.of(context).size.width < 1159 && MediaQuery.of(context).size.width>800?1.2
+            :MediaQuery.of(context).size.width < 800 && MediaQuery.of(context).size.width>600? 1.5:1,
         children: List.generate(
           coupons.length,
           (index) => GestureDetector(
@@ -81,7 +91,7 @@ class CouponGridView extends StatelessWidget {
                         height: 20,
                       ),
                       SizedBox(
-                        height:60,
+                        height: 60,
                         child: ReadMoreText(
                           coupons[index].description,
                           trimLines: 2,
@@ -118,8 +128,7 @@ class CouponGridView extends StatelessWidget {
                                 blurRadius: 10.0,
                                 offset: const Offset(2.0, 2.0),
                               ),
-                            ]
-                        ),
+                            ]),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [

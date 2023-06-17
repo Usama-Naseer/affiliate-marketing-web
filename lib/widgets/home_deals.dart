@@ -44,7 +44,7 @@ class CouponsListView extends StatelessWidget {
                               categoryCoupons(
                                 DummyData.categories[index],
                               ).length,
-                              HelperFunctions.getPlatform(context)==Platform.web?5:HelperFunctions.getPlatform(context)==Platform.tab?3:1)),
+                              HelperFunctions.getPlatform(context)==Platform.web?5:HelperFunctions.getPlatform(context)==Platform.ipad?4:HelperFunctions.getPlatform(context)==Platform.tab?2:1)),
                     ),
                     const SizedBox(
                       height: 25,

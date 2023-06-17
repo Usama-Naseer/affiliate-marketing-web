@@ -29,15 +29,18 @@ class StoreListView extends StatelessWidget {
                     color: AppColors.blackColor),
               ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.pushNamed(context, '/allStores');
                 },
                 child: Container(
-                  padding: const EdgeInsets.only(top: 10.0, right: 20.0, bottom: 10.0, left: 20.0),
+                  padding: const EdgeInsets.only(
+                      top: 10.0, right: 20.0, bottom: 10.0, left: 20.0),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border:Border.all(color: Colors.black,style: BorderStyle.solid,width: 0.7)
-                  ),
+                      border: Border.all(
+                          color: Colors.black,
+                          style: BorderStyle.solid,
+                          width: 0.7)),
                   child: const Text(
                     'Explore all',
                     style: TextStyle(
@@ -49,26 +52,37 @@ class StoreListView extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(height: 30,),
-          HelperFunctions.getPlatform(context)!=Platform.mobile?
-          SizedBox(
-            height: 300,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) => StoreTile(
-                store: DummyData.stores[index],
-              ),
-              itemCount: min(DummyData.stores.length, HelperFunctions.getPlatform(context)==Platform.web?4:HelperFunctions.getPlatform(context)==Platform.tab?2:1),
-            ),
-          ):ListView.builder(
-            shrinkWrap: true,
-            scrollDirection: Axis.vertical,
-            itemBuilder: (context, index) => StoreTile(
-              store: DummyData.stores[index],
-            ),
-            itemCount: min(DummyData.stores.length, 4),
+          const SizedBox(
+            height: 30,
           ),
+          HelperFunctions.getPlatform(context) != Platform.mobile
+              ? SizedBox(
+                  height: 300,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) => StoreTile(
+                      store: DummyData.stores[index],
+                    ),
+                    itemCount: min(
+                        DummyData.stores.length,
+                        HelperFunctions.getPlatform(context) == Platform.web
+                            ? 4
+                            : HelperFunctions.getPlatform(context) ==
+                                    Platform.ipad
+                                ? 3
+                                :HelperFunctions.getPlatform(context) ==
+                            Platform.tab? 2:1),
+                  ),
+                )
+              : ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (context, index) => StoreTile(
+                    store: DummyData.stores[index],
+                  ),
+                  itemCount: min(DummyData.stores.length, 4),
+                ),
         ],
       ),
     );

@@ -1,10 +1,12 @@
 import 'package:discountandcodes/core/dummy.dart';
+import 'package:discountandcodes/core/helper_functions.dart';
 import 'package:discountandcodes/widgets/footer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../core/app_colors.dart';
 import '../models/store_model.dart';
 import '../widgets/header.dart';
+
 Color myHexColor = const Color(0xff2b2b2b);
 
 class AllStores extends StatefulWidget {
@@ -24,10 +26,13 @@ class _AllStoresState extends State<AllStores> {
   ];
   String cat = 'Electronic';
   List<Store> stores = DummyData.stores;
+
   @override
   Widget build(BuildContext context) {
-    stores =
-        DummyData.stores.where((element) => element.category == cat).toList();
+    stores = DummyData.stores.where((element) => element.category == cat).toList();
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       body: SingleChildScrollView(
@@ -47,11 +52,12 @@ class _AllStoresState extends State<AllStores> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Text(
+                  Text(
                     'Find Coupons by Store',
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
-                          fontSize:25, fontWeight: FontWeight.w500),),
+                          fontSize: 25, fontWeight: FontWeight.w500),
+                    ),
                   ),
                   const SizedBox(
                     height: 10,
@@ -76,10 +82,7 @@ class _AllStoresState extends State<AllStores> {
                       borderRadius: BorderRadius.circular(12),
                       items: categories.map((String value) {
                         return DropdownMenuItem<String>(
-                          value: value,
-
-                          child: Text(value)
-                        );
+                            value: value, child: Text(value));
                       }).toList(),
                       onChanged: (val) {
                         cat = val ?? '';
@@ -96,25 +99,25 @@ class _AllStoresState extends State<AllStores> {
             ),
             const SizedBox(height: 20),
             GridView.count(
-              crossAxisCount: 3,
+              crossAxisCount: HelperFunctions.getPlatform(context) == Platform.web ? 3  :(HelperFunctions.getPlatform(context) == Platform.mobile || HelperFunctions.getPlatform(context) == Platform.tab) ? 1 : 2,
               mainAxisSpacing: 0,
-              childAspectRatio: 3,
+              childAspectRatio: HelperFunctions.getPlatform(context) == Platform.web ? 3  :(HelperFunctions.getPlatform(context) == Platform.tab) ? 4 : HelperFunctions.getPlatform(context) == Platform.mobile  ?3:3,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width * 0.1),
+              padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
               children: List.generate(
                 stores.length,
                 (index) => GestureDetector(
-                  onTap: (){
-                    Navigator.pushNamed(context, '/store',arguments: stores[index].storeName);
+                  onTap: () {
+                    Navigator.pushNamed(context, '/store',
+                        arguments: stores[index].storeName);
                   },
                   child: Container(
                     height: 100,
-                    margin: const EdgeInsets.only(right: 20, top: 20, bottom: 20),
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-
+                    margin:
+                        const EdgeInsets.only(right: 20, top: 20, bottom: 20),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -147,17 +150,18 @@ class _AllStoresState extends State<AllStores> {
                               stores[index].storeName,
                               style: GoogleFonts.lato(
                                 textStyle: const TextStyle(
-                                    fontSize:18, fontWeight: FontWeight.w500),),
+                                    fontSize: 18, fontWeight: FontWeight.w500),
+                              ),
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
+
                             Text(
                               'Coupons, promo codes & deals',
-
                               style: GoogleFonts.lato(
                                 textStyle: const TextStyle(
-                                    fontSize:14, fontWeight: FontWeight.w500, color: Colors.grey),),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.grey),
+                              ),
                             )
                           ],
                         ),
