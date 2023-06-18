@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/widgets/code_pop_up.dart';
 import 'package:flutter/material.dart';
@@ -18,16 +20,16 @@ class CouponGridView extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.1),
-        crossAxisCount: MediaQuery.of(context).size.width > 1340
+        crossAxisCount: MediaQuery.of(context).size.width > 1491
             ? 4
-            : MediaQuery.of(context).size.width < 1418 && MediaQuery.of(context).size.width> 1159
-            ? 3:MediaQuery.of(context).size.width < 1159 && MediaQuery.of(context).size.width>800?2
+            : MediaQuery.of(context).size.width <= 1491 && MediaQuery.of(context).size.width> 1000
+            ? 3:MediaQuery.of(context).size.width <= 1000 && MediaQuery.of(context).size.width>500?2
                 : 1,
         childAspectRatio: MediaQuery.of(context).size.width > 1340
-            ? 0.9
+            ? 1
             : MediaQuery.of(context).size.width < 1418 && MediaQuery.of(context).size.width> 1159
-            ? 1:MediaQuery.of(context).size.width < 1159 && MediaQuery.of(context).size.width>800?1.2
-            :MediaQuery.of(context).size.width < 800 && MediaQuery.of(context).size.width>600? 1.5:1,
+            ? 1:MediaQuery.of(context).size.width < 1159 && MediaQuery.of(context).size.width>1050?0.8
+            :MediaQuery.of(context).size.width <= 1050 && MediaQuery.of(context).size.width>850?0.8:MediaQuery.of(context).size.width <= 850 && MediaQuery.of(context).size.width>700? 1:MediaQuery.of(context).size.width <= 700 && MediaQuery.of(context).size.width>500?0.7:1.2,
         children: List.generate(
           coupons.length,
           (index) => GestureDetector(
@@ -66,6 +68,7 @@ class CouponGridView extends StatelessWidget {
                                   fontSize: 18, fontWeight: FontWeight.w600),
                             ),
                           ),
+                          if(MediaQuery.of(context).size.width>580)
                           Container(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 5, vertical: 5),
@@ -80,6 +83,7 @@ class CouponGridView extends StatelessWidget {
                             )),
                           ),
                           const Spacer(),
+                          if(MediaQuery.of(context).size.width>736)
                           Image.network(
                             coupons[index].image,
                             height: 50,
@@ -132,6 +136,7 @@ class CouponGridView extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
+                            if(MediaQuery.of(context).size.width>660)
                             Text(
                               coupons[index].code,
                               style: GoogleFonts.lato(
@@ -171,6 +176,7 @@ class CouponGridView extends StatelessWidget {
                     thickness: 0.7,
                   ),
                   const Spacer(),
+                  // if(MediaQuery.of(context).size.width>915)
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
