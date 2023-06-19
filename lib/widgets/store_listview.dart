@@ -68,9 +68,6 @@ class StoreListView extends StatelessWidget {
                         DummyData.stores.length,
                         HelperFunctions.getPlatform(context) == Platform.web
                             ? 4
-                            : HelperFunctions.getPlatform(context) ==
-                                    Platform.ipad
-                                ? 3
                                 :HelperFunctions.getPlatform(context) ==
                             Platform.tab? 2:1),
                   ),
