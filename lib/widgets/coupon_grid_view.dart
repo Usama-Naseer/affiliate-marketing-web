@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
 import '../core/helper_functions.dart';
 import '../models/coupon_model.dart';
-
+import 'package:auto_size_text/auto_size_text.dart';
 class CouponGridView extends StatelessWidget {
   const CouponGridView({required this.coupons, Key? key}) : super(key: key);
   final List<Coupon> coupons;
@@ -117,40 +117,27 @@ class CouponGridView extends StatelessWidget {
                   height: 0.7,
                   thickness: 0.7,
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      height: 50,
-                      padding: const EdgeInsets.only(left: 30, right: 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.grey.shade200.withOpacity(0.4),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.shade300.withOpacity(0.1),
-                              blurRadius: 10.0,
-                              offset: const Offset(2.0, 2.0),
-                            ),
-                          ]),
+
+                      margin: const EdgeInsets.only(top: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          if (HelperFunctions.getPlatformStanding(context)!=PlatformStanding.tabEnd)
-                            Text(
-                              coupons[index].code.substring(0,min(5,coupons[index].code.length)),
+
+                          AutoSizeText(
+                              coupons[index].code,
                               style: GoogleFonts.lato(
                                 textStyle: const TextStyle(
                                     fontSize: 12, fontWeight: FontWeight.w500),
                               ),
                             ),
-                          if(coupons[index].code.length>5)
-                           Text('..'),
                           const SizedBox(
                             width: 10,
+                            height: 40,
                           ),
                             Container(
                             padding: const EdgeInsets.symmetric(
@@ -161,7 +148,7 @@ class CouponGridView extends StatelessWidget {
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: const Center(
-                                child: Text(
+                                child: AutoSizeText(
                               'Copy',
                               style: TextStyle(
                                   color: AppColors.whiteColor,
@@ -189,14 +176,14 @@ class CouponGridView extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        AutoSizeText(
                           '2128 ',
                           style: GoogleFonts.abel(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: AppColors.blackColor.withOpacity(0.7)),
                         ),
-                        Text(
+                        AutoSizeText(
                           'users',
                           style: GoogleFonts.abel(
                               fontSize: 14,
@@ -212,7 +199,7 @@ class CouponGridView extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
+                        AutoSizeText(
                           'Verified',
                           style: GoogleFonts.abel(
                               fontSize: 14,
