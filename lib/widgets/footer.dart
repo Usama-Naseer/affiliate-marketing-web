@@ -27,7 +27,7 @@ class AppFooter extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Image.asset(
                 'assets/images/logo.png',
                 height: 50,
@@ -46,7 +46,6 @@ class AppFooter extends StatelessWidget {
                 ),
               ),
             ]),
-            if(HelperFunctions.getPlatform(context)!=Platform.mobile)
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -79,7 +78,7 @@ class AppFooter extends StatelessWidget {
                 ),
               ],
             ),
-            if(HelperFunctions.getPlatform(context)!=Platform.mobile)
+            if(MediaQuery.of(context).size.width>700)
               Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -125,7 +124,7 @@ class AppFooter extends StatelessWidget {
                 ),
               ],
             ),
-            if(HelperFunctions.getPlatform(context)!=Platform.mobile)
+            if(HelperFunctions.getPlatform(context)!=Platform.mobile && HelperFunctions.getPlatformStanding(context) != PlatformStanding.tabEnd)
               Column(
               children: [
                 Text(

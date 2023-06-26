@@ -46,6 +46,7 @@ class _AllStoresState extends State<AllStores> {
             const SizedBox(
               height: 20,
             ),
+            Text(screenWidth.toString()),
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.1),
@@ -98,16 +99,22 @@ class _AllStoresState extends State<AllStores> {
               ),
             ),
             const SizedBox(height: 20),
-            GridView.count(
-              crossAxisCount: HelperFunctions.getPlatform(context) == Platform.web ? 3  :(HelperFunctions.getPlatform(context) == Platform.mobile || HelperFunctions.getPlatform(context) == Platform.tab) ? 1 : 2,
-              mainAxisSpacing: 0,
-              childAspectRatio: HelperFunctions.getPlatform(context) == Platform.web ? 3  :(HelperFunctions.getPlatform(context) == Platform.tab) ? 4 : HelperFunctions.getPlatform(context) == Platform.mobile  ?3:3,
+            GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+
+                crossAxisCount: screenWidth>1300? 3  :(screenWidth>800) ? 2 : 1,
+                mainAxisSpacing: 0,
+                mainAxisExtent: 150
+
+              ),
+
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
-              children: List.generate(
-                stores.length,
-                (index) => GestureDetector(
+              itemCount: stores.length,
+
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/store',
                         arguments: stores[index].storeName);
@@ -115,7 +122,7 @@ class _AllStoresState extends State<AllStores> {
                   child: Container(
                     height: 100,
                     margin:
-                        const EdgeInsets.only(right: 20, top: 20, bottom: 20),
+                    const EdgeInsets.only(right: 20, top: 20, bottom: 20),
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 20),
                     child: Row(
@@ -149,27 +156,28 @@ class _AllStoresState extends State<AllStores> {
                             Text(
                               stores[index].storeName,
                               style: GoogleFonts.lato(
-                                textStyle: const TextStyle(
+                                textStyle:  TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.w500),
                               ),
                             ),
-
-                            Text(
-                              'Coupons, promo codes & deals',
-                              style: GoogleFonts.lato(
-                                textStyle: const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.grey),
-                              ),
-                            )
+                            if(HelperFunctions.getPlatformStanding(context)!=PlatformStanding.tabEnd)
+                              Text(
+                                'Coupons, promo codes',
+                                style: GoogleFonts.lato(
+                                  textStyle:  TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.grey),
+                                ),
+                              )
                           ],
                         ),
                       ],
                     ),
                   ),
-                ),
-              ),
+                );
+              },
+
             ),
             const AppFooter(),
           ],

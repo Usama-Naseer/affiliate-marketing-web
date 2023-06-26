@@ -51,6 +51,7 @@ class _StorePageState extends State<StorePage> {
             const SizedBox(
               height: 20,
             ),
+            if(MediaQuery.of(context).size.width>870)
             StoreDescription(store: getStore(),),
             const AppFooter(),
           ],

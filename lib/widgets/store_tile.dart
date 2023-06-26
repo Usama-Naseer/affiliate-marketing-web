@@ -10,13 +10,17 @@ class StoreTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, '/store', arguments: store.storeName);
       },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.35,
-        width: 300,
+        width: screenWidth>1300?screenWidth*.18:screenWidth>1100?screenWidth*.21:screenWidth>700
+            ? screenWidth*.25
+            : screenWidth*.5,
         margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10,left: 2),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
