@@ -1,53 +1,73 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../models/store_model.dart';
 
 class StoreTileSmall extends StatelessWidget {
-  const StoreTileSmall({Key? key}) : super(key: key);
+  final Store store;
+  const StoreTileSmall({required this.store,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-                border: Border.all(
-                    color: Colors.grey.withOpacity(0.5))),
-            child: Image.asset(
-              'assets/images/meow.png',
-              height: 60,
+    return   GestureDetector(
+      onTap: (){
+        Navigator.pushNamed(context, '/store',arguments: store.storeName);
+      },
+      child: Container(
+        height: 100,
+        margin: const EdgeInsets.only(right: 20, top: 20, bottom: 20),
+        padding:
+        const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.myHexColor.withOpacity(0.1),
+                      blurRadius: 10.0,
+                      offset: const Offset(2.0, 2.0),
+                    ),
+                  ]),
+              child: Image.network(
+                store.image,
+                height: 80,
+                width: 120,
+              ),
             ),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'Meow Wolf',
-                style: TextStyle(
-                    color: AppColors.blackColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Text(
-                'Coupons, promo codes & deals',
-                style: TextStyle(
-                    color: AppColors.blackColor.withOpacity(0.7),
-                    fontSize: 14),
-              )
-            ],
-          ),
-        ],
+            const SizedBox(
+              width: 20,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  store.storeName,
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        fontSize:18, fontWeight: FontWeight.w500),),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'Coupons, promo codes & deals',
+
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        fontSize:14, fontWeight: FontWeight.w500, color: Colors.grey),),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

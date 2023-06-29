@@ -1,5 +1,6 @@
 import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/core/dummy.dart';
+import 'package:discountandcodes/widgets/competitors.dart';
 import 'package:discountandcodes/widgets/coupon_grid_view.dart';
 import 'package:discountandcodes/widgets/footer.dart';
 import 'package:discountandcodes/widgets/header.dart';
@@ -53,6 +54,7 @@ class _StorePageState extends State<StorePage> {
             ),
             if(MediaQuery.of(context).size.width>870)
             StoreDescription(store: getStore(),),
+            StoreCompetitors(stores: DummyData.stores.where((element) => element.category== (DummyData.stores.firstWhere((element2) => element2.storeName==storeName).category)).toList()),
             const AppFooter(),
           ],
         ),

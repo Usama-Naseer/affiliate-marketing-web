@@ -69,12 +69,17 @@ class _HeaderState extends State<Header> {
                 Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                   Text(
-                    'Coupons',
-                    style: GoogleFonts.lato(
-                      textStyle: const TextStyle(
-                          fontSize:18, fontWeight: FontWeight.w500),),
+                   GestureDetector(
+                     onTap: (){
+                       Navigator.pushNamed(context, '/allCoupons');
+                     },
+                     child: Text(
+                      'Coupons',
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                            fontSize:18, fontWeight: FontWeight.w500),),
                   ),
+                   ),
                   const SizedBox(
                     width: 10,
                   ),
