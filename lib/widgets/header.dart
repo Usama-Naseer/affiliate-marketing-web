@@ -65,7 +65,7 @@ class _HeaderState extends State<Header> {
                       )),
                 ),
               ),
-              if(HelperFunctions.getPlatform(context)==Platform.web)
+              (HelperFunctions.getPlatform(context)!=Platform.mobile &&  HelperFunctions.getPlatformStanding(context)!=PlatformStanding.tabEnd)?
                 Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -116,6 +116,44 @@ class _HeaderState extends State<Header> {
                     width: 20,
                   ),
                 ],
+              )
+              :PopupMenuButton(
+                icon: Icon(Icons.more_vert),
+                onSelected: (value) {
+                  if(value=='1'){
+                    Navigator.pushNamed(context, '/allCoupons');
+
+                  }
+                  else if(value=='2'){
+                    Navigator.pushNamed(context, '/allStores');
+
+                  }
+                  else if(value =="3"){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BlogsPage()));
+
+                  }
+
+                  // your logic
+                },
+                itemBuilder: (BuildContext bc) {
+                  return const [
+                    PopupMenuItem(
+                      value: '1',
+                      child: Text("Coupons"),
+                    ),
+                    PopupMenuItem(
+                      value: '2',
+                      child: Text("Stores"),
+                    ),
+                    PopupMenuItem(
+                      value: '3',
+                      child: Text("Blogs"),
+                    )
+                  ];
+                },
               )
             ],
           ),

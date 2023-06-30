@@ -46,8 +46,10 @@ class AppFooter extends StatelessWidget {
                 ),
               ),
             ]),
+            if(HelperFunctions.getPlatform(context)!=Platform.mobile)
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
               children: [
                 Text(
                   'Quick Access',
@@ -168,6 +170,109 @@ class AppFooter extends StatelessWidget {
                 ),
               ],
             ),
+            if(HelperFunctions.getPlatform(context)==Platform.mobile)
+               Expanded(
+                 child: Column(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Connect',
+                        style: GoogleFonts.lato(
+                          textStyle: const TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        
+                        children: [
+                          SizedBox(
+                            height: 10,
+                            width: 10,
+                          ),
+                          Icon(
+                            FontAwesomeIcons.instagram,
+                            size: 30,
+                          ),
+                          SizedBox(
+                            height: 10,
+                            width: 10,
+                          ),
+                          Icon(
+                            FontAwesomeIcons.facebookMessenger,
+                            size: 30,
+                          ),
+                          SizedBox(
+                            height: 10,
+                            width: 10,
+                          ),
+                          Icon(
+                            FontAwesomeIcons.whatsapp,
+                            size: 30,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 40,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'About Us',
+                        style: GoogleFonts.lato(
+                          textStyle: const TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/privacyPolicy');
+                        },
+                        child: Text(
+                          'Privacy policy',
+                          style: GoogleFonts.lato(
+                            textStyle: const TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/terms');
+                        },
+                        child: Text(
+                          'Terms Of Use',
+                          style: GoogleFonts.lato(
+                            textStyle: const TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+
+
+              ],
+            ),
+               )
           ],
         ),
       ),

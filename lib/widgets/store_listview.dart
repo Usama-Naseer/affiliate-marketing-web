@@ -85,7 +85,7 @@ class StoreListView extends StatelessWidget {
             // height: 1800,
             child: ListView(
               shrinkWrap: true,
-              padding: EdgeInsets.symmetric(horizontal: screenWidth*0.05),
+               padding: EdgeInsets.only(right: screenWidth*0.05),
               children: List.generate( min(
                   DummyData.stores.length,5), (index) => StoreTile(
                 store: DummyData.stores[index],

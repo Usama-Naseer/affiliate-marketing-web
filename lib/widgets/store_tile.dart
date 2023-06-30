@@ -19,7 +19,7 @@ class StoreTile extends StatelessWidget {
       child: Container(
         height: MediaQuery.of(context).size.height * 0.35,
         width: screenWidth>1300?screenWidth*.18:screenWidth>950?screenWidth*.25:screenWidth>=650
-            ? screenWidth*.35
+            ? 270
             :screenWidth>500?300:320,
         margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10,left: 2),
         decoration: BoxDecoration(

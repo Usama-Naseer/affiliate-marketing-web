@@ -13,9 +13,10 @@ class CouponsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.1),
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
         child: ListView.builder(
             shrinkWrap: true,
             itemCount: DummyData.categories.length,
@@ -35,6 +36,7 @@ class CouponsListView extends StatelessWidget {
                     SizedBox(
                       height: 310,
                       child: ListView.builder(
+                        // padding: EdgeInsets.symmetric(horizontal: screenWidth*0.1),
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index2) => HomeDeal(
                                   coupon: categoryCoupons(
@@ -44,7 +46,8 @@ class CouponsListView extends StatelessWidget {
                               categoryCoupons(
                                 DummyData.categories[index],
                               ).length,
-                              HelperFunctions.getPlatform(context)==Platform.web?5:HelperFunctions.getPlatform(context)==Platform.tab?2:1)),
+                              screenWidth>1400?5:screenWidth>1200?4:screenWidth>850?3:screenWidth>600?2:1),
+                      ),
                     ),
                     const SizedBox(
                       height: 25,

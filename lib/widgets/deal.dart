@@ -10,13 +10,15 @@ class HomeDeal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Material(
       type: MaterialType.transparency,
       child: Container(
         height: MediaQuery.of(context).size.height * 0.2,
-        width: 230,
-        margin: const EdgeInsets.only(right: 30, left: 0, bottom: 10, top: 10),
-        // width: MediaQuery.of(context).size.width * 0.14,
+      //  width: 230,
+        margin:  EdgeInsets.only(right: screenWidth>900?30:15, left: 0, bottom: 10, top: 10),
+        width: screenWidth>1400? screenWidth * 0.14:screenWidth>1200?screenWidth * 0.17:screenWidth>1000?screenWidth*0.21:screenWidth>900?220:screenWidth>850?200:230,
         // margin: const EdgeInsets.only(right: 20, left: 10, bottom: 10, top: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),

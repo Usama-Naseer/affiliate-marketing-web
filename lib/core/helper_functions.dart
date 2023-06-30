@@ -42,7 +42,7 @@ class HelperFunctions {
       return PlatformStanding.tabCenter;
     } else if (MediaQuery.of(context).size.width > 800 &&
         MediaQuery.of(context).size.width <= 1000) {
-      return PlatformStanding.tabEnd;
+      return PlatformStanding.tabStart;
     } else if (MediaQuery.of(context).size.width > 1000 &&
         MediaQuery.of(context).size.width <= 1150) {
       return PlatformStanding.webEnd;
