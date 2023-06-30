@@ -31,7 +31,7 @@ class CouponGridView extends StatelessWidget {
                           MediaQuery.of(context).size.width > 500
                       ? 2
                       : 1,
-          mainAxisExtent: MediaQuery.of(context).size.height * 0.4,
+          mainAxisExtent: 320
         ),
              itemCount: coupons.length,
         itemBuilder: (context, index) => GestureDetector(

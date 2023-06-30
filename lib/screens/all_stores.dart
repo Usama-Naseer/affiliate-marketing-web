@@ -156,7 +156,7 @@ class _AllStoresState extends State<AllStores> {
                             Text(
                               stores[index].storeName,
                               style: GoogleFonts.lato(
-                                textStyle:  TextStyle(
+                                textStyle:  const TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.w500),
                               ),
                             ),
@@ -164,7 +164,7 @@ class _AllStoresState extends State<AllStores> {
                               Text(
                                 'Coupons, promo codes',
                                 style: GoogleFonts.lato(
-                                  textStyle:  TextStyle(
+                                  textStyle:  const TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
                                       color: Colors.grey),

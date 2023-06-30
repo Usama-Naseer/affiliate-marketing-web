@@ -15,7 +15,8 @@ class StoreListView extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     return Padding(
       padding: EdgeInsets.symmetric(
-          vertical: 20, horizontal: MediaQuery.of(context).size.width * 0.1),
+          vertical: 20,
+          horizontal: screenWidth * 0.1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -57,34 +58,39 @@ class StoreListView extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          HelperFunctions.getPlatform(context) != Platform.mobile
-              ? SizedBox(
-                  height: 300,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) => StoreTile(
-                      store: DummyData.stores[index],
-                    ),
-                    itemCount: min(
-                        DummyData.stores.length,
-                        screenWidth>1300
-                            ? 4
-                            : screenWidth>1100?3:
-                            screenWidth>700
-                                ? 2
-                                : 1),
-                  ),
-                )
-              : ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) => StoreTile(
-                    store: DummyData.stores[index],
-                  ),
-                  itemCount: min(DummyData.stores.length, screenWidth>1300?4:screenWidth>800?3:1),
-                ),
+          screenWidth>500?
+          SizedBox(
+            height:  300,
+            child: ListView.builder(
+              shrinkWrap: true,
+              // padding: screenWidth <= 500
+              //     ? EdgeInsets.symmetric(horizontal: screenWidth * 0.1)
+              //     : EdgeInsets.zero,
+              scrollDirection: Axis.horizontal,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) => StoreTile(
+                store: DummyData.stores[index],
+              ),
+              itemCount: min(
+                  DummyData.stores.length,
+                  screenWidth > 1300
+                      ? 4
+                      : screenWidth > 950
+                          ? 3
+                          : screenWidth >= 650
+                              ? 2
+                              : 1),
+            ),
+          ): Container(
+            // height: 1800,
+            child: ListView(
+              shrinkWrap: true,
+              padding: EdgeInsets.symmetric(horizontal: screenWidth*0.05),
+              children: List.generate( min(
+                  DummyData.stores.length,5), (index) => StoreTile(
+                store: DummyData.stores[index],
+              ),)),
+          ),
         ],
       ),
     );

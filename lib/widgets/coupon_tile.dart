@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:discountandcodes/models/coupon_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,8 +41,9 @@ class CouponTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
+                    AutoSizeText(
                       coupon.title,
+                      minFontSize: 10,
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w600),
