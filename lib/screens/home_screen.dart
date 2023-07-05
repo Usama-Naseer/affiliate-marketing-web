@@ -22,16 +22,16 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children:   [
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Header(),
-              SizedBox(height: 30,),
+              const Header(),
+              const SizedBox(height: 30,),
                Text(MediaQuery.of(context).size.width.toString()),
-              StoreListView(),
+              const StoreListView(),
 
-              CouponsListView(),
-              AppFooter(),
+              const CouponsListView(),
+              const AppFooter(),
             ],
           ),
         ),

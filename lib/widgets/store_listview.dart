@@ -5,6 +5,7 @@ import 'package:discountandcodes/core/dummy.dart';
 import 'package:discountandcodes/core/helper_functions.dart';
 import 'package:discountandcodes/widgets/store_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StoreListView extends StatelessWidget {
   const StoreListView({Key? key}) : super(key: key);
@@ -24,12 +25,12 @@ class StoreListView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
-                'Trending Stores',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.blackColor),
+               Text(
+                'Top Stores',
+                style: GoogleFonts.lato(
+                  textStyle: const TextStyle(
+                      fontSize: 23, fontWeight: FontWeight.w600),
+                ),
               ),
               GestureDetector(
                 onTap: () {
@@ -40,16 +41,20 @@ class StoreListView extends StatelessWidget {
                       top: 10.0, right: 20.0, bottom: 10.0, left: 20.0),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
+
                       border: Border.all(
                           color: Colors.black,
                           style: BorderStyle.solid,
-                          width: 0.7)),
-                  child: const Text(
+                          width: 0.7),
+
+                  ),
+
+                  child:  Text(
                     'Explore all',
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.blackColor),
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ),
               )
@@ -59,7 +64,8 @@ class StoreListView extends StatelessWidget {
             height: 30,
           ),
           screenWidth>500?
-          SizedBox(
+          Container(
+            alignment: Alignment.center,
             height:  300,
             child: ListView.builder(
               shrinkWrap: true,
@@ -81,16 +87,13 @@ class StoreListView extends StatelessWidget {
                               ? 2
                               : 1),
             ),
-          ): Container(
-            // height: 1800,
-            child: ListView(
-              shrinkWrap: true,
-               padding: EdgeInsets.only(right: screenWidth*0.05),
-              children: List.generate( min(
-                  DummyData.stores.length,5), (index) => StoreTile(
-                store: DummyData.stores[index],
-              ),)),
-          ),
+          ): ListView(
+            shrinkWrap: true,
+             padding: EdgeInsets.only(right: screenWidth*0.05),
+            children: List.generate( min(
+                DummyData.stores.length,5), (index) => StoreTile(
+              store: DummyData.stores[index],
+            ),)),
         ],
       ),
     );

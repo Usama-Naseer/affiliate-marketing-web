@@ -77,7 +77,7 @@ class _HeaderState extends State<Header> {
                       'Coupons',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                            fontSize:18, fontWeight: FontWeight.w500),),
+                            fontSize:17, fontWeight: FontWeight.w500),),
                   ),
                    ),
                   const SizedBox(
@@ -91,7 +91,7 @@ class _HeaderState extends State<Header> {
                       'Stores',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                            fontSize:18, fontWeight: FontWeight.w500),),
+                            fontSize:17, fontWeight: FontWeight.w500),),
                     ),
                   ),
                   const SizedBox(
@@ -108,7 +108,7 @@ class _HeaderState extends State<Header> {
                       'Blogs',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                            fontSize:18, fontWeight: FontWeight.w500),),
+                            fontSize:17, fontWeight: FontWeight.w500),),
 
                     ),
                   ),
@@ -118,7 +118,7 @@ class _HeaderState extends State<Header> {
                 ],
               )
               :PopupMenuButton(
-                icon: Icon(Icons.more_vert),
+                icon: const Icon(Icons.more_vert),
                 onSelected: (value) {
                   if(value=='1'){
                     Navigator.pushNamed(context, '/allCoupons');

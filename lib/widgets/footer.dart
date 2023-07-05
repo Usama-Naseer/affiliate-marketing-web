@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../core/app_colors.dart';
 import '../core/helper_functions.dart';
 
 class AppFooter extends StatelessWidget {
@@ -11,6 +10,7 @@ class AppFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
+
       const SizedBox(
         height: 50,
       ),
@@ -19,33 +19,16 @@ class AppFooter extends StatelessWidget {
         thickness: 0.5,
       ),
       Container(
-        padding: const EdgeInsets.symmetric(vertical: 30),
-        margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1, vertical: MediaQuery.of(context).size.height * 0.05 ),
+
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12), color: Colors.white),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Image.asset(
-                'assets/images/logo.png',
-                height: 50,
-                width: 200,
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
-                child: Expanded(
-                  child: Text(
-                    "Discount&Codes finds coupon codes, discount sales and promotions for e-commerce stores listed in our store directory. While promo codes are time-sensitive and may expire, we have human editors verify discount codes at retailer websites to ensure they work at the time of test.To redeem a promo code for a discount, simply copy the code to your clipboard, then paste it into the coupon code entry box during checkout on the retailer's website. Look for a confirmation mes entry box during checkout on the retailer's website. Look for a confirmation",
-                    style: GoogleFonts.lato(
-                      textStyle: const TextStyle(
-                          fontSize: 14, fontWeight: FontWeight.w400),
-                    ),
-                  ),
-                ),
-              ),
-            ]),
+
             if(HelperFunctions.getPlatform(context)!=Platform.mobile)
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +48,7 @@ class AppFooter extends StatelessWidget {
                   'Shop Coupons',
                   style: GoogleFonts.lato(
                     textStyle: const TextStyle(
-                        fontSize: 15, fontWeight: FontWeight.w400),
+                        fontSize: 14, fontWeight: FontWeight.w300),
                   ),
                 ),
                 const SizedBox(
@@ -75,7 +58,7 @@ class AppFooter extends StatelessWidget {
                   'Stores by Category',
                   style: GoogleFonts.lato(
                     textStyle: const TextStyle(
-                        fontSize: 15, fontWeight: FontWeight.w400),
+                        fontSize: 14, fontWeight: FontWeight.w300),
                   ),
                 ),
               ],
@@ -105,7 +88,7 @@ class AppFooter extends StatelessWidget {
                     'Privacy policy',
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
-                          fontSize: 15, fontWeight: FontWeight.w400),
+                          fontSize: 14, fontWeight: FontWeight.w300),
                     ),
                   ),
                 ),
@@ -120,7 +103,7 @@ class AppFooter extends StatelessWidget {
                     'Terms Of Use',
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
-                          fontSize: 15, fontWeight: FontWeight.w400),
+                          fontSize: 14, fontWeight: FontWeight.w300),
                     ),
                   ),
                 ),
@@ -183,7 +166,7 @@ class AppFooter extends StatelessWidget {
                         'Connect',
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w600),
+                              fontSize: 15, fontWeight: FontWeight.w300),
                         ),
                       ),
                       const SizedBox(
@@ -191,7 +174,7 @@ class AppFooter extends StatelessWidget {
                       ),
                        Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        
+
                         children: const [
                           SizedBox(
                             height: 10,
@@ -224,7 +207,9 @@ class AppFooter extends StatelessWidget {
                   const SizedBox(height: 40,),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+
                     children: [
+
                       const SizedBox(
                         width: 10,
                       ),
@@ -246,7 +231,7 @@ class AppFooter extends StatelessWidget {
                           'Privacy policy',
                           style: GoogleFonts.lato(
                             textStyle: const TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w400),
+                                fontSize: 14, fontWeight: FontWeight.w300),
                           ),
                         ),
                       ),
@@ -261,7 +246,8 @@ class AppFooter extends StatelessWidget {
                           'Terms Of Use',
                           style: GoogleFonts.lato(
                             textStyle: const TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w400),
+                                fontSize: 14, fontWeight: FontWeight.w300),
+
                           ),
                         ),
                       ),
@@ -272,8 +258,57 @@ class AppFooter extends StatelessWidget {
 
               ],
             ),
-               )
+               ),
+            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.35,
+                child: Expanded(
+                  child: Text(
+                    "DiscountAndCodes.com is a leading online platform dedicated to helping shoppers save money through a vast collection of coupons, promo codes, and discounts.\n \nWith a user-friendly interface, it offers a seamless experience for finding and redeeming deals across a wide range of categories, including fashion, electronics, travel, and more."
+                        "DiscountAndCodes.com is a go-to destination for savvy consumers looking to maximize their savings while shopping online or in-store."
+                        "\n \nSave big with promo codes! Just copy the code, paste it during checkout, and voila! Your discount is applied. "
+                        "Find all supported stores with coupon codes "
+                        "here. Happy shopping and saving!",
+                    style: GoogleFonts.lato(
+                      textStyle: const TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.w300),
+                    ),
+                  ),
+                ),
+              ),
+            ]),
           ],
+
+        ),
+      ),
+      Container(
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
+
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12), color: Colors.white),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+
+            if(HelperFunctions.getPlatform(context)!=Platform.mobile)
+              Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+
+                  mainAxisSize: MainAxisSize.max,
+                  children:  [
+
+
+  Text("Whenever you shop with these partners, we might earn affiliate commissions. It's our way of bringing you more fantastic deals and offers. "
+      "Your support means the world to us!", style: GoogleFonts.lato(
+    textStyle: const TextStyle(
+    fontSize: 15, fontWeight: FontWeight.w300),
+    ),
+    ),
+                  ]),
+          ],
+
         ),
       ),
     ]);

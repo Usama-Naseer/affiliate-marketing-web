@@ -4,6 +4,7 @@ import 'package:discountandcodes/core/dummy.dart';
 import 'package:discountandcodes/models/coupon_model.dart';
 import 'package:discountandcodes/widgets/deal.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../core/helper_functions.dart';
 import '../models/store_model.dart';
@@ -25,10 +26,10 @@ class CouponsListView extends StatelessWidget {
                   children: [
                     Text(
                       DummyData.categories[index],
-                      style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.blackColor),
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                            fontSize: 23, fontWeight: FontWeight.w600),
+                      ),
                     ),
                     const SizedBox(
                       height: 15,
