@@ -189,10 +189,10 @@ class AppFooter extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      const Row(
+                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         
-                        children: [
+                        children: const [
                           SizedBox(
                             height: 10,
                             width: 10,
@@ -221,7 +221,7 @@ class AppFooter extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 40,),
+                  const SizedBox(height: 40,),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
