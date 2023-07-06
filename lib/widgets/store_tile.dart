@@ -1,6 +1,7 @@
 import 'package:discountandcodes/core/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
 import '../core/app_colors.dart';
 import '../models/store_model.dart';
 
@@ -27,7 +28,7 @@ class StoreTile extends StatelessWidget {
             color: AppColors.whiteColor,
             boxShadow: [
               BoxShadow(
-                color: AppColors.myHexColor.withOpacity(0.1),
+                color: AppColors.newblue.withOpacity(0.1),
                 blurRadius: 10.0,
                 offset: const Offset(2.0, 2.0),
               ),
@@ -53,7 +54,7 @@ class StoreTile extends StatelessWidget {
             Divider(
               height: 1,
               thickness: 1,
-              color: Colors.grey.withOpacity(0.2),
+              color: AppColors.newblue.withOpacity(0.1),
             ),
             const SizedBox(
               height: 20,
@@ -76,9 +77,9 @@ class StoreTile extends StatelessWidget {
                         height: 12,
                         width: 12,
                         margin: const EdgeInsets.only(left: 5),
-                        decoration: const BoxDecoration(
+                        decoration:  BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColors.greenColor,
+                          color: HexColor("#5333ed"),
                         ),
                         child: const Icon(
                           Icons.check,

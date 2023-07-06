@@ -1,6 +1,7 @@
 import 'package:discountandcodes/models/coupon_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
 import '../core/app_colors.dart';
 import 'code_pop_up.dart';
 
@@ -25,7 +26,7 @@ class HomeDeal extends StatelessWidget {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: AppColors.myHexColor.withOpacity(0.1),
+                color: AppColors.newblue.withOpacity(0.1),
                 blurRadius: 10.0,
                 offset: const Offset(2.0, 2.0),
               ),
@@ -39,14 +40,14 @@ class HomeDeal extends StatelessWidget {
                 Container(
                   width: 80,
                   height: 20,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
+                  decoration:  BoxDecoration(
+                    borderRadius: const BorderRadius.only(
                       topRight: Radius.circular(0),
                       topLeft: Radius.circular(12),
                       bottomRight: Radius.circular(12),
                       bottomLeft: Radius.circular(0),
                     ),
-                    color: Colors.green,
+                    color: HexColor("#5333ed"),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -130,7 +131,9 @@ class HomeDeal extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            const Divider(),
+             Divider(
+              color: AppColors.newblue.withOpacity(0.1),
+            ),
             Container(
               width: MediaQuery.of(context).size.width * 0.2,
               height: 40,

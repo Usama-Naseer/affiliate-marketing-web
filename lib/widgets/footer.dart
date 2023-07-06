@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
 
+import '../core/app_colors.dart';
 import '../core/helper_functions.dart';
 
 class AppFooter extends StatelessWidget {
@@ -14,9 +16,10 @@ class AppFooter extends StatelessWidget {
       const SizedBox(
         height: 50,
       ),
-      const Divider(
+       Divider(
         height: 1,
-        thickness: 0.5,
+        color: AppColors.newblue.withOpacity(0.1),
+        thickness: 0.8,
       ),
       Container(
         padding: const EdgeInsets.symmetric(vertical: 15),
@@ -124,29 +127,32 @@ class AppFooter extends StatelessWidget {
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    SizedBox(
+                  children:  [
+                    const SizedBox(
                       height: 10,
                       width: 10,
                     ),
                     Icon(
                       FontAwesomeIcons.instagram,
+                      color: HexColor("#f77341"),
                       size: 30,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                       width: 10,
                     ),
                     Icon(
                       FontAwesomeIcons.facebookMessenger,
+                      color: HexColor("#2581ff"),
                       size: 30,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                       width: 10,
                     ),
                     Icon(
                       FontAwesomeIcons.whatsapp,
+                      color: HexColor("#2cd56b"),
                       size: 30,
                     ),
                   ],
@@ -283,10 +289,9 @@ class AppFooter extends StatelessWidget {
       ),
       Container(
         padding: const EdgeInsets.symmetric(vertical: 15),
-        margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
 
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12), color: Colors.white),
+             color: HexColor("#5333ed"),),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -302,7 +307,7 @@ class AppFooter extends StatelessWidget {
 
   Text("Whenever you shop with these partners, we might earn affiliate commissions. It's our way of bringing you more fantastic deals and offers. "
       "Your support means the world to us!", style: GoogleFonts.lato(
-    textStyle: const TextStyle(
+    textStyle: const TextStyle(color: Colors.white,
     fontSize: 15, fontWeight: FontWeight.w300),
     ),
     ),
