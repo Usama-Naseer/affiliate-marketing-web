@@ -14,7 +14,7 @@ class StoreListView extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    return Padding(
+    return Container(
       padding: EdgeInsets.symmetric(
           vertical: 20,
           horizontal: screenWidth * 0.1),
@@ -65,8 +65,8 @@ class StoreListView extends StatelessWidget {
           ),
           screenWidth>500?
           Container(
-            alignment: Alignment.center,
-            height:  300,
+            alignment: Alignment.centerLeft,
+            height:  310,
             child: ListView.builder(
               shrinkWrap: true,
               // padding: screenWidth <= 500
@@ -75,7 +75,7 @@ class StoreListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => StoreTile(
-                store: DummyData.stores[index],
+                store: DummyData.stores[index], index: index,
               ),
               itemCount: min(
                   DummyData.stores.length,
@@ -92,7 +92,7 @@ class StoreListView extends StatelessWidget {
              padding: EdgeInsets.only(right: screenWidth*0.05),
             children: List.generate( min(
                 DummyData.stores.length,5), (index) => StoreTile(
-              store: DummyData.stores[index],
+              store: DummyData.stores[index], index: index,
             ),)),
         ],
       ),

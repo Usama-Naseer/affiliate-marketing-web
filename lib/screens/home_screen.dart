@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
 
-    return const Scaffold(
+    return  Scaffold(
       backgroundColor: AppColors.whiteColor,
       body: SingleChildScrollView(
           child: Column(
@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children:   [
               Header(),
               SizedBox(height: 30,),
-               // Text(MediaQuery.of(context).size.width.toString()),
+               Text(MediaQuery.of(context).size.width.toString()),
               StoreListView(),
 
               CouponsListView(),

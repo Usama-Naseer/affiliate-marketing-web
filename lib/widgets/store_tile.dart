@@ -6,9 +6,9 @@ import '../core/app_colors.dart';
 import '../models/store_model.dart';
 
 class StoreTile extends StatelessWidget {
-  const StoreTile({required this.store, Key? key}) : super(key: key);
+  const StoreTile({required this.store,  required this.index, Key? key}) : super(key: key);
   final Store store;
-
+  final int index;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -19,10 +19,10 @@ class StoreTile extends StatelessWidget {
       },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.35,
-        width: screenWidth>1300?screenWidth*.18:screenWidth>950?screenWidth*.25:screenWidth>=650
+        width: screenWidth>1300?screenWidth*.185:screenWidth>950?screenWidth*.245:screenWidth>=650
             ? 270
             :screenWidth>500?300:320,
-        margin: const EdgeInsets.only(right: 30, bottom: 10, top: 10,),
+        margin:  EdgeInsets.only(right:index!=3? 28:0, bottom: 10, top: 10,left: 0),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: AppColors.whiteColor,
@@ -36,7 +36,7 @@ class StoreTile extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height * 0.19,
+              height: MediaQuery.of(context).size.height * 0.2,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(12),
@@ -61,8 +61,9 @@ class StoreTile extends StatelessWidget {
             ),
 
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -107,8 +108,8 @@ class StoreTile extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.lato(
-                      textStyle: const TextStyle(
-                          fontSize:15, fontWeight: FontWeight.w500),),
+                      textStyle:  TextStyle(
+                          fontSize:14, fontWeight: FontWeight.w300,color: AppColors.blackColor.withOpacity(0.7)),),
                   ),
 
                 ],

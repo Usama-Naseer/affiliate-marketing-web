@@ -42,7 +42,7 @@ class CouponsListView extends StatelessWidget {
                           itemBuilder: (context, index2) => HomeDeal(
                                   coupon: categoryCoupons(
                                 DummyData.categories[index],
-                              )[index2]),
+                              )[index2], index: index2,),
                           itemCount: min(
                               categoryCoupons(
                                 DummyData.categories[index],

@@ -6,8 +6,10 @@ import '../core/app_colors.dart';
 import 'code_pop_up.dart';
 
 class HomeDeal extends StatelessWidget {
-  const HomeDeal({required this.coupon, Key? key}) : super(key: key);
+  const HomeDeal({required this.coupon, required this.index, Key? key})
+      : super(key: key);
   final Coupon coupon;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +18,27 @@ class HomeDeal extends StatelessWidget {
     return Material(
       type: MaterialType.transparency,
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.2,
-      //  width: 230,
-        margin:  EdgeInsets.only(right: screenWidth>900?30:15, left: 0, bottom: 10, top: 10),
-        width: screenWidth>1400? screenWidth * 0.14:screenWidth>1200?screenWidth * 0.17:screenWidth>1000?screenWidth*0.21:screenWidth>900?220:screenWidth>850?200:230,
+        //  width: 230,
+        margin: EdgeInsets.only(
+            right: index != 4
+                ? screenWidth > 900
+                    ? 30
+                    : 15
+                : 0,
+            left: 2,
+            bottom: 10,
+            top: 10),
+        width: screenWidth > 1400
+            ? screenWidth * 0.142
+            : screenWidth > 1200
+                ? screenWidth * 0.17
+                : screenWidth > 1000
+                    ? screenWidth * 0.21
+                    : screenWidth > 900
+                        ? 220
+                        : screenWidth > 850
+                            ? 200
+                            : 230,
         // margin: const EdgeInsets.only(right: 20, left: 10, bottom: 10, top: 10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -40,7 +59,7 @@ class HomeDeal extends StatelessWidget {
                 Container(
                   width: 80,
                   height: 20,
-                  decoration:  BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(
                       topRight: Radius.circular(0),
                       topLeft: Radius.circular(12),
@@ -71,7 +90,7 @@ class HomeDeal extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.1,
               width: 100,
               padding: const EdgeInsets.all(10),
-            //  width: MediaQuery.of(context).size.width,
+              //  width: MediaQuery.of(context).size.width,
               // padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
 
               child: Image.network(
@@ -131,7 +150,7 @@ class HomeDeal extends StatelessWidget {
               ),
             ),
             const Spacer(),
-             Divider(
+            Divider(
               color: AppColors.newblue.withOpacity(0.1),
             ),
             Container(
