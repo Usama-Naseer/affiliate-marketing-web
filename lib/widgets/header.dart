@@ -14,15 +14,16 @@ class Header extends StatefulWidget {
 
 class _HeaderState extends State<Header> {
   TextEditingController controller = TextEditingController();
+  ScrollController scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 80,
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
 
-      decoration:  BoxDecoration(
+      decoration:  const BoxDecoration(
         color: AppColors.whiteColor,
-        boxShadow: kElevationToShadow[0],
+        // boxShadow: kElevationToShadow[1],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -225,7 +226,7 @@ class _HeaderState extends State<Header> {
             ],
           ),
 
-          // Divider(),
+          Divider(),
         ],
       ),
     );

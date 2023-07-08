@@ -22,10 +22,11 @@ class _TermsState extends State<Terms> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
+      appBar: const PreferredSize(preferredSize: Size.fromHeight(100),
+        child: Header(),),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Header(),
             const SizedBox(
               height: 20,
             ),

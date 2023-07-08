@@ -25,7 +25,7 @@ class HomeDeal extends StatelessWidget {
                     ? 30
                     : 15
                 : 0,
-            left: 2,
+            left: 4,
             bottom: 10,
             top: 10),
         width: screenWidth > 1400

@@ -27,14 +27,12 @@ class _StorePageState extends State<StorePage> {
 
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
+      appBar: const PreferredSize(preferredSize: Size.fromHeight(100),
+        child: Header(),),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children:  [
-            const SizedBox(
-              height: 10,
-            ),
-            const Header(),
             const SizedBox(
               height: 20,
             ),

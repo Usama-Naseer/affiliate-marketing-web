@@ -18,11 +18,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return  Scaffold(
       backgroundColor: AppColors.whiteColor,
+      appBar: const PreferredSize(preferredSize: Size.fromHeight(100),
+      child: Header(),),
       body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children:   [
-              Header(),
               SizedBox(height: 30,),
                Text(MediaQuery.of(context).size.width.toString()),
               StoreListView(),
