@@ -18,10 +18,11 @@ class _HeaderState extends State<Header> {
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.09),
-      decoration: const BoxDecoration(
-        // color: AppColors.pinkColor,
-        // boxShadow: kElevationToShadow[2],
+      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
+
+      decoration:  BoxDecoration(
+        color: AppColors.whiteColor,
+        boxShadow: kElevationToShadow[0],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
