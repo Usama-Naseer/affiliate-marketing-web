@@ -17,185 +17,216 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      decoration:  BoxDecoration(
-        color: HexColor("#5333ed"),
-        boxShadow: kElevationToShadow[2],
+      height: 70,
+      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.09),
+      decoration: const BoxDecoration(
+        // color: AppColors.pinkColor,
+        // boxShadow: kElevationToShadow[2],
       ),
-      child:
-      Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 10),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+          // const SizedBox(height: 20),
+          Flexible(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children:  [
+
+              children: [
                 Image.asset(
                   'assets/images/test3.png',
-                  height: 60,
-                  width: 400,
+                  width: 120,
+                  color: AppColors.greenColor,
                 ),
-              ]
 
+                const SizedBox(
+                  width:300,
+                  child: Flexible(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text('Stores',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.primaryColor,),textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),),
+                        Text('Coupons',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.primaryColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false),),
+                        Text('Deals',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.primaryColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
+
+                      ],
+
+                    ),
+                  ),
+                ),
+
+
+                if (HelperFunctions.getPlatform(context) == Platform.web)
+                  Container(
+                    width: 250,
+                    margin: const EdgeInsets.only(top: 10),
+                    alignment: Alignment.topCenter,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        isCollapsed: true,
+                          isDense: true,
+                          hintText: 'Search stores and deals',
+                          contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 12),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                              borderSide: BorderSide(
+                                  color: AppColors.primaryColor.withOpacity(0.3))),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(16),
+                              borderSide: BorderSide(
+                                  color: AppColors.primaryColor.withOpacity(0.3))),
+                          suffixIcon: Icon(
+                            Icons.search_rounded,
+                            color: AppColors.primaryColor,
+                            size: 25,
+                          )),
+                    ),
+                  ),
+    // GestureDetector(
+    //         onTap: () {
+    //           Navigator.pushNamed(context, '/allCoupons');
+    //         },
+    //         child: Text(
+    //           'Coupons    ',
+    //           style: GoogleFonts.lato(
+    //             textStyle: const TextStyle(
+    //                 fontStyle: FontStyle.italic,
+    //                 color: AppColors.primaryColor,
+    //                 fontSize: 17,
+    //                 fontWeight: FontWeight.w500),
+    //           ),
+    //         ),
+    //       ),
+                // (HelperFunctions.getPlatform(context) != Platform.mobile &&
+                //     HelperFunctions.getPlatformStanding(context) !=
+                //         PlatformStanding.tabEnd)
+                //     ? Flexible(
+                //       child: Row(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   crossAxisAlignment: CrossAxisAlignment.start,
+                //   children: [
+                //       GestureDetector(
+                //         onTap: () {
+                //           Navigator.pushNamed(context, '/allCoupons');
+                //         },
+                //         child: Text(
+                //           'Coupons    ',
+                //           style: GoogleFonts.lato(
+                //             textStyle: const TextStyle(
+                //                 fontStyle: FontStyle.italic,
+                //                 color: AppColors.primaryColor,
+                //                 fontSize: 17,
+                //                 fontWeight: FontWeight.w500),
+                //           ),
+                //         ),
+                //       ),
+                //       const SizedBox(
+                //         width: 40,
+                //       ),
+                //       GestureDetector(
+                //         onTap: () {
+                //           Navigator.pushNamed(context, '/allStores');
+                //         },
+                //         child: Text(
+                //           'Stores ',
+                //           style: GoogleFonts.lato(
+                //             textStyle: const TextStyle(
+                //                 fontStyle: FontStyle.italic,
+                //                 color: AppColors.primaryColor,
+                //                 fontSize: 17,
+                //                 fontWeight: FontWeight.w500),
+                //           ),
+                //         ),
+                //       ),
+                //       const SizedBox(
+                //         width: 40,
+                //       ),
+                //       GestureDetector(
+                //         onTap: () {
+                //           Navigator.push(
+                //               context,
+                //               MaterialPageRoute(
+                //                   builder: (context) => const BlogsPage()));
+                //         },
+                //         child: Text(
+                //           'Blogs ',
+                //           style: GoogleFonts.lato(
+                //             textStyle: const TextStyle(
+                //                 fontStyle: FontStyle.italic,
+                //                 color: AppColors.primaryColor,
+                //                 fontSize: 17,
+                //                 fontWeight: FontWeight.w500),
+                //           ),
+                //         ),
+                //       ),
+                //       const SizedBox(
+                //         width: 40,
+                //       ),
+                //       GestureDetector(
+                //         onTap: () {
+                //           Navigator.push(
+                //               context,
+                //               MaterialPageRoute(
+                //                   builder: (context) => const BlogsPage()));
+                //         },
+                //         child: Text(
+                //           ' Contact',
+                //           style: GoogleFonts.lato(
+                //             textStyle: const TextStyle(
+                //                 fontStyle: FontStyle.italic,
+                //                 color: Colors.white,
+                //                 fontSize: 17,
+                //                 fontWeight: FontWeight.w500),
+                //           ),
+                //         ),
+                //       ),
+                //       const SizedBox(
+                //         width: 20,
+                //       ),
+                //   ],
+                // ),
+                //     )
+                //     : PopupMenuButton(
+                //   icon: const Icon(Icons.more_vert),
+                //   onSelected: (value) {
+                //     if (value == '1') {
+                //       Navigator.pushNamed(context, '/allCoupons');
+                //     } else if (value == '2') {
+                //       Navigator.pushNamed(context, '/allStores');
+                //     } else if (value == "3") {
+                //       Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //               builder: (context) => const BlogsPage()));
+                //     }
+                //
+                //     // your logic
+                //   },
+                //   itemBuilder: (BuildContext bc) {
+                //     return const [
+                //       PopupMenuItem(
+                //         value: '1',
+                //         child: Text("Coupons"),
+                //       ),
+                //       PopupMenuItem(
+                //         value: '2',
+                //         child: Text("Stores"),
+                //       ),
+                //       PopupMenuItem(
+                //         value: '3',
+                //         child: Text("Blogs"),
+                //       )
+                //     ];
+                //   },
+                // ),
+              ],
+            ),
           ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     if(HelperFunctions.getPlatform(context)==Platform.web)
-          //     Container(
-          //       width: MediaQuery.of(context).size.width * 0.35,
-          //       alignment: Alignment.center,
-          //       child: TextField(
-          //         decoration: InputDecoration(
-          //             hintText: 'Search stores and deals',
-          //             contentPadding: const EdgeInsets.symmetric(
-          //                 horizontal: 30, vertical: 12),
-          //             border: OutlineInputBorder(
-          //                 borderRadius: BorderRadius.circular(24),
-          //                 borderSide: BorderSide(
-          //                     color: AppColors.greyColor.withOpacity(0.3))),
-          //             enabledBorder: OutlineInputBorder(
-          //                 borderRadius: BorderRadius.circular(24),
-          //                 borderSide: BorderSide(
-          //                     color: AppColors.greyColor.withOpacity(0.3))),
-          //             suffixIcon: Container(
-          //               height: 35,
-          //               width: 35,
-          //               margin:
-          //                   const EdgeInsets.only(right: 5, bottom: 5, top: 5),
-          //               padding: const EdgeInsets.all(5),
-          //               decoration: const BoxDecoration(
-          //                   shape: BoxShape.circle, color: Color(0xff00da24)),
-          //               child: const Center(
-          //                 child: Icon(
-          //                   Icons.search_rounded,
-          //                   color: AppColors.whiteColor,
-          //                 ),
-          //               ),
-          //             )),
-          //       ),
-          //     ),
-              (HelperFunctions.getPlatform(context)!=Platform.mobile &&  HelperFunctions.getPlatformStanding(context)!=PlatformStanding.tabEnd)?
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                    width: 40,
-                  ),
-                   GestureDetector(
-                     onTap: (){
-                       Navigator.pushNamed(context, '/allCoupons');
-                     },
-                     child: Text(
-                      'Coupons    ',
-                      style: GoogleFonts.lato(
-                        textStyle: const TextStyle(
-                            fontStyle: FontStyle.italic,
-                            color: Colors.white, fontSize:17, fontWeight: FontWeight.w500),),
-                  ),
-                   ),
-                  const SizedBox(
-                    width: 40,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/allStores');
-                    },
-                    child: Text(
-                      'Stores ',
-                      style: GoogleFonts.lato(
-                        textStyle: const TextStyle(
-                          fontStyle: FontStyle.italic,
-                            color: Colors.white,  fontSize:17, fontWeight: FontWeight.w500),),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 40,
-                  ),
 
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const BlogsPage()));
-                    },
-                    child: Text(
-                      'Blogs ',
-                      style: GoogleFonts.lato(
-                        textStyle: const TextStyle(
-                            fontStyle: FontStyle.italic,
-                            color: Colors.white,    fontSize:17, fontWeight: FontWeight.w500),),
-
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 40,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const BlogsPage()));
-                    },
-                    child: Text(
-                      ' Contact',
-                      style: GoogleFonts.lato(
-                        textStyle: const TextStyle(
-                            fontStyle: FontStyle.italic,
-                            color: Colors.white,    fontSize:17, fontWeight: FontWeight.w500),),
-
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                ],
-              )
-              :PopupMenuButton(
-                icon: const Icon(Icons.more_vert),
-                onSelected: (value) {
-                  if(value=='1'){
-                    Navigator.pushNamed(context, '/allCoupons');
-
-                  }
-                  else if(value=='2'){
-                    Navigator.pushNamed(context, '/allStores');
-
-                  }
-                  else if(value =="3"){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const BlogsPage()));
-
-                  }
-
-                  // your logic
-                },
-                itemBuilder: (BuildContext bc) {
-                  return const [
-                    PopupMenuItem(
-                      value: '1',
-                      child: Text("Coupons"),
-                    ),
-                    PopupMenuItem(
-                      value: '2',
-                      child: Text("Stores"),
-                    ),
-                    PopupMenuItem(
-                      value: '3',
-                      child: Text("Blogs"),
-                    )
-                  ];
-                },
-              ),
-
-
+          // Divider(),
         ],
       ),
     );

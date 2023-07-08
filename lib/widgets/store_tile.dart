@@ -22,7 +22,7 @@ class StoreTile extends StatelessWidget {
         width: screenWidth>1300?screenWidth*.18:screenWidth>950?screenWidth*.25:screenWidth>=650
             ? 270
             :screenWidth>500?300:320,
-        margin: const EdgeInsets.only(right: 20, bottom: 10, top: 10,left: 2),
+        margin: const EdgeInsets.only(right: 30, bottom: 10, top: 10,),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: AppColors.whiteColor,
