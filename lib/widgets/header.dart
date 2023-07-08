@@ -17,12 +17,12 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 100,
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
 
       decoration:  BoxDecoration(
-        color: AppColors.whiteColor,
-        boxShadow: kElevationToShadow[0],
+        color: Colors.orange,
+        boxShadow: kElevationToShadow[2],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,8 +35,9 @@ class _HeaderState extends State<Header> {
 
             children: [
               Image.asset(
-                'assets/images/logoBlack.png',
-                width: 180,
+                'assets/images/test2.png',
+                color: AppColors.whiteColor,
+                // width: 300,
                 height: 50,
               ),
 
@@ -46,10 +47,10 @@ class _HeaderState extends State<Header> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text('Stores',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor,),textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),),
-                    Text('Coupons',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false),),
-                    Text('Deals',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
-                    Text('Blogs',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
+                    Text('Stores',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16,color: AppColors.whiteColor,),textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),),
+                    Text('Coupons',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16,color: AppColors.whiteColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false),),
+                    Text('Deals',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16,color: AppColors.whiteColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
+                    Text('Blogs',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16,color: AppColors.whiteColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
                   ],
 
                 ),
@@ -63,24 +64,24 @@ class _HeaderState extends State<Header> {
                   alignment: Alignment.topCenter,
                   child: TextField(
                     decoration: InputDecoration(
-                      hintStyle: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: AppColors.blackColor),
+                      hintStyle: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: AppColors.whiteColor),
 
                       isCollapsed: true,
-                        isDense: true,
+                        // isDense: true,
                         hintText: 'Search stores and deals',
                         contentPadding: const EdgeInsets.symmetric(
                             horizontal: 15, vertical: 12),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(16),
                             borderSide: BorderSide(
-                                color: AppColors.blackColor.withOpacity(0.3))),
+                                color: AppColors.whiteColor.withOpacity(0.3))),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(16),
                             borderSide: BorderSide(
-                                color: AppColors.primaryColor.withOpacity(0.3))),
+                                color: AppColors.whiteColor.withOpacity(0.3))),
                         suffixIcon: Icon(
                           Icons.search_rounded,
-                          color: AppColors.blackColor,
+                          color: AppColors.whiteColor,
                           size: 25,
                         )),
                   ),
