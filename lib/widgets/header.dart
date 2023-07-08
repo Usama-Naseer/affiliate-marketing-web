@@ -35,9 +35,9 @@ class _HeaderState extends State<Header> {
 
               children: [
                 Image.asset(
-                  'assets/images/test3.png',
-                  width: 120,
-                  color: AppColors.greenColor,
+                  'assets/images/logoBlack.png',
+                  width: 180,
+                  height: 50,
                 ),
 
                 const SizedBox(
@@ -47,9 +47,10 @@ class _HeaderState extends State<Header> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text('Stores',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.primaryColor,),textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),),
-                        Text('Coupons',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.primaryColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false),),
-                        Text('Deals',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.primaryColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
+                        Text('Stores',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor,),textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),),
+                        Text('Coupons',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false),),
+                        Text('Deals',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
+                        Text('Blogs',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
 
                       ],
 
@@ -65,6 +66,8 @@ class _HeaderState extends State<Header> {
                     alignment: Alignment.topCenter,
                     child: TextField(
                       decoration: InputDecoration(
+                        hintStyle: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: AppColors.blackColor),
+
                         isCollapsed: true,
                           isDense: true,
                           hintText: 'Search stores and deals',
@@ -73,14 +76,14 @@ class _HeaderState extends State<Header> {
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(16),
                               borderSide: BorderSide(
-                                  color: AppColors.primaryColor.withOpacity(0.3))),
+                                  color: AppColors.blackColor.withOpacity(0.3))),
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(16),
                               borderSide: BorderSide(
                                   color: AppColors.primaryColor.withOpacity(0.3))),
                           suffixIcon: Icon(
                             Icons.search_rounded,
-                            color: AppColors.primaryColor,
+                            color: AppColors.blackColor,
                             size: 25,
                           )),
                     ),
