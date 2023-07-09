@@ -19,10 +19,9 @@ class StoreTile extends StatelessWidget {
       },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.35,
-        width: screenWidth>1300?screenWidth*.185:screenWidth>950?screenWidth*.245:screenWidth>=650
-            ? 270
-            :screenWidth>500?300:320,
-        margin:  EdgeInsets.only(right:index!=3? 28:0, bottom: 10, top: 10,left: 4),
+        width: screenWidth>1650?screenWidth*.184:screenWidth>1300?screenWidth*.183:screenWidth>950?screenWidth*.245:screenWidth>=650
+            ? screenWidth*0.35:300,
+        margin:  EdgeInsets.only(right:index!=3? screenWidth*0.017:0, bottom: 10, top: 10,left: 4),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: AppColors.whiteColor,
