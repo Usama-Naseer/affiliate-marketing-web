@@ -22,7 +22,7 @@ class HomeDeal extends StatelessWidget {
         margin: EdgeInsets.only(
             right: index != 4
                 ? screenWidth > 900
-                    ? 30
+                    ? screenWidth*0.017
                     : 15
                 : 0,
             left: 4,
