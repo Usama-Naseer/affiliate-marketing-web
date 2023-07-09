@@ -15,9 +15,7 @@ class StoreListView extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
-      padding: EdgeInsets.symmetric(
-          vertical: 20,
-          horizontal: screenWidth * 0.1),
+      padding: EdgeInsets.symmetric(vertical: 20, horizontal: screenWidth * 0.1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -61,11 +59,11 @@ class StoreListView extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           screenWidth>500?
           Container(
-            alignment: Alignment.centerLeft,
+             alignment: Alignment.topLeft,
             height:  310,
             child: ListView.builder(
               shrinkWrap: true,
@@ -87,13 +85,16 @@ class StoreListView extends StatelessWidget {
                               ? 2
                               : 1),
             ),
-          ): ListView(
-            shrinkWrap: true,
-             padding: EdgeInsets.only(right: screenWidth*0.05),
-            children: List.generate( min(
-                DummyData.stores.length,5), (index) => StoreTile(
-              store: DummyData.stores[index], index: index,
-            ),)),
+          ): Container(
+            alignment: Alignment.center,
+            child: ListView(
+              shrinkWrap: true,
+               padding: EdgeInsets.symmetric(horizontal: screenWidth*0.05),
+              children: List.generate( min(
+                  DummyData.stores.length,5), (index) => StoreTile(
+                store: DummyData.stores[index], index: index,
+              ),)),
+          ),
         ],
       ),
     );

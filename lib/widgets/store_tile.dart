@@ -21,7 +21,7 @@ class StoreTile extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.35,
         width: screenWidth>1650?screenWidth*.184:screenWidth>1300?screenWidth*.183:screenWidth>950?screenWidth*.245:screenWidth>=650
             ? screenWidth*0.35:300,
-        margin:  EdgeInsets.only(right:index!=3? screenWidth*0.017:0, bottom: 10, top: 10,left: 4),
+        margin:  EdgeInsets.only(right:index!=3? screenWidth*0.017:0, bottom: 10, top: 10,),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: AppColors.whiteColor,
@@ -71,15 +71,15 @@ class StoreTile extends StatelessWidget {
                         store.storeName,
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              fontSize:15, fontWeight: FontWeight.w700),),
+                              fontSize:17, fontWeight: FontWeight.w600),),
                       ),
                       Container(
                         height: 12,
                         width: 12,
                         margin: const EdgeInsets.only(left: 5),
-                        decoration:  BoxDecoration(
+                        decoration:  const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: HexColor("#5333ed"),
+                          color: AppColors.primaryColor,
                         ),
                         child: const Icon(
                           Icons.check,
@@ -95,7 +95,7 @@ class StoreTile extends StatelessWidget {
                         '365 users globally ',
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              fontSize:13, fontWeight: FontWeight.w500),),
+                              fontSize:12, fontWeight: FontWeight.w400),),
                       ),
                     ],
                   ),

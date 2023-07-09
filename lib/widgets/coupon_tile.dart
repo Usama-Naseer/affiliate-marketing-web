@@ -66,7 +66,6 @@ class CouponTile extends StatelessWidget {
                     Image.network(
                       coupon.image,
                       height: 50,
-                      width: 60,
                     )
                   ],
                 ),

@@ -85,12 +85,9 @@ class CouponGridView extends StatelessWidget {
                             )),
                           ),
                         const Spacer(),
-                          Flexible(
-                            child: Image.network(
-                              coupons[index].image,
-                              height: 50,
-                              width: 60,
-                            ),
+                          Image.network(
+                            coupons[index].image,
+                            height: 50,
                           )
                       ],
                     ),

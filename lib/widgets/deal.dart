@@ -25,7 +25,7 @@ class HomeDeal extends StatelessWidget {
                     ? screenWidth*0.017
                     : 15
                 : 0,
-            left: 4,
+
             bottom: 10,
             top: 10),
         width: screenWidth > 1400
@@ -51,7 +51,7 @@ class HomeDeal extends StatelessWidget {
               ),
             ]),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -66,7 +66,7 @@ class HomeDeal extends StatelessWidget {
                       bottomRight: Radius.circular(12),
                       bottomLeft: Radius.circular(0),
                     ),
-                    color: HexColor("#5333ed"),
+                    color: AppColors.primaryColor,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +78,7 @@ class HomeDeal extends StatelessWidget {
                           textStyle: const TextStyle(
                               fontSize: 10,
                               fontWeight: FontWeight.w500,
-                              color: Colors.white),
+                              color: AppColors.whiteColor),
                         ),
                       ),
                     ],
@@ -86,16 +86,18 @@ class HomeDeal extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.1,
-              width: 100,
-              padding: const EdgeInsets.all(10),
-              //  width: MediaQuery.of(context).size.width,
-              // padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
+            Center(
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.1,
+                width: 100,
+                padding: const EdgeInsets.all(10),
+                //  width: MediaQuery.of(context).size.width,
+                // padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
 
-              child: Image.network(
-                coupon.image,
-                fit: BoxFit.contain,
+                child: Image.network(
+                  coupon.image,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             const SizedBox(
@@ -109,21 +111,26 @@ class HomeDeal extends StatelessWidget {
                 children: [
                   Text(
                     coupon.title,
+                    textAlign: TextAlign.start,
                     style: GoogleFonts.lato(
                       textStyle: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.w700),
+
                     ),
+
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    coupon.description,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.lato(
-                      textStyle: const TextStyle(
-                          fontSize: 14, fontWeight: FontWeight.w500),
+                  SizedBox(
+                    height: 35,
+                    child: Text(
+                      coupon.description,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.lato(
+                          textStyle:  TextStyle(
+                              fontSize:14, fontWeight: FontWeight.w300,color: AppColors.blackColor.withOpacity(0.7)),)
                     ),
                   ),
                   const SizedBox(

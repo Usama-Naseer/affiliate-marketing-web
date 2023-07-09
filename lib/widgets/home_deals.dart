@@ -24,7 +24,7 @@ class _CouponsListViewState extends State<CouponsListView> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
+        padding: EdgeInsets.symmetric(horizontal: screenWidth>500? MediaQuery.of(context).size.width * 0.1:5),
         child: ListView.builder(
             shrinkWrap: true,
             itemCount: DummyData.categories.length,
@@ -45,6 +45,7 @@ class _CouponsListViewState extends State<CouponsListView> {
                   height: 310,
                   child: ListView.builder(
                     // padding: EdgeInsets.symmetric(horizontal: screenWidth*0.1),
+                    physics: screenWidth>600?NeverScrollableScrollPhysics():null,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index2) => HomeDeal(
                       coupon: sortedCoupons[index][index2], index: index2,),
@@ -52,7 +53,7 @@ class _CouponsListViewState extends State<CouponsListView> {
                         categoryCoupons(
                           DummyData.categories[index],
                         ).length,
-                        screenWidth>1400?5:screenWidth>1200?4:screenWidth>850?3:screenWidth>600?2:1),
+                        screenWidth>1400?5:screenWidth>1200?4:screenWidth>850?3:screenWidth>600?2:5),
                   ),
                 ),
                 const SizedBox(

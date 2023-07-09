@@ -19,11 +19,17 @@ class _HeaderState extends State<Header> {
   Widget build(BuildContext context) {
     return Container(
       height: 80,
-      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.1),
+      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.095),
 
-      decoration:  const BoxDecoration(
+      decoration:   BoxDecoration(
         color: AppColors.whiteColor,
-        // boxShadow: kElevationToShadow[1],
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.myHexColor.withOpacity(0.2),
+              blurRadius: 5.0,
+              offset: const Offset(2.0, 1.0),
+            ),
+          ]
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,20 +43,21 @@ class _HeaderState extends State<Header> {
             children: [
               Image.asset(
                 'assets/images/logoBlack.png',
-                width: 180,
-                height: 50,
+                // width: 180,
+                 height: 50,
+
               ),
 
-              const SizedBox(
+               SizedBox(
                 width:300,
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text('Stores',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor,),textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),),
-                    Text('Coupons',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false),),
-                    Text('Deals',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
-                    Text('Blogs',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 14,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
+                    Text('Stores',style: GoogleFonts.lato(fontWeight: FontWeight.w300,fontSize: 17,color: AppColors.blackColor,),textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),),
+                    Text('Coupons',style: GoogleFonts.lato(fontWeight: FontWeight.w300,fontSize: 17,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false),),
+                    Text('Deals',style: GoogleFonts.lato(fontWeight: FontWeight.w300,fontSize: 17,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
+                    Text('Blogs',style: GoogleFonts.lato(fontWeight: FontWeight.w300,fontSize: 17,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
                   ],
 
                 ),
@@ -59,31 +66,46 @@ class _HeaderState extends State<Header> {
 
               if (HelperFunctions.getPlatform(context) == Platform.web)
                 Container(
-                  width: 250,
+                  width: 180,
                   margin: const EdgeInsets.only(top: 10),
                   alignment: Alignment.topCenter,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintStyle: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: AppColors.blackColor),
+                  child:  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const Icon(
+                        Icons.search_rounded,
+                        color: AppColors.blackColor,
+                        size: 25,
+                      ),
+                      SizedBox(width: 10,),
+                      Flexible(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintStyle: GoogleFonts.lato(fontSize: 13,fontWeight: FontWeight.w300,color: AppColors.blackColor),
+                            isCollapsed: true,
+                              isDense: true,
+                              hintText: 'Search stores and deals',
+                              contentPadding: EdgeInsets.only(
+                                  left: 0, top: 6,bottom: 12),
+                              border: UnderlineInputBorder(borderSide: BorderSide(width:0.3,)),
+                              enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width:0.3,)),
+                              focusedBorder:UnderlineInputBorder(borderSide: BorderSide(width:0.3,))
 
-                      isCollapsed: true,
-                        isDense: true,
-                        hintText: 'Search stores and deals',
-                        contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 12),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                            borderSide: BorderSide(
-                                color: AppColors.blackColor.withOpacity(0.3))),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                            borderSide: BorderSide(
-                                color: AppColors.primaryColor.withOpacity(0.3))),
-                        suffixIcon: Icon(
-                          Icons.search_rounded,
-                          color: AppColors.blackColor,
-                          size: 25,
-                        )),
+
+    // border: InputBorder.none,
+                              // border: OutlineInputBorder(
+                              //     borderRadius: BorderRadius.circular(16),
+                              //     borderSide: BorderSide(
+                              //         color: AppColors.blackColor.withOpacity(0.3))),
+                              // enabledBorder: OutlineInputBorder(
+                              //     borderRadius: BorderRadius.circular(16),
+                              //     borderSide: BorderSide(
+                              //         color: AppColors.primaryColor.withOpacity(0.3))),
+                               ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
     // GestureDetector(
@@ -226,7 +248,7 @@ class _HeaderState extends State<Header> {
             ],
           ),
 
-          Divider(),
+          // Divider(),
         ],
       ),
     );
