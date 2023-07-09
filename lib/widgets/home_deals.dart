@@ -9,8 +9,15 @@ import 'package:google_fonts/google_fonts.dart';
 import '../core/helper_functions.dart';
 import '../models/store_model.dart';
 
-class CouponsListView extends StatelessWidget {
-  const CouponsListView({Key? key}) : super(key: key);
+class CouponsListView extends StatefulWidget {
+  const CouponsListView({super.key});
+
+  @override
+  State<CouponsListView> createState() => _CouponsListViewState();
+}
+
+class _CouponsListViewState extends State<CouponsListView> {
+  List<List<Coupon>> sortedCoupons =[];
 
   @override
   Widget build(BuildContext context) {
@@ -22,41 +29,52 @@ class CouponsListView extends StatelessWidget {
             shrinkWrap: true,
             itemCount: DummyData.categories.length,
             itemBuilder: (context, index) => Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      DummyData.categories[index],
-                      style: GoogleFonts.lato(
-                        textStyle: const TextStyle(
-                            fontSize: 23, fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    SizedBox(
-                      height: 310,
-                      child: ListView.builder(
-                        // padding: EdgeInsets.symmetric(horizontal: screenWidth*0.1),
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index2) => HomeDeal(
-                                  coupon: categoryCoupons(
-                                DummyData.categories[index],
-                              )[index2], index: index2,),
-                          itemCount: min(
-                              categoryCoupons(
-                                DummyData.categories[index],
-                              ).length,
-                              screenWidth>1400?5:screenWidth>1200?4:screenWidth>850?3:screenWidth>600?2:1),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                  ],
-                )));
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  DummyData.categories[index],
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                        fontSize: 23, fontWeight: FontWeight.w600),
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                SizedBox(
+                  height: 310,
+                  child: ListView.builder(
+                    // padding: EdgeInsets.symmetric(horizontal: screenWidth*0.1),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index2) => HomeDeal(
+                      coupon: sortedCoupons[index][index2], index: index2,),
+                    itemCount: min(
+                        categoryCoupons(
+                          DummyData.categories[index],
+                        ).length,
+                        screenWidth>1400?5:screenWidth>1200?4:screenWidth>850?3:screenWidth>600?2:1),
+                  ),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+              ],
+            )));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    sortAndShuffleCoupons();
+  }
+  void sortAndShuffleCoupons(){
+    for (var element in DummyData.categories) {
+      sortedCoupons.add(categoryCoupons(element));
+    }
   }
 }
+
+
 
 List<Coupon> categoryCoupons(String cat) {
   List<Store> stores = [];
@@ -69,6 +87,7 @@ List<Coupon> categoryCoupons(String cat) {
   for (var element2 in DummyData.coupons) {
     if (stores.any((element3) => element3.storeName == element2.storeName)) {
       coupons.add(element2);
+
     }
   }
   return coupons..shuffle();
