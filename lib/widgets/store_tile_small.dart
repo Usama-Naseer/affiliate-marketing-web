@@ -18,7 +18,7 @@ class StoreTileSmall extends StatelessWidget {
         height: 100,
         margin: const EdgeInsets.only(right: 20, top: 20, bottom: 20),
         padding:
-        const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
 
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -58,7 +58,7 @@ class StoreTileSmall extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  'Coupons, promo codes & deals',
+                  'Coupons & deals',
 
                   style: GoogleFonts.lato(
                     textStyle: const TextStyle(

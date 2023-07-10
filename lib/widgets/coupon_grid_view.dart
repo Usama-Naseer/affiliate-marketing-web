@@ -18,15 +18,15 @@ class CouponGridView extends StatelessWidget {
       child: GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.1),
+        padding: EdgeInsets.only(
+            right: 50,left: 50),
 
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: MediaQuery.of(context).size.width > 1350
-              ? 4
+              ? 2
               : MediaQuery.of(context).size.width <= 1350 &&
               MediaQuery.of(context).size.width > 900
-                  ? 3
+                  ? 2
                   : MediaQuery.of(context).size.width <= 900 &&
                           MediaQuery.of(context).size.width > 500
                       ? 2
@@ -40,7 +40,7 @@ class CouponGridView extends StatelessWidget {
           },
           child: Container(
             margin:
-                const EdgeInsets.only(top: 20, bottom: 20, right: 20, left: 4),
+                const EdgeInsets.only(top: 0, bottom: 20, right: 20, left: 4),
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
             decoration: BoxDecoration(
                 color: AppColors.whiteColor,
@@ -61,7 +61,7 @@ class CouponGridView extends StatelessWidget {
                   children: [
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           coupons[index].title,
@@ -84,11 +84,7 @@ class CouponGridView extends StatelessWidget {
                               style: TextStyle(color: AppColors.orangeColor),
                             )),
                           ),
-                        const Spacer(),
-                          Image.network(
-                            coupons[index].image,
-                            height: 50,
-                          )
+
                       ],
                     ),
                     const SizedBox(

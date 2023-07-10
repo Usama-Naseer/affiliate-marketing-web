@@ -34,25 +34,29 @@ class _StorePageState extends State<StorePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children:  [
             const SizedBox(
-              height: 20,
+              height: 40,
             ),
-            Text(
-              '$storeName Coupon Codes June 2023',
-                style: GoogleFonts.lato(
-                  textStyle: const TextStyle(
-                      fontSize:26, fontWeight: FontWeight.w500),),
+
+
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+              children: [
+                if(MediaQuery.of(context).size.width>870)
+                  StoreDescription(store: getStore(),),
+                Container(
+                    width: MediaQuery.of(context).size.width*0.55,
+                    child: Center(child: CouponGridView(coupons: DummyData.coupons.where((element) => element.storeName==storeName).toList(),))),
+                StoreCompetitors(stores: DummyData.stores.where((element) => element.category== (DummyData.stores.firstWhere((element2) => element2.storeName==storeName).category)).toList()),
+
+              ],
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            Text(MediaQuery.of(context).size.width.toString()),
-            CouponGridView(coupons: DummyData.coupons.where((element) => element.storeName==storeName).toList(),),
             const SizedBox(
               height: 20,
             ),
             if(MediaQuery.of(context).size.width>870)
             StoreDescription(store: getStore(),),
-            StoreCompetitors(stores: DummyData.stores.where((element) => element.category== (DummyData.stores.firstWhere((element2) => element2.storeName==storeName).category)).toList()),
             const AppFooter(),
           ],
         ),
