@@ -18,15 +18,13 @@ class CouponGridView extends StatelessWidget {
       child: GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.only(
-            right: 50,left: 50),
-
+        padding: const EdgeInsets.only(right: 50,left: 50),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: MediaQuery.of(context).size.width > 1350
-              ? 2
+              ? 3
               : MediaQuery.of(context).size.width <= 1350 &&
               MediaQuery.of(context).size.width > 900
-                  ? 2
+                  ? 3
                   : MediaQuery.of(context).size.width <= 900 &&
                           MediaQuery.of(context).size.width > 500
                       ? 2

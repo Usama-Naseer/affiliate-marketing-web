@@ -14,7 +14,7 @@ class StoreCompetitors extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-          width: MediaQuery.of(context).size.width*0.2,
+        margin:  EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
           decoration: BoxDecoration(
               border: Border.all(color: Colors.grey.withOpacity(0.2)),
@@ -30,7 +30,7 @@ class StoreCompetitors extends StatelessWidget {
             children: [
               Text('Top Competitors',style: GoogleFonts.lato(fontSize: 26,fontWeight: FontWeight.bold,color:AppColors.blackColor),),
               GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,
                     mainAxisSpacing: 0,
                     mainAxisExtent: 150
                   ),

@@ -40,15 +40,14 @@ class _StorePageState extends State<StorePage> {
 
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.start,
 
               children: [
                 if(MediaQuery.of(context).size.width>870)
                   StoreDescription(store: getStore(),),
                 Container(
-                    width: MediaQuery.of(context).size.width*0.55,
+                    width: MediaQuery.of(context).size.width*0.7,
                     child: Center(child: CouponGridView(coupons: DummyData.coupons.where((element) => element.storeName==storeName).toList(),))),
-                StoreCompetitors(stores: DummyData.stores.where((element) => element.category== (DummyData.stores.firstWhere((element2) => element2.storeName==storeName).category)).toList()),
 
               ],
             ),
@@ -56,7 +55,7 @@ class _StorePageState extends State<StorePage> {
               height: 20,
             ),
             if(MediaQuery.of(context).size.width>870)
-            StoreDescription(store: getStore(),),
+              StoreCompetitors(stores: DummyData.stores.where((element) => element.category== (DummyData.stores.firstWhere((element2) => element2.storeName==storeName).category)).toList()),
             const AppFooter(),
           ],
         ),

@@ -21,6 +21,7 @@ class _StoreDescriptionState extends State<StoreDescription> {
       children: [
         Container(
           width: MediaQuery.of(context).size.width*0.2,
+          margin: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.075),
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
           decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.withOpacity(0.2)),
