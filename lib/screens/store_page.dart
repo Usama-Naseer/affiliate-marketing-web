@@ -23,6 +23,8 @@ class _StorePageState extends State<StorePage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     storeName= ModalRoute.of(context)?.settings.arguments as String;
 
     return Scaffold(
@@ -36,17 +38,17 @@ class _StorePageState extends State<StorePage> {
             const SizedBox(
               height: 40,
             ),
-
+           Text(MediaQuery.of(context).size.width.toString()),
 
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
 
               children: [
-                if(MediaQuery.of(context).size.width>870)
+                 if(MediaQuery.of(context).size.width>850)
                   StoreDescription(store: getStore(),),
                 Container(
-                    width: MediaQuery.of(context).size.width*0.7,
+                    width: screenWidth>900?screenWidth*0.7:screenWidth>850?screenWidth*0.5:screenWidth>700?screenWidth*0.9:screenWidth*0.7,
                     child: Center(child: CouponGridView(coupons: DummyData.coupons.where((element) => element.storeName==storeName).toList(),))),
 
               ],

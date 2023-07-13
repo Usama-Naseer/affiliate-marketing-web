@@ -24,11 +24,11 @@ class CouponGridView extends StatelessWidget {
               ? 3
               : MediaQuery.of(context).size.width <= 1350 &&
               MediaQuery.of(context).size.width > 900
-                  ? 3
+                  ? 2
                   : MediaQuery.of(context).size.width <= 900 &&
-                          MediaQuery.of(context).size.width > 500
-                      ? 2
-                      : 1,
+                          MediaQuery.of(context).size.width > 850
+                      ? 1
+                      : MediaQuery.of(context).size.width > 700? 2:1,
           mainAxisExtent: 320
         ),
              itemCount: coupons.length,
