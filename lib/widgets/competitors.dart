@@ -12,6 +12,8 @@ class StoreCompetitors extends StatelessWidget {
   const StoreCompetitors({required this.stores, Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return SingleChildScrollView(
       child: Container(
           margin: EdgeInsets.symmetric(
@@ -31,9 +33,9 @@ class StoreCompetitors extends StatelessWidget {
             children: [
               Text('Top Competitors',style: GoogleFonts.lato(fontSize: 26,fontWeight: FontWeight.bold,color:AppColors.blackColor),),
               GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,
+                  gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: screenWidth>1000?3:screenWidth>500?2:1,
                     mainAxisSpacing: 0,
-                    childAspectRatio: 3,
+                    mainAxisExtent: 130,
                   ),
 
                   shrinkWrap: true,

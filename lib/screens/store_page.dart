@@ -11,19 +11,18 @@ import 'package:google_fonts/google_fonts.dart';
 import '../models/store_model.dart';
 
 class StorePage extends StatefulWidget {
-  const StorePage({ this.storeName ='',Key? key}) : super(key: key);
- final String  storeName;
+  const StorePage({ this.storeName= '',Key? key}) : super(key: key);
+ final String? storeName;
 
   @override
   State<StorePage> createState() => _StorePageState();
 }
 
 class _StorePageState extends State<StorePage> {
- late String storeName ;
 
   @override
   Widget build(BuildContext context) {
-    storeName= ModalRoute.of(context)?.settings.arguments as String;
+
 
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
@@ -37,7 +36,7 @@ class _StorePageState extends State<StorePage> {
               height: 20,
             ),
             Text(
-              '$storeName Coupon Codes June 2023',
+              '${widget.storeName} Coupon Codes June 2023',
                 style: GoogleFonts.lato(
                   textStyle: const TextStyle(
                       fontSize:26, fontWeight: FontWeight.w500),),
@@ -46,13 +45,13 @@ class _StorePageState extends State<StorePage> {
             const SizedBox(
               height: 20,
             ),
-            CouponGridView(coupons: DummyData.coupons.where((element) => element.storeName==storeName).toList(),),
+            CouponGridView(coupons: DummyData.coupons.where((element) => element.storeName==widget.storeName).toList(),),
             const SizedBox(
               height: 20,
             ),
             if(MediaQuery.of(context).size.width>870)
             StoreDescription(store: getStore(),),
-            StoreCompetitors(stores: DummyData.stores.where((element) => element.category== (DummyData.stores.firstWhere((element2) => element2.storeName==storeName).category)).toList()),
+            StoreCompetitors(stores: DummyData.stores.where((element) => element.category== (DummyData.stores.firstWhere((element2) => element2.storeName==widget.storeName).category)).toList()),
             const AppFooter(),
           ],
         ),
@@ -60,7 +59,7 @@ class _StorePageState extends State<StorePage> {
     );
   }
   Store getStore(){
-    return DummyData.stores.firstWhere((element) => element.storeName==storeName);
+    return DummyData.stores.firstWhere((element) => element.storeName==widget.storeName);
 
   }
 }

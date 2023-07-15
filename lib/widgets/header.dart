@@ -2,6 +2,7 @@ import 'package:discountandcodes/core/app_colors.dart';
 import 'package:discountandcodes/core/helper_functions.dart';
 import 'package:discountandcodes/screens/blogs_page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -41,14 +42,20 @@ class _HeaderState extends State<Header> {
                 ? CrossAxisAlignment.center
                 : CrossAxisAlignment.end,
             children: [
-              Image.asset(
-                'assets/images/logoBlack.png',
-                // width: 180,
-                height: screenWidth > 750
-                    ? 50
-                    : screenWidth > 500
-                        ? 30
-                        : 25,
+              GestureDetector(
+                onTap: (){
+                  context.go('/');
+
+                },
+                child: Image.asset(
+                  'assets/images/logoBlack.png',
+                  // width: 180,
+                  height: screenWidth > 750
+                      ? 50
+                      : screenWidth > 500
+                          ? 30
+                          : 25,
+                ),
               ),
               if (screenWidth > 750)
                 SizedBox(
@@ -59,7 +66,7 @@ class _HeaderState extends State<Header> {
                     children: [
                       GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/allStores');
+                            context.go('/stores');
                           },
                           child: Text(
                             'Stores',
@@ -68,12 +75,12 @@ class _HeaderState extends State<Header> {
                               fontSize: 17,
                               color: AppColors.blackColor,
                             ),
-                            textHeightBehavior: TextHeightBehavior(
+                            textHeightBehavior: const TextHeightBehavior(
                                 applyHeightToFirstAscent: false),
                           )),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/allCoupons');
+                          context.go('/coupons');
                         },
                         child: Text(
                           'Coupons',
@@ -82,12 +89,12 @@ class _HeaderState extends State<Header> {
                               fontSize: 17,
                               color: AppColors.blackColor),
                           textHeightBehavior:
-                              TextHeightBehavior(applyHeightToFirstAscent: false),
+                              const TextHeightBehavior(applyHeightToFirstAscent: false),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/blogs');
+                          context.go('/blogs');
                         },
                         child: Text('Blogs',
                             style: GoogleFonts.lato(

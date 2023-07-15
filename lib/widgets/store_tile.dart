@@ -1,5 +1,6 @@
 import 'package:discountandcodes/core/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../core/app_colors.dart';
@@ -16,7 +17,12 @@ class StoreTile extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/store', arguments: store.storeName);
+        context.goNamed(
+          'store',
+          pathParameters: {
+            'storeName': store.storeName,
+          },
+        );
       },
       child: Container(
         width: screenWidth > 1650

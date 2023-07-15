@@ -6,18 +6,88 @@ import 'package:discountandcodes/screens/privacy_policy.dart';
 import 'package:discountandcodes/screens/store_page.dart';
 import 'package:discountandcodes/screens/terms_of_use.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+
+
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
+
+  final GoRouter _router = GoRouter(
+    routes: <RouteBase>[
+      GoRoute(
+        path: '/',
+        builder: (BuildContext context, GoRouterState state) {
+          return const HomeScreen();
+        },
+        routes: <RouteBase>[
+          GoRoute(
+            path: 'stores',
+            builder: (BuildContext context, GoRouterState state) {
+              // return const DetailsScreen();
+              return const AllStores();
+            },
+          ),
+          GoRoute(
+            path: 'coupons',
+            builder: (BuildContext context, GoRouterState state) {
+              // return const DetailsScreen();
+              return const CouponsByCategory();
+            },
+          ),
+          GoRoute(
+            path: 'blogs',
+            builder: (BuildContext context, GoRouterState state) {
+              // return const DetailsScreen();
+              return const BlogsPage();
+            },
+          ),
+          GoRoute(
+            path: 'termsOfUse',
+            builder: (BuildContext context, GoRouterState state) {
+              // return const DetailsScreen();
+              return const Terms();
+            },
+          ),
+          GoRoute(
+            path: 'privacyPolicy',
+            builder: (BuildContext context, GoRouterState state) {
+              // return const DetailsScreen();
+              return const PrivacyPolicy();
+            },
+          ),
+          GoRoute(
+            path: 'privacyPolicy',
+            builder: (BuildContext context, GoRouterState state) {
+              // return const DetailsScreen();
+              return const PrivacyPolicy();
+            },
+          ),
+          GoRoute(
+            path: 'store/:storeName',
+            name: 'store',
+            builder: (BuildContext context, GoRouterState state) {
+              // return const DetailsScreen();
+              return  StorePage(storeName: state.pathParameters['storeName']!,);
+            },
+          ),
+
+        ],
+      ),
+    ],
+  );
+
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig:_router ,
       title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: 'Alcatraz',
@@ -35,17 +105,17 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      routes: {
-        '/': (context) => const HomeScreen(),
-        '/allStores': (context) => const AllStores(),
-        '/store': (context) => const StorePage(),
-        '/privacyPolicy': (context) => const PrivacyPolicy(),
-        '/terms': (context) => const Terms(),
-        '/allCoupons': (context) => const CouponsByCategory(),
-        '/blogs': (context) => const BlogsPage(),
-
-      },
-      initialRoute: '/',
+      // routes: {
+      //   '/': (context) => const HomeScreen(),
+      //   '/allStores': (context) => const AllStores(),
+      //   '/store': (context) => const StorePage(),
+      //   '/privacyPolicy': (context) => const PrivacyPolicy(),
+      //   '/terms': (context) => const Terms(),
+      //   '/allCoupons': (context) => const CouponsByCategory(),
+      //   '/blogs': (context) => const BlogsPage(),
+      //
+      // },
+      // initialRoute: '/',
     );
   }
 }
