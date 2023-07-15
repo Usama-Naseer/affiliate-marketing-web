@@ -29,7 +29,7 @@ class HomeDeal extends StatelessWidget {
             bottom: 10,
             top: 10),
         width: screenWidth > 1400
-            ? screenWidth * 0.142
+            ? screenWidth * 0.145
             : screenWidth > 1200
                 ? screenWidth * 0.17
                 : screenWidth > 1000

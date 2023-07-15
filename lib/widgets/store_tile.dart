@@ -25,8 +25,9 @@ class StoreTile extends StatelessWidget {
         );
       },
       child: Container(
+        height: 280,
         width: screenWidth > 1650
-            ? screenWidth * .184
+            ? screenWidth * .186
             : screenWidth > 1300
                 ? screenWidth * .183
                 : screenWidth > 950
