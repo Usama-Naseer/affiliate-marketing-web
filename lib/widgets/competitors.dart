@@ -33,7 +33,7 @@ class StoreCompetitors extends StatelessWidget {
             children: [
               Text('Top Competitors',style: GoogleFonts.lato(fontSize: 26,fontWeight: FontWeight.bold,color:AppColors.blackColor),),
               GridView.builder(
-                  gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: screenWidth>1000?3:screenWidth>500?2:1,
+                  gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: screenWidth>1400?3:screenWidth>800?2:1,
                     mainAxisSpacing: 0,
                     mainAxisExtent: 130,
                   ),

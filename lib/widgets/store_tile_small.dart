@@ -58,7 +58,7 @@ class StoreTileSmall extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  'Coupons, promo codes & deals',
+                  'Coupons & deals',
 
                   style: GoogleFonts.lato(
                     textStyle: const TextStyle(
