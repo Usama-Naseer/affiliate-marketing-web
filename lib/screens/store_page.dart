@@ -46,7 +46,6 @@ class _StorePageState extends State<StorePage> {
             const SizedBox(
               height: 20,
             ),
-            Text(MediaQuery.of(context).size.width.toString()),
             CouponGridView(coupons: DummyData.coupons.where((element) => element.storeName==storeName).toList(),),
             const SizedBox(
               height: 20,

@@ -9,6 +9,7 @@ class BlogsGridView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       child: GridView.count(
+        shrinkWrap: true,
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.1),
         crossAxisCount: 3,
@@ -41,9 +42,9 @@ class BlogsGridView extends StatelessWidget {
                     fit: BoxFit.fitWidth,
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Expanded(
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

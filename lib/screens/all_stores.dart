@@ -44,7 +44,6 @@ class _AllStoresState extends State<AllStores> {
             const SizedBox(
               height: 20,
             ),
-            Text(screenWidth.toString()),
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width * 0.1),

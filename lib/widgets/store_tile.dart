@@ -6,7 +6,8 @@ import '../core/app_colors.dart';
 import '../models/store_model.dart';
 
 class StoreTile extends StatelessWidget {
-  const StoreTile({required this.store,  required this.index, Key? key}) : super(key: key);
+  const StoreTile({required this.store, required this.index, Key? key})
+      : super(key: key);
   final Store store;
   final int index;
   @override
@@ -18,10 +19,20 @@ class StoreTile extends StatelessWidget {
         Navigator.pushNamed(context, '/store', arguments: store.storeName);
       },
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.35,
-        width: screenWidth>1650?screenWidth*.184:screenWidth>1300?screenWidth*.183:screenWidth>950?screenWidth*.245:screenWidth>=650
-            ? screenWidth*0.35:300,
-        margin:  EdgeInsets.only(right:index!=3? screenWidth*0.017:0, bottom: 10, top: 10,),
+        width: screenWidth > 1650
+            ? screenWidth * .184
+            : screenWidth > 1300
+                ? screenWidth * .183
+                : screenWidth > 950
+                    ? screenWidth * .245
+                    : screenWidth >= 650
+                        ? screenWidth * 0.35
+                        : 300,
+        margin: EdgeInsets.only(
+          right: index != 3 ? screenWidth * 0.017 : 0,
+          bottom: 10,
+          top: 10,
+        ),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: AppColors.whiteColor,
@@ -33,9 +44,10 @@ class StoreTile extends StatelessWidget {
               ),
             ]),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              height: MediaQuery.of(context).size.height * 0.2,
+              height: 170,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(12),
@@ -58,9 +70,8 @@ class StoreTile extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -71,13 +82,14 @@ class StoreTile extends StatelessWidget {
                         store.storeName,
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
-                              fontSize:17, fontWeight: FontWeight.w600),),
+                              fontSize: 17, fontWeight: FontWeight.w600),
+                        ),
                       ),
                       Container(
                         height: 12,
                         width: 12,
                         margin: const EdgeInsets.only(left: 5),
-                        decoration:  const BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: AppColors.primaryColor,
                         ),
@@ -90,13 +102,14 @@ class StoreTile extends StatelessWidget {
                       const SizedBox(
                         width: 5,
                       ),
-                       if(HelperFunctions.getPlatform(context)==Platform.web)
-                       Text(
-                        '365 users globally ',
-                        style: GoogleFonts.lato(
-                          textStyle: const TextStyle(
-                              fontSize:12, fontWeight: FontWeight.w400),),
-                      ),
+                      if (HelperFunctions.getPlatform(context) == Platform.web)
+                        Text(
+                          '365 users globally ',
+                          style: GoogleFonts.lato(
+                            textStyle: const TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.w400),
+                          ),
+                        ),
                     ],
                   ),
                   const SizedBox(
@@ -107,10 +120,15 @@ class StoreTile extends StatelessWidget {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.lato(
-                      textStyle:  TextStyle(
-                          fontSize:14, fontWeight: FontWeight.w300,color: AppColors.blackColor.withOpacity(0.7)),),
+                      textStyle: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w300,
+                          color: AppColors.blackColor.withOpacity(0.7)),
+                    ),
                   ),
-
+                  const SizedBox(
+                    height: 10,
+                  ),
                 ],
               ),
             )

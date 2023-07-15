@@ -100,10 +100,10 @@ class _TermsState extends State<Terms> {
                               "Prohibited Activities: You agree not to engage in any of the following activities while using the Website:\n"))
                     ],
                   ),
-                  Row(
+                  const Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
+                    children: [
                       SizedBox(
                         width: 20,
                       ),
@@ -112,10 +112,10 @@ class _TermsState extends State<Terms> {
                               '1.3.1. Violating any applicable laws, regulations, or third-party rights.\n')),
                     ],
                   ),
-                  Row(
+                  const Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
+                    children: [
                       SizedBox(
                         width: 20,
                       ),
@@ -136,10 +136,10 @@ class _TermsState extends State<Terms> {
                               '1.3.3. Interfering with the operation or security of the Website.\n')),
                     ],
                   ),
-                  Row(
+                  const Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
+                    children: [
                       SizedBox(
                         width: 20,
                       ),
@@ -148,10 +148,10 @@ class _TermsState extends State<Terms> {
                               '1.3.4. Impersonating any person or entity or misrepresenting your affiliation with Discount&Codes.\n')),
                     ],
                   ),
-                  Row(
+                  const Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: const [
+                    children: [
                       SizedBox(
                         width: 20,
                       ),

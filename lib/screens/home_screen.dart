@@ -16,18 +16,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
 
-    return  Scaffold(
+    return  const Scaffold(
       backgroundColor: AppColors.whiteColor,
-      appBar: const PreferredSize(preferredSize: Size.fromHeight(100),
+      appBar: PreferredSize(preferredSize: Size.fromHeight(100),
       child: Header(),),
       body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children:   [
               SizedBox(height: 30,),
-               Text(MediaQuery.of(context).size.width.toString()),
               StoreListView(),
-
               CouponsListView(),
               AppFooter(),
             ],
