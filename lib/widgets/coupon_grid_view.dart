@@ -61,7 +61,7 @@ class CouponGridView extends StatelessWidget {
                   children: [
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           coupons[index].title,
@@ -84,11 +84,6 @@ class CouponGridView extends StatelessWidget {
                               style: TextStyle(color: AppColors.orangeColor),
                             )),
                           ),
-                        const Spacer(),
-                          Image.network(
-                            coupons[index].image,
-                            height: 50,
-                          )
                       ],
                     ),
                     const SizedBox(

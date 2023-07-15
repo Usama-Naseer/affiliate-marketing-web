@@ -1,4 +1,5 @@
 import 'package:discountandcodes/screens/all_stores.dart';
+import 'package:discountandcodes/screens/blogs_page.dart';
 import 'package:discountandcodes/screens/coupons_by_ccategory.dart';
 import 'package:discountandcodes/screens/home_screen.dart';
 import 'package:discountandcodes/screens/privacy_policy.dart';
@@ -41,6 +42,8 @@ class MyApp extends StatelessWidget {
         '/privacyPolicy': (context) => const PrivacyPolicy(),
         '/terms': (context) => const Terms(),
         '/allCoupons': (context) => const CouponsByCategory(),
+        '/blogs': (context) => const BlogsPage(),
+
       },
       initialRoute: '/',
     );

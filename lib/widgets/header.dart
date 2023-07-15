@@ -17,20 +17,19 @@ class _HeaderState extends State<Header> {
   ScrollController scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       height: 80,
-      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.095),
-
-      decoration:   BoxDecoration(
-        color: AppColors.whiteColor,
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.myHexColor.withOpacity(0.2),
-              blurRadius: 5.0,
-              offset: const Offset(2.0, 1.0),
-            ),
-          ]
-      ),
+      padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * 0.095),
+      decoration: BoxDecoration(color: AppColors.whiteColor, boxShadow: [
+        BoxShadow(
+          color: AppColors.myHexColor.withOpacity(0.2),
+          blurRadius: 5.0,
+          offset: const Offset(2.0, 1.0),
+        ),
+      ]),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -38,38 +37,77 @@ class _HeaderState extends State<Header> {
           // const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-
+            crossAxisAlignment: screenWidth > 500
+                ? CrossAxisAlignment.center
+                : CrossAxisAlignment.end,
             children: [
               Image.asset(
                 'assets/images/logoBlack.png',
                 // width: 180,
-                 height: 50,
-
+                height: screenWidth > 750
+                    ? 50
+                    : screenWidth > 500
+                        ? 30
+                        : 25,
               ),
-
-               SizedBox(
-                width:300,
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text('Stores',style: GoogleFonts.lato(fontWeight: FontWeight.w300,fontSize: 17,color: AppColors.blackColor,),textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),),
-                    Text('Coupons',style: GoogleFonts.lato(fontWeight: FontWeight.w300,fontSize: 17,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false),),
-                    Text('Deals',style: GoogleFonts.lato(fontWeight: FontWeight.w300,fontSize: 17,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
-                    Text('Blogs',style: GoogleFonts.lato(fontWeight: FontWeight.w300,fontSize: 17,color: AppColors.blackColor),textHeightBehavior:TextHeightBehavior(applyHeightToFirstAscent: false)),
-                  ],
-
+              if (screenWidth > 750)
+                SizedBox(
+                  width: 300,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/allStores');
+                          },
+                          child: Text(
+                            'Stores',
+                            style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 17,
+                              color: AppColors.blackColor,
+                            ),
+                            textHeightBehavior: TextHeightBehavior(
+                                applyHeightToFirstAscent: false),
+                          )),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/allCoupons');
+                        },
+                        child: Text(
+                          'Coupons',
+                          style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w300,
+                              fontSize: 17,
+                              color: AppColors.blackColor),
+                          textHeightBehavior:
+                              TextHeightBehavior(applyHeightToFirstAscent: false),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/blogs');
+                        },
+                        child: Text('Blogs',
+                            style: GoogleFonts.lato(
+                                fontWeight: FontWeight.w300,
+                                fontSize: 17,
+                                color: AppColors.blackColor),
+                            textHeightBehavior: TextHeightBehavior(
+                                applyHeightToFirstAscent: false)),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
 
-
-              if (HelperFunctions.getPlatform(context) == Platform.web)
+              if (HelperFunctions.getPlatform(context) == Platform.web ||
+                  screenWidth < 750)
                 Container(
                   width: 180,
                   margin: const EdgeInsets.only(top: 10),
                   alignment: Alignment.topCenter,
-                  child:  Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -78,22 +116,35 @@ class _HeaderState extends State<Header> {
                         color: AppColors.blackColor,
                         size: 25,
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Flexible(
                         child: TextField(
                           decoration: InputDecoration(
-                            hintStyle: GoogleFonts.lato(fontSize: 13,fontWeight: FontWeight.w300,color: AppColors.blackColor),
-                            isCollapsed: true,
+                              hintStyle: GoogleFonts.lato(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w300,
+                                  color: AppColors.blackColor),
+                              isCollapsed: true,
                               isDense: true,
                               hintText: 'Search stores and deals',
-                              contentPadding: EdgeInsets.only(
-                                  left: 0, top: 6,bottom: 12),
-                              border: UnderlineInputBorder(borderSide: BorderSide(width:0.3,)),
-                              enabledBorder: UnderlineInputBorder(borderSide: BorderSide(width:0.3,)),
-                              focusedBorder:UnderlineInputBorder(borderSide: BorderSide(width:0.3,))
+                              contentPadding:
+                                  EdgeInsets.only(left: 0, top: 6, bottom: 12),
+                              border: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                width: 0.3,
+                              )),
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                width: 0.3,
+                              )),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                width: 0.3,
+                              ))
 
-
-    // border: InputBorder.none,
+                              // border: InputBorder.none,
                               // border: OutlineInputBorder(
                               //     borderRadius: BorderRadius.circular(16),
                               //     borderSide: BorderSide(
@@ -102,27 +153,27 @@ class _HeaderState extends State<Header> {
                               //     borderRadius: BorderRadius.circular(16),
                               //     borderSide: BorderSide(
                               //         color: AppColors.primaryColor.withOpacity(0.3))),
-                               ),
+                              ),
                         ),
                       ),
                     ],
                   ),
                 ),
-    // GestureDetector(
-    //         onTap: () {
-    //           Navigator.pushNamed(context, '/allCoupons');
-    //         },
-    //         child: Text(
-    //           'Coupons    ',
-    //           style: GoogleFonts.lato(
-    //             textStyle: const TextStyle(
-    //                 fontStyle: FontStyle.italic,
-    //                 color: AppColors.primaryColor,
-    //                 fontSize: 17,
-    //                 fontWeight: FontWeight.w500),
-    //           ),
-    //         ),
-    //       ),
+              // GestureDetector(
+              //         onTap: () {
+              //           Navigator.pushNamed(context, '/allCoupons');
+              //         },
+              //         child: Text(
+              //           'Coupons    ',
+              //           style: GoogleFonts.lato(
+              //             textStyle: const TextStyle(
+              //                 fontStyle: FontStyle.italic,
+              //                 color: AppColors.primaryColor,
+              //                 fontSize: 17,
+              //                 fontWeight: FontWeight.w500),
+              //           ),
+              //         ),
+              //       ),
               // (HelperFunctions.getPlatform(context) != Platform.mobile &&
               //     HelperFunctions.getPlatformStanding(context) !=
               //         PlatformStanding.tabEnd)

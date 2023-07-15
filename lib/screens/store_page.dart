@@ -41,6 +41,7 @@ class _StorePageState extends State<StorePage> {
                 style: GoogleFonts.lato(
                   textStyle: const TextStyle(
                       fontSize:26, fontWeight: FontWeight.w500),),
+
             ),
             const SizedBox(
               height: 20,
