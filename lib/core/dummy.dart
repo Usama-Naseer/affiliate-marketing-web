@@ -12,8 +12,7 @@ class DummyData {
   static List<Store> stores = [
     Store(
         storeName: 'Zaful',
-        shortDescription:
-            "Zaful.com is a leading one-stop online shop for today's most daring, exciting and edgy fashion apparels.",
+        shortDescription: "Zaful.com is a leading one-stop online shop for today's most daring, exciting and edgy fashion apparels.",
         image:
             "https://cdn.dealspotr.com/io-images/logo/zafulcom.jpg",     totalCoupons: 28, category: 'Clothing & Fashion', longDescription: '', url: 'zuful.com', affiliateUrl: 'zaful.com'),
     Store(

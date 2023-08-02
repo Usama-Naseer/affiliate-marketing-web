@@ -1,6 +1,7 @@
 import 'package:discountandcodes/screens/all_stores.dart';
 import 'package:discountandcodes/screens/blogs_page.dart';
 import 'package:discountandcodes/screens/coupons_by_ccategory.dart';
+import 'package:discountandcodes/screens/generator.dart';
 import 'package:discountandcodes/screens/home_screen.dart';
 import 'package:discountandcodes/screens/privacy_policy.dart';
 import 'package:discountandcodes/screens/store_page.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const HomeScreen();
+          return const Generateor();
         },
         routes: <RouteBase>[
           GoRoute(
